@@ -31,7 +31,7 @@
     {
       "name": "API Reference",
       "icon": "rectangle-terminal",
-      "url": "api-reference"
+      "url": "api"
     }
   ],
   "navigation": [
@@ -41,38 +41,110 @@
     },
     {
       "group": "API Documentation",
-      "pages": ["api-reference/authentication"]
+      "pages": ["api/authentication"]
     },
     {
       "group": "Applicants",
       "pages": [
-        "api-reference/applicants/applicants-create",
-        "api-reference/applicants/applicants-get-all",
-        "api-reference/applicants/applicants-get-by-id",
-        "api-reference/applicants/applicants-update"
+        "api/applicants/create",
+        "api/applicants/get-all",
+        "api/applicants/get-by-id",
+        "api/applicants/update"
       ]
     },
     {
       "group": "General Ledger",
       "pages": [
-        "api-reference/general-ledger/transactions-get-all",
-        "api-reference/general-ledger/transactions-get-by-id"
+        "api/general-ledger/transactions/get-all",
+        "api/general-ledger/transactions/get-by-id"
       ]
     },
     {
-      "group": "Integrations",
+      "group": "Leads",
       "pages": [
-        "api-reference/integrations/integrations-get-all",
-        "api-reference/integrations/integrations-get-by-id"
+        "api/leads/create",
+        "api/leads/get-all",
+        "api/leads/get-by-id",
+        "api/leads/update"
       ]
     },
     {
-      "group": "Users",
+      "group": "Leases",
       "pages": [
-        "api-reference/users/users-create",
-        "api-reference/users/users-get-all",
-        "api-reference/users/users-get-by-id",
-        "api-reference/users/users-update"
+        "api/leases/create",
+        "api/leases/get-all",
+        "api/leases/get-by-id",
+        "api/leases/update"
+      ]
+    },
+    {
+      "group": "Listings",
+      "pages": [
+        "api/listings/create",
+        "api/listings/get-all",
+        "api/listings/get-by-id"
+      ]
+    },
+    {
+      "group": "Properties",
+      "pages": [
+        "api/properties/get-all",
+        "api/properties/get-by-id"
+      ]
+    },
+    {
+      "group": "Residents",
+      "pages": [
+        "api/residents/create",
+        "api/residents/get-all",
+        "api/residents/get-by-id",
+        "api/residents/update"
+      ]
+    },
+    {
+      "group": "Units",
+      "pages": [
+        "api/units/create",
+        "api/units/get-all",
+        "api/units/get-by-id",
+        "api/units/update"
+      ]
+    },
+    {
+      "group": "Vendors",
+      "pages": [
+        "api/vendors/create",
+        "api/vendors/get-all",
+        "api/vendors/get-by-id",
+        "api/vendors/update"
+      ]
+    },
+    {
+      "group": "Work Orders",
+      "pages": [
+        "api/work-orders/create",
+        "api/work-orders/get-all",
+        "api/work-orders/get-by-id",
+        "api/work-orders/update"
+      ]
+    },
+    {
+      "group": "Settings",
+      "pages": [
+        "api/data/diffs/get-all",
+        "api/integrations/create",
+        "api/integrations/get-all",
+        "api/integrations/get-by-id",
+        "api/integrations/update",
+        "api/logs/jobs/get-all",
+        "api/logs/jobs/get-by-id",
+        "api/job-schedules/get-by-integration-id",
+        "api/job-schedules/get-by-id",
+        "api/job-schedules/update",
+        "api/users/create",
+        "api/users/get-all",
+        "api/users/get-by-id",
+        "api/users/update"
       ]
     }
   ]
