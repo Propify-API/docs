@@ -1,11 +1,17 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Documentation Starter Kit",
+  "name": "Propify Documentation",
+  "api": {
+    "playground": {
+      "mode": "simple"
+    },
+    "maintainOrder": true
+  },
   "logo": {
     "dark": "/logo/dark.png",
     "light": "/logo/light.png"
   },
-  "favicon": "/favicon.png",
+  "favicon": "/images/favicon.png",
   "colors": {
     "primary": "#0069ED",
     "light": "#4D9CFF",
@@ -14,7 +20,7 @@
   "topbarLinks": [
     {
       "name": "Documentation",
-      "url": "https://mintlify.com/docs"
+      "url": "https://docs.getpropify.com"
     }
   ],
   "topbarCtaButton": {
@@ -26,16 +32,6 @@
       "name": "API Reference",
       "icon": "rectangle-terminal",
       "url": "api-reference"
-    },
-    {
-      "name": "Changelog",
-      "icon": "list",
-      "url": "https://mintlify.com"
-    },
-    {
-      "name": "Community",
-      "icon": "discord",
-      "url": "https://mintlify.com/community"
     }
   ],
   "navigation": [
@@ -48,18 +44,36 @@
       "pages": ["api-reference/authentication"]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Applicants",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/update",
-        "api-reference/endpoint/delete"
+        "api-reference/applicants/applicants-create",
+        "api-reference/applicants/applicants-get-all",
+        "api-reference/applicants/applicants-get-by-id",
+        "api-reference/applicants/applicants-update"
+      ]
+    },
+    {
+      "group": "General Ledger",
+      "pages": [
+        "api-reference/general-ledger/transactions-get-all",
+        "api-reference/general-ledger/transactions-get-by-id"
+      ]
+    },
+    {
+      "group": "Integrations",
+      "pages": [
+        "api-reference/integrations/integrations-get-all",
+        "api-reference/integrations/integrations-get-by-id"
+      ]
+    },
+    {
+      "group": "Users",
+      "pages": [
+        "api-reference/users/users-create",
+        "api-reference/users/users-get-all",
+        "api-reference/users/users-get-by-id",
+        "api-reference/users/users-update"
       ]
     }
-  ],
-  "footerSocials": {
-    "twitter": "https://twitter.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
-  }
+  ]
 }
