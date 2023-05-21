@@ -5279,6 +5279,124 @@ paths:
       security:
         - APIKEY_1: []
           APIKEY_2: []
+  "/v1/integrations/{id}/vendors":
+    post:
+      operationId: PostV1IntegrationsIdVendors
+      responses:
+        "200":
+          description: POST /v1/integrations/:id/vendors Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+        "400":
+          description: POST /v1/integrations/:id/vendors Error response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                      errors:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                    required:
+                      - message
+                      - errors
+                required:
+                  - error
+      description: Create a vendor for an integration.
+      summary: Create vendor
+      tags:
+        - vendors
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: POST /v1/integrations/:id/vendors request body
+              allOf:
+                - allOf:
+                    - allOf:
+                        - allOf:
+                            - type: object
+                              properties: {}
+                            - type: object
+                              properties: {}
+                        - type: object
+                          properties: {}
+                    - type: object
+                      properties: {}
+                - type: object
+                  properties: {}
+      security:
+        - APIKEY_1: []
+          APIKEY_2: []
+  "/v1/integrations/{id}/work-orders":
+    post:
+      operationId: PostV1IntegrationsIdWorkOrders
+      responses:
+        "200":
+          description: POST /v1/integrations/:id/work-orders Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+        "400":
+          description: POST /v1/integrations/:id/work-orders Error response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                      errors:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                    required:
+                      - message
+                      - errors
+                required:
+                  - error
+      description: Create a work order for an integration.
+      summary: Create work order
+      tags:
+        - work-orders
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: POST /v1/integrations/:id/work-orders request body
+              allOf:
+                - allOf:
+                    - allOf:
+                        - allOf:
+                            - type: object
+                              properties: {}
+                            - type: object
+                              properties: {}
+                        - type: object
+                          properties: {}
+                    - type: object
+                      properties: {}
+                - type: object
+                  properties: {}
+      security:
+        - APIKEY_1: []
+          APIKEY_2: []
   /v1/leads:
     get:
       operationId: GetV1Leads
@@ -8462,19 +8580,19 @@ paths:
       security:
         - APIKEY_1: []
           APIKEY_2: []
-  "/v1/properties/{propertyId}/units":
+  "/v1/properties/{property_id}/units":
     post:
-      operationId: PostV1PropertiesPropertyidUnits
+      operationId: PostV1PropertiesPropertyIdUnits
       responses:
         "200":
-          description: POST /v1/properties/:propertyId/units Successful response
+          description: POST /v1/properties/:property_id/units Successful response
           content:
             application/json:
               schema:
                 type: object
                 properties: {}
         "400":
-          description: POST /v1/properties/:propertyId/units Error response
+          description: POST /v1/properties/:property_id/units Error response
           content:
             application/json:
               schema:
@@ -8503,7 +8621,7 @@ paths:
         content:
           application/json:
             schema:
-              description: POST /v1/properties/:propertyId/units request body
+              description: POST /v1/properties/:property_id/units request body
               allOf:
                 - allOf:
                     - allOf:
@@ -8584,19 +8702,19 @@ paths:
       security:
         - APIKEY_1: []
           APIKEY_2: []
-  "/v1/properties/{propertyId}/units/{unitId}":
+  "/v1/properties/{property_id}/units/{unit_id}":
     put:
-      operationId: PutV1PropertiesPropertyidUnitsUnitid
+      operationId: PutV1PropertiesPropertyIdUnitsUnitId
       responses:
         "200":
-          description: PUT /v1/properties/:propertyId/units/:unitId Successful response
+          description: PUT /v1/properties/:property_id/units/:unit_id Successful response
           content:
             application/json:
               schema:
                 type: object
                 properties: {}
         "400":
-          description: PUT /v1/properties/:propertyId/units/:unitId Error response
+          description: PUT /v1/properties/:property_id/units/:unit_id Error response
           content:
             application/json:
               schema:
@@ -8619,13 +8737,13 @@ paths:
                   - error
       description: Update a unit for a property.
       summary: Update unit
-      tags:
+      tags: &a1
         - units
       requestBody:
         content:
           application/json:
             schema:
-              description: PUT /v1/properties/:propertyId/units/:unitId request body
+              description: PUT /v1/properties/:property_id/units/:unit_id request body
               allOf:
                 - allOf:
                     - allOf:
@@ -10722,6 +10840,134 @@ paths:
       security:
         - APIKEY_1: []
           APIKEY_2: []
+    put:
+      operationId: PutV1UnitsId
+      responses:
+        "200":
+          description: PUT /v1/units/:id Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+        "400":
+          description: PUT /v1/units/:id Error response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                      errors:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                    required:
+                      - message
+                      - errors
+                required:
+                  - error
+      description: Update a unit for a property.
+      summary: Update unit
+      tags: *a1
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            description: PUT /v1/units/:id parameter
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: PUT /v1/units/:id request body
+              allOf:
+                - allOf:
+                    - allOf:
+                        - allOf:
+                            - type: object
+                              properties: {}
+                            - type: object
+                              properties: {}
+                        - type: object
+                          properties: {}
+                    - type: object
+                      properties: {}
+                - type: object
+                  properties:
+                    number:
+                      type: string
+                      description: The unit number
+                    bedrooms:
+                      type: string
+                      description: The number of bedrooms
+                    bathrooms:
+                      type: string
+                      description: The number of bathrooms
+                    square_feet:
+                      type: integer
+                      format: int64
+                      minimum: 0
+                      exclusiveMinimum: false
+                      maximum: 9007199254740991
+                      exclusiveMaximum: false
+                      description: The square footage of the unit
+                    building_number:
+                      type: string
+                      description: The building number
+                    building_name:
+                      type: string
+                      description: The building name
+                    floor_plan_code:
+                      type: string
+                      description: The floor plan code
+                    floor_plan_name:
+                      type: string
+                      description: The floor plan name
+                    floor:
+                      type: string
+                      description: Floor number/name
+                    street_address_1:
+                      type: string
+                      description: The street address line 1
+                    street_address_2:
+                      type: string
+                      description: The street address line 2
+                    city:
+                      type: string
+                      description: The city
+                    state:
+                      type: string
+                      description: The state
+                    zip:
+                      type: string
+                      description: The zip code
+                    is_available:
+                      type: boolean
+                      description: Whether the unit is available
+                    is_furnished:
+                      type: boolean
+                      description: Whether the unit is furnished
+                    is_listed:
+                      type: boolean
+                      description: Whether the unit is listed
+                    is_vacant:
+                      type: boolean
+                      description: Whether the unit is vacant
+                    custom_data:
+                      type: object
+                      properties: {}
+                      description: Custom data
+                  required: []
+      security:
+        - APIKEY_1: []
+          APIKEY_2: []
   /v1/vendors:
     get:
       operationId: GetV1Vendors
@@ -11161,81 +11407,6 @@ paths:
               - YARDI
               - RENTVINE
               - REALPAGE_APP
-      security:
-        - APIKEY_1: []
-          APIKEY_2: []
-    post:
-      operationId: PostV1Vendors
-      responses:
-        "200":
-          description: POST /v1/vendors Successful response
-          content:
-            application/json:
-              schema:
-                type: object
-                properties: {}
-        "400":
-          description: POST /v1/vendors Error response
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  error:
-                    type: object
-                    properties:
-                      message:
-                        type: string
-                      errors:
-                        type: array
-                        items:
-                          type: object
-                          properties: {}
-                    required:
-                      - message
-                      - errors
-                required:
-                  - error
-      description: Create a vendor for an integration.
-      summary: Create vendor
-      tags:
-        - vendors
-      requestBody:
-        content:
-          application/json:
-            schema:
-              description: POST /v1/vendors request body
-              allOf:
-                - allOf:
-                    - allOf:
-                        - allOf:
-                            - type: object
-                              properties: {}
-                            - type: object
-                              properties: {}
-                        - type: object
-                          properties: {}
-                    - type: object
-                      properties: {}
-                - type: object
-                  properties:
-                    integration_id:
-                      type: string
-                      format: cuid
-                    vendor:
-                      type: string
-                      enum:
-                        - BUILDIUM
-                        - ENTRATA
-                        - PROPERTYWARE
-                        - REALPAGE
-                        - RENTMANAGER
-                        - YARDI
-                        - RENTVINE
-                        - REALPAGE_APP
-                  required:
-                    - integration_id
-                    - vendor
       security:
         - APIKEY_1: []
           APIKEY_2: []
@@ -12272,81 +12443,6 @@ paths:
               - YARDI
               - RENTVINE
               - REALPAGE_APP
-      security:
-        - APIKEY_1: []
-          APIKEY_2: []
-    post:
-      operationId: PostV1WorkOrders
-      responses:
-        "200":
-          description: POST /v1/work-orders Successful response
-          content:
-            application/json:
-              schema:
-                type: object
-                properties: {}
-        "400":
-          description: POST /v1/work-orders Error response
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  error:
-                    type: object
-                    properties:
-                      message:
-                        type: string
-                      errors:
-                        type: array
-                        items:
-                          type: object
-                          properties: {}
-                    required:
-                      - message
-                      - errors
-                required:
-                  - error
-      description: Create a work order for an integration.
-      summary: Create work order
-      tags:
-        - work-orders
-      requestBody:
-        content:
-          application/json:
-            schema:
-              description: POST /v1/work-orders request body
-              allOf:
-                - allOf:
-                    - allOf:
-                        - allOf:
-                            - type: object
-                              properties: {}
-                            - type: object
-                              properties: {}
-                        - type: object
-                          properties: {}
-                    - type: object
-                      properties: {}
-                - type: object
-                  properties:
-                    integration_id:
-                      type: string
-                      format: cuid
-                    vendor:
-                      type: string
-                      enum:
-                        - BUILDIUM
-                        - ENTRATA
-                        - PROPERTYWARE
-                        - REALPAGE
-                        - RENTMANAGER
-                        - YARDI
-                        - RENTVINE
-                        - REALPAGE_APP
-                  required:
-                    - integration_id
-                    - vendor
       security:
         - APIKEY_1: []
           APIKEY_2: []
