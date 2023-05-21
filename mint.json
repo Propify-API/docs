@@ -17,15 +17,9 @@
     "light": "#4D9CFF",
     "dark": "#5849EC"
   },
-  "topbarLinks": [
-    {
-      "name": "Documentation",
-      "url": "https://docs.getpropify.com"
-    }
-  ],
   "topbarCtaButton": {
     "name": "Get Started",
-    "url": "https://github.com/mintlify/starter"
+    "url": "https://getpropify.com"
   },
   "anchors": [
     {
@@ -37,7 +31,13 @@
   "navigation": [
     {
       "group": "Home",
-      "pages": ["introduction", "features"]
+      "pages": [
+        "introduction",
+        "pagination",
+        "rate-limits",
+        "sync-frequency",
+        "webhooks"
+      ]
     },
     {
       "group": "API Documentation",
