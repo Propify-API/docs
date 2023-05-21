@@ -4269,6 +4269,13 @@ paths:
       summary: Update applicant
       tags:
         - applicants
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            description: PUT /v1/applicants/:id parameter
+            type: string
       requestBody:
         content:
           application/json:
@@ -4351,6 +4358,7 @@ paths:
                     country_alternate:
                       type: string
                       description: Country of the applicant's secondary/alternate address.
+                  required: []
       security:
         - APIKEY_1: []
           APIKEY_2: []
@@ -7076,6 +7084,13 @@ paths:
       summary: Update lease
       tags:
         - leases
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            description: PUT /v1/leases/:id parameter
+            type: string
       requestBody:
         content:
           application/json:
@@ -7132,68 +7147,50 @@ paths:
                       exclusiveMaximum: false
                       description: The deposit amount in cents
                     deposit_date:
+                      type: string
+                      format: date-time
+                      pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
                       description: The date the deposit was received
-                      type: string
-                      format: date-time
-                      pattern: ^\d{4}-\d{2}-\d{2}(T\d{2}:\d{2}:\d{2}(\.\d+)?)?Z?$
-                      externalDocs:
-                        url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
                     signature_date:
+                      type: string
+                      format: date-time
+                      pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
                       description: The date the lease was signed
-                      type: string
-                      format: date-time
-                      pattern: ^\d{4}-\d{2}-\d{2}(T\d{2}:\d{2}:\d{2}(\.\d+)?)?Z?$
-                      externalDocs:
-                        url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
                     start_date:
+                      type: string
+                      format: date-time
+                      pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
                       description: The date the lease starts
-                      type: string
-                      format: date-time
-                      pattern: ^\d{4}-\d{2}-\d{2}(T\d{2}:\d{2}:\d{2}(\.\d+)?)?Z?$
-                      externalDocs:
-                        url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
                     end_date:
+                      type: string
+                      format: date-time
+                      pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
                       description: The date the lease ends
-                      type: string
-                      format: date-time
-                      pattern: ^\d{4}-\d{2}-\d{2}(T\d{2}:\d{2}:\d{2}(\.\d+)?)?Z?$
-                      externalDocs:
-                        url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
                     application_date:
+                      type: string
+                      format: date-time
+                      pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
                       description: The date the application was submitted
-                      type: string
-                      format: date-time
-                      pattern: ^\d{4}-\d{2}-\d{2}(T\d{2}:\d{2}:\d{2}(\.\d+)?)?Z?$
-                      externalDocs:
-                        url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
                     scheduled_move_in_date:
+                      type: string
+                      format: date-time
+                      pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
                       description: The date the resident is scheduled to move in
-                      type: string
-                      format: date-time
-                      pattern: ^\d{4}-\d{2}-\d{2}(T\d{2}:\d{2}:\d{2}(\.\d+)?)?Z?$
-                      externalDocs:
-                        url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
                     scheduled_move_out_date:
+                      type: string
+                      format: date-time
+                      pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
                       description: The date the resident is scheduled to move out
-                      type: string
-                      format: date-time
-                      pattern: ^\d{4}-\d{2}-\d{2}(T\d{2}:\d{2}:\d{2}(\.\d+)?)?Z?$
-                      externalDocs:
-                        url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
                     realized_move_in_date:
+                      type: string
+                      format: date-time
+                      pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
                       description: The date the resident actually moved in
-                      type: string
-                      format: date-time
-                      pattern: ^\d{4}-\d{2}-\d{2}(T\d{2}:\d{2}:\d{2}(\.\d+)?)?Z?$
-                      externalDocs:
-                        url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
                     realized_move_out_date:
-                      description: The date the resident actually moved out
                       type: string
                       format: date-time
-                      pattern: ^\d{4}-\d{2}-\d{2}(T\d{2}:\d{2}:\d{2}(\.\d+)?)?Z?$
-                      externalDocs:
-                        url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
+                      pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
+                      description: The date the resident actually moved out
                     status:
                       type: string
                       enum:
@@ -7212,6 +7209,7 @@ paths:
                       type: object
                       properties: {}
                       description: Custom data
+                  required: []
       security:
         - APIKEY_1: []
           APIKEY_2: []
@@ -8642,6 +8640,8 @@ paths:
                       properties: {}
                 - type: object
                   properties:
+                    id:
+                      type: string
                     number:
                       type: string
                       description: The unit number
@@ -8705,6 +8705,8 @@ paths:
                       type: object
                       properties: {}
                       description: Custom data
+                  required:
+                    - id
       security:
         - APIKEY_1: []
           APIKEY_2: []
@@ -9397,6 +9399,13 @@ paths:
       summary: Update resident
       tags:
         - residents
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            description: PUT /v1/residents/:id parameter
+            type: string
       requestBody:
         content:
           application/json:
@@ -9437,13 +9446,11 @@ paths:
                       format: email
                       description: An alternate email address for the resident.
                     date_of_birth:
-                      description: The date of birth of the resident.
                       type: string
                       format: date-time
-                      pattern: ^\d{4}-\d{2}-\d{2}(T\d{2}:\d{2}:\d{2}(\.\d+)?)?Z?$
-                      externalDocs:
-                        url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
-                    adddress_1:
+                      pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
+                      description: The date of birth of the resident.
+                    address_1:
                       type: string
                       description: First line of the resident's primary address
                     address_2:
@@ -9483,6 +9490,7 @@ paths:
                       type: object
                       properties: {}
                       description: Custom data
+                  required: []
       security:
         - APIKEY_1: []
           APIKEY_2: []
@@ -11668,6 +11676,13 @@ paths:
       summary: Update vendor
       tags:
         - vendors
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            description: PUT /v1/vendors/:id parameter
+            type: string
       requestBody:
         content:
           application/json:
@@ -11686,24 +11701,8 @@ paths:
                     - type: object
                       properties: {}
                 - type: object
-                  properties:
-                    integration_id:
-                      type: string
-                      format: cuid
-                    vendor:
-                      type: string
-                      enum:
-                        - BUILDIUM
-                        - ENTRATA
-                        - PROPERTYWARE
-                        - REALPAGE
-                        - RENTMANAGER
-                        - YARDI
-                        - RENTVINE
-                        - REALPAGE_APP
-                  required:
-                    - integration_id
-                    - vendor
+                  properties: {}
+                  required: []
       security:
         - APIKEY_1: []
           APIKEY_2: []
@@ -12897,6 +12896,13 @@ paths:
       summary: Update work order
       tags:
         - work-orders
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            description: PUT /v1/work-orders/:id parameter
+            type: string
       requestBody:
         content:
           application/json:
@@ -12915,24 +12921,8 @@ paths:
                     - type: object
                       properties: {}
                 - type: object
-                  properties:
-                    integration_id:
-                      type: string
-                      format: cuid
-                    vendor:
-                      type: string
-                      enum:
-                        - BUILDIUM
-                        - ENTRATA
-                        - PROPERTYWARE
-                        - REALPAGE
-                        - RENTMANAGER
-                        - YARDI
-                        - RENTVINE
-                        - REALPAGE_APP
-                  required:
-                    - integration_id
-                    - vendor
+                  properties: {}
+                  required: []
       security:
         - APIKEY_1: []
           APIKEY_2: []
