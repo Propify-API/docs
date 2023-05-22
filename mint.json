@@ -38,6 +38,7 @@
       "group": "Home",
       "pages": [
         "introduction",
+        "authentication",
         "pagination",
         "rate-limits",
         "sync-frequency",
@@ -47,10 +48,6 @@
     {
       "group": "Use Cases",
       "pages": ["use-cases/lead-to-lease"]
-    },
-    {
-      "group": "API Documentation",
-      "pages": ["api-reference/authentication"]
     },
     {
       "group": "Applicants",

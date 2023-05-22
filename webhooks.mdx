@@ -35,8 +35,12 @@ app.post('/webhook/leases', async (req, res) => {
 });
 ```
 
-Then, in Propify, you can register your webhook URL and subscribe to the events you care about (data-diff on the lease model, in the example above).
+Then, in Propify, you can register your webhook URL and subscribe to the events you care about ("Data Update" on the `leases` model in this example).
 
-Now each time Propify identifies a change in the lease model for a particular lease, you will be notified via a POST request to your webhook URL.
+<Frame>
+    <img src="/images/webhook-lease-setup.png" />
+</Frame>
 
-The above example is intended to be a simple example of how webhooks work. In practice, you will want to use a more robust system to receive and process webhooks. For example, you will want to use a queueing system to ensure that you don't lose any webhook events if your system is down.
+Now each time Propify identifies a change in the leases model for a particular lease in your integration, you will be notified via a POST request to your webhook URL.
+
+_Note: The above example is intended to be a simple example of how webhooks work. In practice, you will want to use a more robust system to receive and process webhooks. For example, you would probably want to use a queueing system to ensure that you don't lose any webhook events if your system is down._
