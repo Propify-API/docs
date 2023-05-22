@@ -137,20 +137,43 @@
     {
       "group": "Settings",
       "pages": [
-        "api-reference/data/diffs/get-all",
-        "api-reference/integrations/create",
-        "api-reference/integrations/get-all",
-        "api-reference/integrations/get-by-id",
-        "api-reference/integrations/update",
-        "api-reference/logs/jobs/get-all",
-        "api-reference/logs/jobs/get-by-id",
-        "api-reference/job-schedules/get-by-integration-id",
-        "api-reference/job-schedules/get-by-id",
-        "api-reference/job-schedules/update",
-        "api-reference/users/create",
-        "api-reference/users/get-all",
-        "api-reference/users/get-by-id",
-        "api-reference/users/update"
+        {
+          "group": "Data",
+          "pages": ["api-reference/data/diffs/get-all"]
+        },
+        {
+          "group": "integrations",
+          "pages": [
+            "api-reference/integrations/create",
+            "api-reference/integrations/get-all",
+            "api-reference/integrations/get-by-id",
+            "api-reference/integrations/update"
+          ]
+        },
+        {
+          "group": "Logs",
+          "pages": [
+            "api-reference/logs/jobs/get-all",
+            "api-reference/logs/jobs/get-by-id"
+          ]
+        },
+        {
+          "group": "Jobs",
+          "pages": [
+            "api-reference/job-schedules/get-by-integration-id",
+            "api-reference/job-schedules/get-by-id",
+            "api-reference/job-schedules/update"
+          ]
+        },
+        {
+          "group": "Users",
+          "pages": [
+            "api-reference/users/create",
+            "api-reference/users/get-all",
+            "api-reference/users/get-by-id",
+            "api-reference/users/update"
+          ]
+        }
       ]
     }
   ]
