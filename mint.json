@@ -140,7 +140,7 @@
                             ]
                         },
                         {
-                            "group": "integrations",
+                            "group": "Integrations",
                             "pages": [
                                 "api-reference/integrations/create",
                                 "api-reference/integrations/get-all",
