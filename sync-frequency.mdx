@@ -1,34 +1,16 @@
 ---
 title: "Sync Frequency"
-description: "This is where you can describe your product's features"
+description: "How often does Propify sync with my property management software?"
 ---
 
-Mintlify makes beautiful effortless documentation as easy as pushing to Git. With your new documentation, you get the following features built in:
+# Overview
+Understanding how often Propify syncs with your property management system must be underscored first by an understanding of how Propify works fundamentally.
 
-## Optimized to Convert Users
+In order to provide you with the most reliable API possible, Propify periodically syncs with your property management system, retrieves data, transforms data and caches that transformed data. This means that the data you see in Propify is not live data, but rather a snapshot of the data at the time of the last sync.
 
-Everything is heavily optimized for SEO and conversion
+To that end, sync frequency is an important concept to understand as it can impact your business processes. For example, if you are using Propify to manage your maintenance requests, you may want to know how often the data is updated so that you can ensure that your maintenance team is working with the most up-to-date information.
 
-![Conversion](/images/conversion.png)
+## Sync Frequency
+By default, new integrations are set to run a sync every 12 hours. This means that every 12 hours, Propify will sync with your property management system, retrieve data, transform data and cache that transformed data.
 
-## High-performing Search
-
-Ultra-fast search comes out of the box and re-indexes all of the documentation on every update
-
-![Search](/images/search.png)
-
-## Interactive API Playground
-
-Interactive API Playground pages for users to explore the endpoints
-
-![API Playground](/images/playground.png)
-
-## Light and Dark Mode
-
-Check out light and dark mode offered out of the box and beautiful for every bit of content and components
-
-![Light Mode](/images/light.png)
-
-## Analytics Built to Understand Users
-
-Analytics is built into the platform to help you understand what page users are interacting with, where they are converting, and where they are dropping off
+However, the default sync frequency is not always the best option for every integration. For example, if you are using Propify to perform background checks on perspective tenants, you may want more frequent syncs so that you can provide a faster turnaround for your customers who may be actively waiting to hear the result. In this case, we can increase the sync frequency to something like every 15 minutes — assuming you have an agreement in place with your PMS integration partner that will permit this rate limit configuration.
