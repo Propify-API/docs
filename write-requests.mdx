@@ -1,0 +1,9 @@
+---
+title: "Write Requests"
+description: "Write requests are used to create or update data."
+---
+
+## Overview
+With Propify, you can read, create and update data to and from your customer's property management system (PMS). To understand how Propfiy handles write requests, it is important to understand how Propify thinks about source-of-truth relationships.
+
+Propify does not act as the source of truth. Instead, we rely solely on each PMS to maintain accurate records. This means that when you write data to Propify's API, we will pass the request along to the PMS and log the response — found in [job logs](api-reference/logs/jobs). _The new or updated data will not be immediately reflected in the Propify API._ Once the [next sync cycle](sync-frequency) is complete, the data will be available in the API, assuming the request was successful on the PMS side.

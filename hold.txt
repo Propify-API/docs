@@ -26,6 +26,11 @@
       "name": "API Reference",
       "icon": "rectangle-terminal",
       "url": "api-reference"
+    },
+    {
+      "name": "Use Cases",
+      "icon": "sparkles",
+      "url": "use-cases"
     }
   ],
   "navigation": [
@@ -40,6 +45,19 @@
         "sync-frequency",
         "webhooks",
         "write-requests"
+      ]
+    },
+    {
+      "group": "Use Cases",
+      "pages": [
+        "use-cases/amenities",
+        "use-cases/charge-to-ledger",
+        "use-cases/lead-to-lease",
+        "use-cases/listings",
+        "use-cases/maintenance",
+        "use-cases/rent-collection",
+        "use-cases/resident-experience",
+        "use-cases/rewards"
       ]
     },
     {
