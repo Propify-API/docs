@@ -3,7 +3,7 @@ title: "Webhooks"
 description: "Leverage Propify's webhooks to get updates that you care about."
 ---
 
-Many of our customers use webhooks to get updates on things lease status changes, new leads, and more. We offer webhook events for new and changed data for all of our data models, job status and more.
+Many of our customers use webhooks to get updates on events like lease status changes, new leads, and more. We offer webhook events for new and changed data for all of our data models, job statuses and more.
 
 ## Why use webhooks?
 
@@ -43,4 +43,46 @@ Then, in Propify, you can register your webhook URL and subscribe to the events 
 
 Now each time Propify identifies a change in the leases model for a particular lease in your integration, you will be notified via a POST request to your webhook URL.
 
+Here is an example of how Propify might send a webhook request to your system:
+```bash Example webhook sent from Propify
+curl -X POST \
+  'https://<your-website.com>/webhook/leases' \
+  --header 'Content-Type': 'application/json' \
+  --header 'propify-signature': '<payload signature>', \
+  --data-raw '{
+      "meta": {
+        "object": "leases",
+        "integration_id": "1234567890",
+      },
+      "diff": {
+        "previous": { "status": "pending" },
+        "new": { "status": "approved" }
+      }
+    }'
+```
+
 _Note: The above example is intended to be a simple example of how webhooks work. In practice, you will want to use a more robust system to receive and process webhooks. For example, you would probably want to use a queueing system to ensure that you don't lose any webhook events if your system is down._
+
+## Signed Payloads
+
+Propify signs every webhook payload with a signature. This signature is sent in the `propify-signature` header. You can use this signature to verify that the webhook was sent by Propify and not a malicious third party.
+
+The secret that is used to sign the payload is available in your integration settings. You can find it by going to the "Webhooks" page in the Propify dashboard and clicking on the "Settings" button.
+
+Here is an example of how you might verify the signature in Node.js:
+```javascript Example signature verification
+import { timingSafeEqual, createHmac } from 'crypto'
+
+const createHmacSignature = ({ data, secret }): string => {
+  return createHmac('sha256', secret).update(JSON.stringify(data)).digest('hex')
+}
+
+const compareSignatures = ({ suppliedSignature, data }): Boolean => {
+  const generatedSignature = createHmacSignature({ data, secret })
+  const source = Buffer.from(suppliedSignature)
+  const comparison = Buffer.from(generatedSignature)
+  return timingSafeEqual(source, comparison)
+}
+
+return compareSignatures({ suppliedSignature: req.headers['propify-signature'], data: req.body })
+```
