@@ -45,11 +45,10 @@ Now each time Propify identifies a change in the leases model for a particular l
 
 Here is an example of how Propify might send a webhook request to your system:
 ```Example webhook sent from Propify
-
-POST /webhook/leases
+POST <your_path>
 Host: <your_domain>
 Content-Type: application/json
-propify-signature: <payload signature>
+propify-signature: <payload_signature>
 
 {
     "meta": {
