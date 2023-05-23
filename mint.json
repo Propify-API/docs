@@ -82,7 +82,6 @@
                 {
                     "group": "Listings",
                     "pages": [
-                        "api-reference/listings/create",
                         "api-reference/listings/get-all",
                         "api-reference/listings/get-by-id"
                     ]
