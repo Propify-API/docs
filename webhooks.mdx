@@ -77,7 +77,7 @@ Here is an example of how you might verify the signature in Node.js:
 import { timingSafeEqual, createHmac } from 'crypto'
 
 const createHmacSignature = ({ data, secret }): string => {
-  return createHmac('sha256', secret).update(JSON.stringify(data)).digest('hex')
+  return createHmac('sha256', secret).update(data).digest('hex')
 }
 
 const compareSignatures = ({ suppliedSignature, data }): Boolean => {
