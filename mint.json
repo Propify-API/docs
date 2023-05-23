@@ -1,173 +1,180 @@
 {
-  "$schema": "https://mintlify.com/schema.json",
-  "name": "Propify Documentation",
-  "api": {
-    "playground": {
-      "mode": "simple"
-    },
-    "maintainOrder": true
-  },
-  "logo": {
-    "dark": "/logo/dark.png",
-    "light": "/logo/light.png"
-  },
-  "favicon": "/images/favicon.png",
-  "colors": {
-    "primary": "#5849EC",
-    "light": "#4D9CFF",
-    "dark": "#5849EC"
-  },
-  "topbarCtaButton": {
-    "name": "Get Started",
-    "url": "https://getpropify.com"
-  },
-  "anchors": [
-    {
-      "name": "API Reference",
-      "icon": "rectangle-terminal",
-      "url": "api-reference"
-    }
-  ],
-  "navigation": [
-    {
-      "group": "Home",
-      "pages": [
-        "introduction",
-        "authentication",
-        "custom-data",
-        "pagination",
-        "rate-limits",
-        "sync-frequency",
-        "webhooks",
-        "write-requests"
-      ]
-    },
-    {
-      "group": "Applicants",
-      "pages": [
-        "api-reference/applicants/create",
-        "api-reference/applicants/get-all",
-        "api-reference/applicants/get-by-id",
-        "api-reference/applicants/update"
-      ]
-    },
-    {
-      "group": "General Ledger",
-      "pages": [
-        "api-reference/general-ledger/transactions/get-all",
-        "api-reference/general-ledger/transactions/get-by-id"
-      ]
-    },
-    {
-      "group": "Leads",
-      "pages": [
-        "api-reference/leads/create",
-        "api-reference/leads/get-all",
-        "api-reference/leads/get-by-id",
-        "api-reference/leads/update"
-      ]
-    },
-    {
-      "group": "Leases",
-      "pages": [
-        "api-reference/leases/create",
-        "api-reference/leases/get-all",
-        "api-reference/leases/get-by-id",
-        "api-reference/leases/update"
-      ]
-    },
-    {
-      "group": "Listings",
-      "pages": [
-        "api-reference/listings/create",
-        "api-reference/listings/get-all",
-        "api-reference/listings/get-by-id"
-      ]
-    },
-    {
-      "group": "Properties",
-      "pages": [
-        "api-reference/properties/get-all",
-        "api-reference/properties/get-by-id"
-      ]
-    },
-    {
-      "group": "Residents",
-      "pages": [
-        "api-reference/residents/create",
-        "api-reference/residents/get-all",
-        "api-reference/residents/get-by-id",
-        "api-reference/residents/update"
-      ]
-    },
-    {
-      "group": "Units",
-      "pages": [
-        "api-reference/units/create",
-        "api-reference/units/get-all",
-        "api-reference/units/get-by-id",
-        "api-reference/units/update"
-      ]
-    },
-    {
-      "group": "Vendors",
-      "pages": [
-        "api-reference/vendors/create",
-        "api-reference/vendors/get-all",
-        "api-reference/vendors/get-by-id",
-        "api-reference/vendors/update"
-      ]
-    },
-    {
-      "group": "Work Orders",
-      "pages": [
-        "api-reference/work-orders/create",
-        "api-reference/work-orders/get-all",
-        "api-reference/work-orders/get-by-id",
-        "api-reference/work-orders/update"
-      ]
-    },
-    {
-      "group": "Settings",
-      "pages": [
-        {
-          "group": "Data",
-          "pages": ["api-reference/data/diffs/get-all"]
+    "$schema": "https://mintlify.com/schema.json",
+    "name": "Propify Documentation",
+    "api": {
+        "playground": {
+            "mode": "simple"
         },
+        "maintainOrder": true
+    },
+    "logo": {
+        "dark": "/logo/dark.png",
+        "light": "/logo/light.png"
+    },
+    "favicon": "/images/favicon.png",
+    "colors": {
+        "primary": "#5849EC",
+        "light": "#4D9CFF",
+        "dark": "#5849EC"
+    },
+    "topbarCtaButton": {
+        "name": "Get Started",
+        "url": "https://getpropify.com"
+    },
+    "anchors": [
         {
-          "group": "integrations",
-          "pages": [
-            "api-reference/integrations/create",
-            "api-reference/integrations/get-all",
-            "api-reference/integrations/get-by-id",
-            "api-reference/integrations/update"
-          ]
-        },
-        {
-          "group": "Logs",
-          "pages": [
-            "api-reference/logs/jobs/get-all",
-            "api-reference/logs/jobs/get-by-id"
-          ]
-        },
-        {
-          "group": "Jobs",
-          "pages": [
-            "api-reference/job-schedules/get-by-integration-id",
-            "api-reference/job-schedules/get-by-id",
-            "api-reference/job-schedules/update"
-          ]
-        },
-        {
-          "group": "Users",
-          "pages": [
-            "api-reference/users/create",
-            "api-reference/users/get-all",
-            "api-reference/users/get-by-id",
-            "api-reference/users/update"
-          ]
+            "name": "API Reference",
+            "icon": "rectangle-terminal",
+            "url": "api-reference"
         }
-      ]
-    }
-  ]
+    ],
+    "navigation": [
+        {
+            "group": "Home",
+            "pages": [
+                "introduction",
+                "authentication",
+                "custom-data",
+                "pagination",
+                "rate-limits",
+                "sync-frequency",
+                "webhooks",
+                "write-requests"
+            ]
+        },
+        {
+            "group": "API Reference",
+            "pages": [
+                {
+                    "group": "Applicants",
+                    "pages": [
+                        "api-reference/applicants/create",
+                        "api-reference/applicants/get-all",
+                        "api-reference/applicants/get-by-id",
+                        "api-reference/applicants/update"
+                    ]
+                },
+                {
+                    "group": "General Ledger",
+                    "pages": [
+                        "api-reference/general-ledger/transactions/get-all",
+                        "api-reference/general-ledger/transactions/get-by-id"
+                    ]
+                },
+                {
+                    "group": "Leads",
+                    "pages": [
+                        "api-reference/leads/create",
+                        "api-reference/leads/get-all",
+                        "api-reference/leads/get-by-id",
+                        "api-reference/leads/update"
+                    ]
+                },
+                {
+                    "group": "Leases",
+                    "pages": [
+                        "api-reference/leases/create",
+                        "api-reference/leases/get-all",
+                        "api-reference/leases/get-by-id",
+                        "api-reference/leases/update"
+                    ]
+                },
+                {
+                    "group": "Listings",
+                    "pages": [
+                        "api-reference/listings/create",
+                        "api-reference/listings/get-all",
+                        "api-reference/listings/get-by-id"
+                    ]
+                },
+                {
+                    "group": "Properties",
+                    "pages": [
+                        "api-reference/properties/get-all",
+                        "api-reference/properties/get-by-id"
+                    ]
+                },
+                {
+                    "group": "Residents",
+                    "pages": [
+                        "api-reference/residents/create",
+                        "api-reference/residents/get-all",
+                        "api-reference/residents/get-by-id",
+                        "api-reference/residents/update"
+                    ]
+                },
+                {
+                    "group": "Units",
+                    "pages": [
+                        "api-reference/units/create",
+                        "api-reference/units/get-all",
+                        "api-reference/units/get-by-id",
+                        "api-reference/units/update"
+                    ]
+                },
+                {
+                    "group": "Vendors",
+                    "pages": [
+                        "api-reference/vendors/create",
+                        "api-reference/vendors/get-all",
+                        "api-reference/vendors/get-by-id",
+                        "api-reference/vendors/update"
+                    ]
+                },
+                {
+                    "group": "Work Orders",
+                    "pages": [
+                        "api-reference/work-orders/create",
+                        "api-reference/work-orders/get-all",
+                        "api-reference/work-orders/get-by-id",
+                        "api-reference/work-orders/update"
+                    ]
+                },
+                {
+                    "group": "Settings",
+                    "pages": [
+                        {
+                            "group": "Data",
+                            "pages": [
+                                "api-reference/data/diffs/get-all"
+                            ]
+                        },
+                        {
+                            "group": "integrations",
+                            "pages": [
+                                "api-reference/integrations/create",
+                                "api-reference/integrations/get-all",
+                                "api-reference/integrations/get-by-id",
+                                "api-reference/integrations/update"
+                            ]
+                        },
+                        {
+                            "group": "Logs",
+                            "pages": [
+                                "api-reference/logs/jobs/get-all",
+                                "api-reference/logs/jobs/get-by-id"
+                            ]
+                        },
+                        {
+                            "group": "Jobs",
+                            "pages": [
+                                "api-reference/job-schedules/get-by-integration-id",
+                                "api-reference/job-schedules/get-by-id",
+                                "api-reference/job-schedules/update"
+                            ]
+                        },
+                        {
+                            "group": "Users",
+                            "pages": [
+                                "api-reference/users/create",
+                                "api-reference/users/get-all",
+                                "api-reference/users/get-by-id",
+                                "api-reference/users/update"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
 }
