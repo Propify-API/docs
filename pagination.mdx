@@ -1,34 +1,94 @@
 ---
-title: "Pagination"
-description: "This is where you can describe your product's features"
+title: "Pagination & Sorting"
+description: "Many Propify GET endpoints return an array of results. To make it easier to work with these results, we provide standard pagination and sorting options to be used in the query string."
 ---
 
-Mintlify makes beautiful effortless documentation as easy as pushing to Git. With your new documentation, you get the following features built in:
+# Pagination
+There are two optional parameters that can be used to control pagination of results: `offset` and `limit`. Each can be used independently, or together.
 
-## Optimized to Convert Users
+## Meta Object
+The `meta` object is returned at the root with every paginated response payload. It contains information about the query that was performed.
 
-Everything is heavily optimized for SEO and conversion
+```json Example meta object
+{
+  "meta": {
+    "offset": 0, // default is 0
+    "limit": 100, // default is 100
+    "orderBy": [], // default is empty array
+    "hasMore": Boolean // (no default)
+  },
+  results: [] // the data you requested
+}
+```
 
-![Conversion](/images/conversion.png)
+## Limit
+The `limit` parameter is used to limit the number of results returned. For example, if you wanted to limit the results to 10, you would use `limit=10` as a query string parameter in the URL. If you do not define a limit, the default is 100.
 
-## High-performing Search
+```json Example use of limit
+// GET https://api.getpropify.com/v1/<model_name>?limit=10
 
-Ultra-fast search comes out of the box and re-indexes all of the documentation on every update
+{
+  "meta": {
+    "offset": 0,
+    "limit": 10,
+    "orderBy": [],
+    "hasMore": true // or false
+  },
+  "results": [] // 10 results
+}
+```
 
-![Search](/images/search.png)
+## Offset
+The `offset` parameter is used to skip a number of results. For example, if you wanted to skip the first 10 results, you would use `offset=10` as a query string parameter in the URL. If you do not define an offset, the default is 0.
 
-## Interactive API Playground
+The below example would skip the first 10 results, and return the next 100 results.
 
-Interactive API Playground pages for users to explore the endpoints
+```json Example use of offset
+// GET https://api.getpropify.com/v1/<model_name>?offset=10
 
-![API Playground](/images/playground.png)
+{
+  "meta": {
+    "offset": 10,
+    "limit": 100,
+    "orderBy": [],
+    "hasMore": true // or false
+  },
+  "results": [] // 100 results
+}
+```
 
-## Light and Dark Mode
+## hasMore
+The `hasMore` parameter is used to indicate if there are more results available. If there are more results available, the value will be `true`. If there are no more results available, the value will be `false`. This can be used to determine if you should make another request to get more results, or optionally increase the `limit` value.
 
-Check out light and dark mode offered out of the box and beautiful for every bit of content and components
+---
 
-![Light Mode](/images/light.png)
+# Sorting
+Propify provides a sorting mechanism that can be used to sort results by one or more fields. The `orderBy` parameter is used to define the sort order. The `orderBy` parameter is an array of objects, where each object contains a `field` and `direction` property.
 
-## Analytics Built to Understand Users
+## order-by Query String Parameter
+The `order-by` parameter is used to define the sort order. It is a combination of `field_name` and `direction` separted by a colon. For example, if you wanted to sort by the `id` field in ascending order, you would use `order-by=id:asc` as a query string parameter in the URL. If you wanted to sort by the `id` field in descending order, you would use `order-by=id:desc` as a query string parameter in the URL.
 
-Analytics is built into the platform to help you understand what page users are interacting with, where they are converting, and where they are dropping off
+If you wanted to sort by multiple fields, you would provide a comma separated list of fields and directions. For example, if you wanted to sort by the `id` field in ascending order, and then by the `name` field in descending order, you would use `order-by=id:asc,name:desc` as a query string parameter in the URL.
+
+```json Example use of order-by
+// GET https://api.getpropify.com/v1/<model_name>?order-by=id:asc,name:desc
+
+{
+  "meta": {
+    "offset": 0,
+    "limit": 100,
+    "orderBy": [
+      {
+        "field": "id",
+        "direction": "asc"
+      },
+      {
+        "field": "name",
+        "direction": "desc"
+      }
+    ],
+    "hasMore": true // or false
+  },
+  "results": []
+}
+```
