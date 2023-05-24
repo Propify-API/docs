@@ -39,7 +39,7 @@ The `limit` parameter is used to limit the number of results returned. For examp
 ```
 
 ## Offset
-The `offset` parameter is used to skip a number of results. For example, if you wanted to skip the first 10 results, you would use `offset=10` as a query string parameter in the URL. If you do not define an offset, the default is 0.
+The `offset` parameter is used to skip results. For example, if you wanted to skip the first 10 results, you would use `offset=10` as a query string parameter in the URL. If you do not define an offset, the default is 0.
 
 The below example would skip the first 10 results, and return the next 100 results.
 
@@ -66,9 +66,9 @@ The `hasMore` parameter is used to indicate if there are more results available.
 Propify provides a sorting mechanism that can be used to sort results by one or more fields. The `orderBy` parameter is used to define the sort order. The `orderBy` parameter is an array of objects, where each object contains a `field` and `direction` property.
 
 ## order-by Query String Parameter
-The `order-by` parameter is used to define the sort order. It is a combination of `field_name` and `direction` separted by a colon. For example, if you wanted to sort by the `id` field in ascending order, you would use `order-by=id:asc` as a query string parameter in the URL. If you wanted to sort by the `id` field in descending order, you would use `order-by=id:desc` as a query string parameter in the URL.
+The `order-by` parameter is used to define the sort order. It is a combination of `field_name` and `direction` separated by a colon. For example, if you wanted to sort by the `id` field in ascending order, you would use `order-by=id:asc` as a query string parameter in the URL. If you wanted to sort by the `id` field in descending order, you would use `order-by=id:desc` as a query string parameter in the URL.
 
-If you wanted to sort by multiple fields, you would provide a comma separated list of fields and directions. For example, if you wanted to sort by the `id` field in ascending order, and then by the `name` field in descending order, you would use `order-by=id:asc,name:desc` as a query string parameter in the URL.
+If you wanted to sort by multiple fields, you would provide a comma-separated list of fields and directions. For example, if you wanted to sort by the `id` field in ascending order, and then by the `name` field in descending order, you would use `order-by=id:asc,name:desc` as a query string parameter in the URL.
 
 ```json Example use of order-by
 // GET https://api.getpropify.com/v1/<model_name>?order-by=id:asc,name:desc
