@@ -1,34 +1,13 @@
-# Mintlify Starter Kit
+# Propify Docs
 
-Click on `Use this template` to copy the Mintlify starter kit. The starter kit contains examples including
+## Framework
+We use mintlify to organize and style our documentation site. Please check [their docs](https://mintlify.com/docs/introduction) for detailed information on configuration options.
 
-- Guide pages
-- Navigation
-- Customizations
-- API Reference pages
-- Use of popular components
-
-### 👩‍💻 Development
-
-Install the [Mintlify CLI](https://www.npmjs.com/package/mintlify) to preview the documentation changes locally. To install, use the following command
-
+## API Reference
+The OpenAPI spec file is located in the root and titled `openapi.yml` Mintlify parses this doc and fills out associated mdx files at compile time. However, the associated mdx file must exist in order for the endpoint to get listed in the docs. The minimal requirement is front matter values of:
 ```
-npm i -g mintlify
+---
+title: <Page Title>
+openapi: "Verb and route: e.g. GET /v1/<model>"
+---
 ```
-
-Run the following command at the root of your documentation (where mint.json is)
-
-```
-mintlify dev
-```
-
-### 😎 Publishing Changes
-
-Changes will be deployed to production automatically after pushing to the default branch.
-
-You can also preview changes using PRs, which generates a preview link of the docs.
-
-#### Troubleshooting
-
-- Mintlify dev isn't running - Run `mintlify install` it'll re-install dependencies.
-- Page loads as a 404 - Make sure you are running in a folder with `mint.json`
