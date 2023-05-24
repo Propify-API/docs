@@ -58,6 +58,7 @@
                 {
                     "group": "General Ledger",
                     "pages": [
+                        "api-reference/general-ledger/transactions/create",
                         "api-reference/general-ledger/transactions/get-all",
                         "api-reference/general-ledger/transactions/get-by-id"
                     ]
