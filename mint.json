@@ -35,6 +35,7 @@
                 "introduction",
                 "authentication",
                 "custom-data",
+                "filtering",
                 "pagination",
                 "rate-limits",
                 "sync-frequency",
