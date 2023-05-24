@@ -3971,7 +3971,7 @@ paths:
                   - error
       description: Create an applicant for an integration.
       summary: Create applicant
-      tags: &a1
+      tags:
         - applicants
       requestBody:
         content:
@@ -4449,186 +4449,24 @@ paths:
                       properties: {}
                 - type: object
                   properties:
-                    x_property_id:
-                      type: string
-                      description: The property ID with which to associate the applicant
-                    first_name:
-                      type: string
-                      description: The first name of the applicant.
-                    middle_name:
-                      type: string
-                      description: The middle name of the applicant.
                     last_name:
                       type: string
                       description: The last name of the applicant.
+                    first_name:
+                      type: string
+                      description: The first name of the applicant.
+                    x_unit_id:
+                      type: string
+                      description: The ID of the unit to which this applicant is applying. This maps
+                        to the unitSpaceId property of the Application object.
                     email_1:
                       type: string
                       format: email
                       description: The primary email address for the applicant.
-                    email_2:
-                      type: string
-                      format: email
-                      description: An alternate email address for the applicant.
-                    date_of_birth:
-                      description: The date of birth of the applicant.
-                      type: string
-                      format: date-time
-                      pattern: ^\d{4}-\d{2}-\d{2}(T\d{2}:\d{2}:\d{2}(\.\d+)?)?Z?$
-                      externalDocs:
-                        url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
-                    adddress_1:
-                      type: string
-                      description: First line of the applicant's primary address
-                    address_2:
-                      type: string
-                      description: Second line of the applicant's primary address
-                    city:
-                      type: string
-                      description: City of the applicant's primary address.
-                    state:
-                      type: string
-                      description: State of the applicant's primary address.
-                    zip:
-                      type: string
-                      description: Zip/Postal Code of the applicant's primary address.
-                    country:
-                      type: string
-                      description: Country of the applicant's primary address.
-                    address_1_alternate:
-                      type: string
-                      description: First line of the applicant's secondary/alternate street address.
-                    address_2_alternate:
-                      type: string
-                      description: Second line of the applicant's secondary/alternate street address.
-                    city_alternate:
-                      type: string
-                      description: City of the applicant's secondary/alternate address.
-                    state_alternate:
-                      type: string
-                      description: State of the applicant's secondary/alternate address.
-                    zip_alternate:
-                      type: string
-                      description: Zip/Postal Code of the applicant's secondary/alternate address.
-                    country_alternate:
-                      type: string
-                      description: Country of the applicant's secondary/alternate address.
-                  required: []
-      security:
-        - APIKEY_1: []
-          APIKEY_2: []
-  "/v1/integrations/{id}/applicants":
-    post:
-      operationId: PostV1IntegrationsIdApplicants
-      responses:
-        "200":
-          description: POST /v1/integrations/:id/applicants Successful response
-          content:
-            application/json:
-              schema:
-                type: object
-                properties: {}
-        "400":
-          description: POST /v1/integrations/:id/applicants Error response
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  error:
-                    type: object
-                    properties:
-                      message:
-                        type: string
-                      errors:
-                        type: array
-                        items:
-                          type: object
-                          properties: {}
-                    required:
-                      - message
-                      - errors
-                required:
-                  - error
-      description: Create an applicant for an integration.
-      summary: Create applicant
-      tags: *a1
-      requestBody:
-        content:
-          application/json:
-            schema:
-              description: POST /v1/integrations/:id/applicants request body
-              allOf:
-                - allOf:
-                    - allOf:
-                        - allOf:
-                            - type: object
-                              properties: {}
-                            - type: object
-                              properties: {}
-                        - type: object
-                          properties: {}
-                    - type: object
-                      properties: {}
-                - type: object
-                  properties:
-                    integration_id:
-                      type: string
-                    x_property_id:
-                      type: string
-                      description: The property ID with which to associate the resident. This is the
-                        ID of the object in Rentmanager. Note that it should be
-                        passed as a string and not an integer.
-                    originating_lead_source_id:
-                      type: string
-                      description: The ID of the lead source. This maps to the originatingLeadSourceId
-                        property of the Application object.
-                    first_name:
-                      type: string
-                      description: The first name of the resident.  This value maps to both the
-                        FirstName and PrimaryContact.FirstName properties of the
-                        Tenant object
-                    last_name:
-                      type: string
-                      description: The last name of the resident.  This value maps to both the
-                        LastName and PrimaryContact.LastName properties of the
-                        Tenant object
-                    x_unit_id:
-                      type: string
-                      description: The unit ID to associate the applicant with
-                    email_1:
-                      type: string
-                      format: email
-                      description: The primary email address for the resident.  This value maps to the
-                        PrimaryContact.Email property of the Tenant object
-                    date_of_birth:
-                      type: string
-                      format: date-time
-                      pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
-                      description: The date of birth of the resident.  This value maps to the
-                        PrimaryContact.DateOfBirth property of the Tenant
-                        object.
-                    address_1:
-                      type: string
-                      description: Street address for the resident. This maps to the Street property
-                        of the primary address of the Tenant object
-                    address_2:
-                      type: string
-                      description: Second line of the street address for the applicant.  This maps to
-                        the addressLine2 property of the Applicant's primary
-                        address.
-                    city:
-                      type: string
-                      description: City of the resident's primary address
-                    state:
-                      type: string
-                      description: State of the resident's primary address
-                    zip:
-                      type: string
-                      description: Zip/Postal Code of the resident's primary address
                     phone_1:
                       type: string
-                      description: Applicant's primary phone number.  This will be assumed to be a
-                        HOME phone number unless phone_1_type is also set.
+                      description: Applicant's primary phone number. This maps to the phoneNumber
+                        property of the Applicant object.
                     phone_1_type:
                       type: string
                       enum:
@@ -4638,701 +4476,8 @@ paths:
                         - FAX
                       description: The type of the applicant's primary phone number.  The value passed
                         in here must be one of 'HOME', 'WORK', 'MOBILE', FAX'.
-                    custom_data:
-                      type: object
-                      properties: {}
-                      description: Custom data
-                    send_rental_application_email:
-                      type: boolean
-                      default: false
-                      description: Whether to send the new applicant an email with a link to the
-                        online application form. Defaults to FALSE.
-                    phone_2:
-                      type: string
-                      description: Applicant's secondary phone number.  This will be assumed to be a
-                        MOBILE phone number unless phone_2_type is also set.
-                    phone_2_type:
-                      type: string
-                      enum:
-                        - HOME
-                        - WORK
-                        - MOBILE
-                        - FAX
-                      description: The type of the applicant's secondary phone number.  The value
-                        passed in here must be one of 'HOME', 'WORK', 'MOBILE',
-                        FAX'.
-                    middle_name:
-                      type: string
-                      description: The middle name of the resident.  This value maps to the
-                        PrimaryContact.MiddleName property of the Tenant object
-                  required:
-                    - integration_id
-      security:
-        - APIKEY_1: []
-          APIKEY_2: []
-  "/v1/integrations/{id}/leads":
-    post:
-      operationId: PostV1IntegrationsIdLeads
-      responses:
-        "200":
-          description: POST /v1/integrations/:id/leads Successful response
-          content:
-            application/json:
-              schema:
-                type: object
-                properties: {}
-        "400":
-          description: POST /v1/integrations/:id/leads Error response
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  error:
-                    type: object
-                    properties:
-                      message:
-                        type: string
-                      errors:
-                        type: array
-                        items:
-                          type: object
-                          properties: {}
-                    required:
-                      - message
-                      - errors
-                required:
-                  - error
-      description: Create a lead for an integration.
-      summary: Create lead
-      tags: &a2
-        - leads
-      requestBody:
-        content:
-          application/json:
-            schema:
-              description: POST /v1/integrations/:id/leads request body
-              allOf:
-                - allOf:
-                    - allOf:
-                        - allOf:
-                            - type: object
-                              properties: {}
-                            - type: object
-                              properties: {}
-                        - type: object
-                          properties: {}
-                    - type: object
-                      properties: {}
-                - type: object
-                  properties:
-                    integration_id:
-                      type: string
-                    last_name:
-                      type: string
-                      description: The last name of the prospect.  This value maps to the LastName
-                        property of the Prospect object
-                    first_name:
-                      type: string
-                      description: The first name of the prospect.  This value maps to the FirstName
-                        property of the Prospect object
-                    email_1:
-                      type: string
-                      format: email
-                      description: The primary email address for the prospect.  This value maps to the
-                        Email property of the Prospect object
-                    phone_1:
-                      type: string
-                      description: Prospect's primary phone number.  This will be assumed to be a HOME
-                        phone number unless phone_1_type is also set.
-                    phone_1_type:
-                      type: string
-                      enum:
-                        - HOME
-                        - WORK
-                        - MOBILE
-                        - FAX
-                      description: The type of the prospect's primary phone number.  The value passed
-                        in here must be one of 'HOME', 'WORK', 'MOBILE', FAX'.
-                    phone_2:
-                      type: string
-                      description: Prospect's secondary phone number.  This will be assumed to be a
-                        MOBILE phone number unless phone_2_type is also set.
-                    phone_2_type:
-                      type: string
-                      enum:
-                        - HOME
-                        - WORK
-                        - MOBILE
-                        - FAX
-                      description: The type of the prospect's secondary phone number.  The value
-                        passed in here must be one of 'HOME', 'WORK', 'MOBILE',
-                        FAX'.
-                    address_1:
-                      type: string
-                      description: First line of the street address for the prospect.
-                    address_2:
-                      type: string
-                      description: Second line of the street address for the prospect.
-                    city:
-                      type: string
-                      description: The city that the prospect lives in.
-                    state:
-                      type: string
-                      description: State of the prospect's primary address.
-                    zip:
-                      type: string
-                      description: Zip/Postal Code of the prospect's primary address.
-                    country:
-                      type: string
-                      description: Country of the prospect's primary address
-                  required:
-                    - integration_id
-      security:
-        - APIKEY_1: []
-          APIKEY_2: []
-  "/v1/integrations/{id}/leases":
-    post:
-      operationId: PostV1IntegrationsIdLeases
-      responses:
-        "200":
-          description: POST /v1/integrations/:id/leases Successful response
-          content:
-            application/json:
-              schema:
-                type: object
-                properties: {}
-        "400":
-          description: POST /v1/integrations/:id/leases Error response
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  error:
-                    type: object
-                    properties:
-                      message:
-                        type: string
-                      errors:
-                        type: array
-                        items:
-                          type: object
-                          properties: {}
-                    required:
-                      - message
-                      - errors
-                required:
-                  - error
-      description: Create a lease for an integration.
-      summary: Create lease
-      tags: &a3
-        - leases
-      requestBody:
-        content:
-          application/json:
-            schema:
-              description: POST /v1/integrations/:id/leases request body
-              allOf:
-                - allOf:
-                    - allOf:
-                        - allOf:
-                            - type: object
-                              properties: {}
-                            - type: object
-                              properties: {}
-                        - type: object
-                          properties: {}
-                    - type: object
-                      properties: {}
-                - type: object
-                  properties:
-                    integration_id:
-                      type: string
-                    type:
-                      type: string
-                      enum:
-                        - Fixed
-                        - FixedWithRollover
-                        - AtWill
-                      description: The lease type.  The value of this field must be one of "Fixed",
-                        "FixedWithRollover", or "AtWill"
-                    x_unit_id:
-                      type: string
-                      pattern: /^[0-9]+$/
-                      description: The Rentvine ID number of the unit that this lease is associated
-                        with.
-                    start_date:
-                      type: string
-                      format: date-time
-                      pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
-                      description: The date that the lease begins
-                    end_date:
-                      type: string
-                      format: date-time
-                      pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
-                      description: The date that the lease ends
-                    send_welcome_email:
-                      type: boolean
-                      default: false
-                      description: A boolean value indicating whether or not to send a welcome email
-                        to the tenant
-                    first_name:
-                      type: string
-                      description: The first name of the primary resident on this lease.
-                    last_name:
-                      type: string
-                      description: The last name of the primary resident on this lease.
-                    email_1:
-                      type: string
-                      format: email
-                      description: The email address for the primary resident on this lease.
-                    email_2:
-                      type: string
-                      format: email
-                      description: The secondary/alternate email address for the primary resident on
-                        this lease.  This value maps to the AlternateEmail
-                        property of the Tenant object
-                    phone_1:
-                      type: string
-                      description: The phone number of the primary resident on this lease.
-                    phone_1_type:
-                      type: string
-                      enum:
-                        - HOME
-                        - WORK
-                        - MOBILE
-                        - FAX
-                      description: The type of the primary resident's phone number.  The value passed
-                        in here must be one of 'HOME', 'WORK', 'MOBILE', FAX'.
-                    phone_2:
-                      type: string
-                      description: The second phone number of the primary resident on this lease.
-                    phone_2_type:
-                      type: string
-                      enum:
-                        - HOME
-                        - WORK
-                        - MOBILE
-                        - FAX
-                      description: The type of the primary resident's secondary phone number.  The
-                        value passed in here must be one of 'HOME', 'WORK',
-                        'MOBILE', FAX'.
-                    date_of_birth:
-                      type: string
-                      format: date-time
-                      pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
-                      description: The resident's date of birth
-                    address_1:
-                      type: string
-                      description: The first line of the primary resident's address.
-                    address_2:
-                      type: string
-                      description: The second line of the primary resident's address.
-                    city:
-                      type: string
-                      description: The city of the primary resident's address
-                    state:
-                      type: string
-                      description: The state of the primary resident's address
-                    zip:
-                      type: string
-                      pattern: /[0-9]+/
-                      description: The postal code of the primary resident's address. The value passed
-                        to th
-                    country:
-                      type: string
-                      description: Country of the resident's primary address.  This maps to the
-                        Address.Country property of the Tenant object.  This
-                        value must be a valid member of the Buildium country
-                        enum, documented at
-                        https://developer.buildium.com/#operation/LeasesExternalApi_CreateLease
-                    address_1_alternate:
-                      type: string
-                      maxLength: 100
-                      description: First line of the street address for the primary resident. This
-                        maps to the Address.AddressLine1 property of the primary
-                        address of the Tenant object
-                    address_2_alternate:
-                      type: string
-                      maxLength: 100
-                      description: Second line of the street address for the primary resident.  This
-                        maps to the Address.AddressLine2 property of the Tenant
-                        object.
-                    city_alternate:
-                      type: string
-                      maxLength: 100
-                      description: City of the primary resident's address. This maps to the
-                        Address.City property of the Tenant object.
-                    state_alternate:
-                      type: string
-                      description: State of the primary resident's address. This maps to the
-                        Address.State property of the Tenant object.
-                    zip_alternate:
-                      type: string
-                      description: Zip/Postal Code of the primary resident's address. This maps to the
-                        Address.PostalCode property of the Tenant object.
-                    country_alternate:
-                      type: string
-                      description: Country of the resident's primary address.  This maps to the
-                        Address.Country property of the Tenant object.  This
-                        value must be a valid member of the Buildium country
-                        enum, documented at
-                        https://developer.buildium.com/#operation/LeasesExternalApi_CreateLease
-                    rent_cycle:
-                      type: string
-                      enum:
-                        - Monthly
-                        - Weekly
-                        - Every2Weeks
-                        - Quarterly
-                        - Yearly
-                        - Every2Months
-                        - Daily
-                        - Every6Months
-                        - OneTime
-                      description: How often rent charges will be automatically appended to the lease
-                        ledger. Must be one of 'Monthly', 'Weekly',
-                        'Every2Weeks', 'Quarterly', 'Yearly', 'Every2Months',
-                        'Daily', 'Every6Months', 'OneTime',
-                    rent_amount_in_cents:
-                      type: integer
-                      format: int64
-                      minimum: -9007199254740991
-                      exclusiveMinimum: false
-                      maximum: 9007199254740991
-                      exclusiveMaximum: false
-                      description: The amount of rent to be appended to the lease ledger, in cents
-                    rent_due_date:
-                      type: string
-                      pattern: /[0-9]{4}[-/][0-9]{1,2}[-/][0-9]{1,2}/
-                      description: The next date on which rent is due. If a rent cycle other than
-                        "OneTime" is provided, this will also be the date on
-                        which that cycle begins. Expected format is YYYY/MM/DD
-                    gl_account_id:
-                      type: string
-                      pattern: /^[0-9]+$/
-                      description: The general ledger account under which to record the rent charge
-                    x_property_id:
-                      type: string
-                      pattern: /^[0-9]+$/
-                      description: The Rentvine ID number of the property that this lease is
-                        associated with. This field is not required, and the
-                        Unit ID provided in x_unit_id takes precedence.
-                    unit_space_id:
-                      type: string
-                      pattern: /^[0-9]+$/
-                      description: The Entrata ID number of the unit space that this lease is
-                        associated with.  While this is passed as a string, the
-                        value must parse as an integer.
-                    floor_plan_code:
-                      type: string
-                      pattern: /^[0-9]+$/
-                      description: The Entrata ID number of the floorplan.  While this is passed as a
-                        string, the value must parse as an integer.
-                    lease_term_id:
-                      type: string
-                      pattern: /^[0-9]+$/
-                      description: The Entrata ID number of the lease term.  While this is passed as a
-                        string, the value must parse as an integer.
-                    customer_relationship_type_id:
-                      type: string
-                      pattern: /^[0-9]+$/
-                      description: Entrata ID number of the Customer Relationship Type.  While this is
-                        passed as a string, the value must parse as an integer.
-                    x_resident_id:
-                      type: string
-                      pattern: /^[0-9]+$/
-                      description: The Rentvine ID number of the resident (referred to as a Contact in
-                        Rentvine) that the lease is associated with
-                    scheduled_move_out_date:
-                      type: string
-                      format: date-time
-                      pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
-                      description: The date that the resident is scheduled to move out
-                    realized_move_in_date:
-                      type: string
-                      format: date-time
-                      pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
-                      description: The date that the resident moved in
-                    realized_move_out_date:
-                      type: string
-                      format: date-time
-                      pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
-                      description: The date that the resident moved out
-                    scheduled_move_in_date:
-                      type: string
-                      format: date-time
-                      pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
-                      description: The date that the resident intends to move in
-                  required:
-                    - integration_id
-      security:
-        - APIKEY_1: []
-          APIKEY_2: []
-  "/v1/integrations/{id}/listings":
-    post:
-      operationId: PostV1IntegrationsIdListings
-      responses:
-        "200":
-          description: POST /v1/integrations/:id/listings Successful response
-          content:
-            application/json:
-              schema:
-                type: object
-                properties: {}
-        "400":
-          description: POST /v1/integrations/:id/listings Error response
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  error:
-                    type: object
-                    properties:
-                      message:
-                        type: string
-                      errors:
-                        type: array
-                        items:
-                          type: object
-                          properties: {}
-                    required:
-                      - message
-                      - errors
-                required:
-                  - error
-      description: Create a listing for an integration.
-      summary: "*Create listing"
-      tags:
-        - listings
-      requestBody:
-        content:
-          application/json:
-            schema:
-              description: POST /v1/integrations/:id/listings request body
-              allOf:
-                - allOf:
-                    - allOf:
-                        - allOf:
-                            - type: object
-                              properties: {}
-                            - type: object
-                              properties: {}
-                        - type: object
-                          properties: {}
-                    - type: object
-                      properties: {}
-                - type: object
-                  properties:
-                    unit_id:
-                      type: string
-                      description: The Propify unit id - cuid()
-                    rent_amount_in_cents:
-                      type: integer
-                      format: int64
-                      minimum: 0
-                      exclusiveMinimum: false
-                      maximum: 9007199254740991
-                      exclusiveMaximum: false
-                      description: The rent amount in cents
-                    deposit_amount_in_cents:
-                      type: integer
-                      format: int64
-                      minimum: 0
-                      exclusiveMinimum: false
-                      maximum: 9007199254740991
-                      exclusiveMaximum: false
-                      description: The deposit amount in cents
-                    lease_terms:
-                      type: string
-                      description: The lease terms
-                    available_date:
-                      description: The available date
-                      type: string
-                      format: date-time
-                      pattern: ^\d{4}-\d{2}-\d{2}(T\d{2}:\d{2}:\d{2}(\.\d+)?)?Z?$
-                      externalDocs:
-                        url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
-                    contact_id:
-                      type: string
-                      description: The Propify contact id - cuid()
-                    is_managed_external:
-                      type: boolean
-                      description: Whether the listing is managed externally
-                    custom_data:
-                      type: object
-                      properties: {}
-                      description: Custom data
-                  required:
-                    - unit_id
-                    - rent_amount_in_cents
-                    - deposit_amount_in_cents
-                    - available_date
-                    - contact_id
-                    - is_managed_external
-      security:
-        - APIKEY_1: []
-          APIKEY_2: []
-  "/v1/integrations/{id}/residents":
-    post:
-      operationId: PostV1IntegrationsIdResidents
-      responses:
-        "200":
-          description: POST /v1/integrations/:id/residents Successful response
-          content:
-            application/json:
-              schema:
-                type: object
-                properties: {}
-        "400":
-          description: POST /v1/integrations/:id/residents Error response
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  error:
-                    type: object
-                    properties:
-                      message:
-                        type: string
-                      errors:
-                        type: array
-                        items:
-                          type: object
-                          properties: {}
-                    required:
-                      - message
-                      - errors
-                required:
-                  - error
-      description: Create a resident for an integration.
-      summary: Create resident
-      tags: &a4
-        - residents
-      requestBody:
-        content:
-          application/json:
-            schema:
-              description: POST /v1/integrations/:id/residents request body
-              allOf:
-                - allOf:
-                    - allOf:
-                        - allOf:
-                            - type: object
-                              properties: {}
-                            - type: object
-                              properties: {}
-                        - type: object
-                          properties: {}
-                    - type: object
-                      properties: {}
-                - type: object
-                  properties:
-                    integration_id:
-                      type: string
-                    x_lease_id:
-                      type: string
-                      description: The lease ID with which to associate the resident. This is the ID
-                        of the lease in Buildium. Note that it should be passed
-                        as a string and not an integer.
-                    last_name:
-                      type: string
-                      description: The last name of the resident.  This value maps to both the
-                        LastName and PrimaryContact.LastName properties of the
-                        Tenant object
-                    first_name:
-                      type: string
-                      description: The first name of the resident.  This value maps to both the
-                        FirstName and PrimaryContact.FirstName properties of the
-                        Tenant object
-                    email_1:
-                      type: string
-                      format: email
-                      description: The primary email address for the resident.  This value maps to the
-                        PrimaryContact.Email property of the Tenant object
-                    email_2:
-                      type: string
-                      format: email
-                      description: An alternate email address for the resident. This value maps to the
-                        AlternateEmail property of the Tenant object.
-                    date_of_birth:
-                      type: string
-                      format: date-time
-                      pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
-                      description: The date of birth of the resident.  This value maps to the
-                        PrimaryContact.DateOfBirth property of the Tenant
-                        object.
-                    address_1:
-                      type: string
-                      description: Street address for the resident. This maps to the Street property
-                        of the primary address of the Tenant object
-                    address_2:
-                      type: string
-                      description: Second line of the street address for the resident.  This maps to
-                        the Address.AddressLine2 property of the Tenant object.
-                    city:
-                      type: string
-                      description: City of the resident's primary address
-                    state:
-                      type: string
-                      description: State of the resident's primary address
-                    zip:
-                      type: string
-                      description: Zip/Postal Code of the resident's primary address
-                    country:
-                      type: string
-                      description: Country of the resident's primary address.  This maps to the
-                        Address.Country property of the Tenant object.  This
-                        value must be a valid member of the Buildium country
-                        enum, documented at
-                        https://developer.buildium.com/#operation/RentalTenantsExternalApi_CreateRentalTenant
-                    address_1_alternate:
-                      type: string
-                      description: Secondary/alternate street address for the resident. This maps to
-                        the Street property of the second address of the Tenant
-                        object
-                    address_2_alternate:
-                      type: string
-                      description: Second line of the secondary/alternate street address for the
-                        resident.  This maps to the
-                        AlternateAddress.AddressLine2 property of the Tenant
-                        object
-                    city_alternate:
-                      type: string
-                      description: City of the resident's secondary/alternate address
-                    state_alternate:
-                      type: string
-                      description: State of the resident's secondary/alternate address
-                    zip_alternate:
-                      type: string
-                      description: Zip/Postal Code of the resident's secondary/alternate address
-                    country_alternate:
-                      type: string
-                      description: Country of the resident's secondary/alternate address.  This maps
-                        to the AlternateAddress.Country property of the Tenant
-                        object.  This value must be a valid member of the
-                        Buildium country enum, documented at
-                        https://developer.buildium.com/#operation/RentalTenantsExternalApi_CreateRentalTenant
-                    notes:
-                      type: string
-                      description: Any notes on the resident.  This value maps to the Comment property
-                        of the Tenant object.
-                    phone_1:
-                      type: string
-                      description: Resident's primary phone number.  This will be assumed to be a HOME
-                        phone number unless phone_1_type is also set.
-                    phone_1_type:
-                      type: string
-                      enum:
-                        - HOME
-                        - WORK
-                        - MOBILE
-                        - FAX
-                      description: The type of the resident's primary phone number.  The value passed
-                        in here must be one of 'HOME', 'WORK', 'MOBILE', FAX'.
+                        This maps to the phoneNumberTypeId property of the
+                        Applicant object.
                     phone_2:
                       type: string
                       description: Resident's secondary phone number.  This will be assumed to be a
@@ -5347,663 +4492,44 @@ paths:
                       description: The type of the resident's secondary phone number.  The value
                         passed in here must be one of 'HOME', 'WORK', 'MOBILE',
                         FAX'.
-                    custom_data:
-                      type: object
-                      properties: {}
-                      description: Custom data
                     x_property_id:
                       type: string
                       description: The property ID with which to associate the resident. This is the
-                        ID of the object in Rentmanager. Note that it should be
-                        passed as a string and not an integer.
-                    rent_period:
+                        ID of the property in Rentmanager.  Note that it should
+                        be passed as a string and not an integer.
+                    originating_lead_source_id:
                       type: string
-                      enum:
-                        - monthly
-                        - weekly
-                        - daily
-                      description: How often the resident is expected to pay rent.  Allowed values are
-                        "monthly", "weekly", and "daily".  Maps to the
-                        RentPeriod property of the Tenant object.
-                    rent_due_day:
-                      type: integer
-                      format: int64
-                      minimum: 1
-                      exclusiveMinimum: false
-                      maximum: 31
-                      exclusiveMaximum: false
-                      description: Day of the month on which the tenant's rent is due.  Maps to the
-                        RentDueDay property of the Tenant object
-                    middle_name:
-                      type: string
-                      description: The middle name of the resident.  This value maps to the
-                        PrimaryContact.MiddleName property of the Tenant object
-                  required:
-                    - integration_id
-      security:
-        - APIKEY_1: []
-          APIKEY_2: []
-  "/v1/integrations/{id}/transactions":
-    post:
-      operationId: PostV1IntegrationsIdTransactions
-      responses:
-        "200":
-          description: POST /v1/integrations/:id/transactions Successful response
-          content:
-            application/json:
-              schema:
-                type: object
-                properties: {}
-        "400":
-          description: POST /v1/integrations/:id/transactions Error response
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  error:
-                    type: object
-                    properties:
-                      message:
-                        type: string
-                      errors:
-                        type: array
-                        items:
-                          type: object
-                          properties: {}
-                    required:
-                      - message
-                      - errors
-                required:
-                  - error
-      description: Create a transaction for an integration.
-      summary: Create transaction
-      tags: &a5
-        - general-ledger
-      requestBody:
-        content:
-          application/json:
-            schema:
-              description: POST /v1/integrations/:id/transactions request body
-              allOf:
-                - allOf:
-                    - allOf:
-                        - allOf:
-                            - type: object
-                              properties: {}
-                            - type: object
-                              properties: {}
-                        - type: object
-                          properties: {}
-                    - type: object
-                      properties: {}
-                - type: object
-                  properties:
-                    integration_id:
-                      type: string
-                    invoice_date:
+                      description: The ID of the lead source. This maps to the originatingLeadSourceId
+                        property of the Application object.
+                    date_of_birth:
                       type: string
                       format: date-time
                       pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
-                      description: The date the invoice was receieved
-                    due_date:
-                      type: string
-                      format: date-time
-                      pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
-                      description: The date the invoice was receieved
-                    memo:
-                      type: string
-                      maxLength: 245
-                      description: A description of the invoice
-                    x_vendor_id:
-                      type: number
-                      format: double
-                      minimum: 5e-324
-                      exclusiveMinimum: false
-                      maximum: 1.7976931348623157e+308
-                      exclusiveMaximum: false
-                      description: The Buildium ID of the vendor who is sending the invoice
-                    reference_number:
-                      type: string
-                      description: Reference or invoice number assigned to the invoice
-                    x_work_order_id:
-                      type: number
-                      format: double
-                      minimum: 5e-324
-                      exclusiveMinimum: false
-                      maximum: 1.7976931348623157e+308
-                      exclusiveMaximum: false
-                      description: The Buildium ID of a work order to associate this bill with
-                    lines:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          x_accounting_entity_type:
-                            type: string
-                            enum:
-                              - company
-                              - property
-                            description: The Buildium accounting entity type to associate this payment with.
-                              Can be either "property" or "company"
-                          x_accounting_entity_id:
-                            type: number
-                            format: double
-                            minimum: 5e-324
-                            exclusiveMinimum: false
-                            maximum: 1.7976931348623157e+308
-                            exclusiveMaximum: false
-                            description: The Buildium ID of the property or company to associate this
-                              payment with
-                          x_gl_account_id:
-                            type: number
-                            format: double
-                            minimum: 5e-324
-                            exclusiveMinimum: false
-                            maximum: 1.7976931348623157e+308
-                            exclusiveMaximum: false
-                            description: The general ledger account id
-                          amount_in_cents:
-                            type: number
-                            format: double
-                            minimum: 5e-324
-                            exclusiveMinimum: false
-                            maximum: 1.7976931348623157e+308
-                            exclusiveMaximum: false
-                            description: The amount of the line item, in cents
-                          memo:
-                            type: string
-                            maxLength: 240
-                            description: A description of the line item
-                        required:
-                          - x_accounting_entity_type
-                          - x_accounting_entity_id
-                          - x_gl_account_id
-                          - amount_in_cents
-                      minItems: 1
-                      description: Line items associated with the bill
-                  required:
-                    - integration_id
-      security:
-        - APIKEY_1: []
-          APIKEY_2: []
-  "/v1/integrations/{id}/vendors":
-    post:
-      operationId: PostV1IntegrationsIdVendors
-      responses:
-        "200":
-          description: POST /v1/integrations/:id/vendors Successful response
-          content:
-            application/json:
-              schema:
-                type: object
-                properties: {}
-        "400":
-          description: POST /v1/integrations/:id/vendors Error response
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  error:
-                    type: object
-                    properties:
-                      message:
-                        type: string
-                      errors:
-                        type: array
-                        items:
-                          type: object
-                          properties: {}
-                    required:
-                      - message
-                      - errors
-                required:
-                  - error
-      description: Create a vendor for an integration.
-      summary: Create vendor
-      tags: &a7
-        - vendors
-      requestBody:
-        content:
-          application/json:
-            schema:
-              description: POST /v1/integrations/:id/vendors request body
-              allOf:
-                - allOf:
-                    - allOf:
-                        - allOf:
-                            - type: object
-                              properties: {}
-                            - type: object
-                              properties: {}
-                        - type: object
-                          properties: {}
-                    - type: object
-                      properties: {}
-                - type: object
-                  properties:
-                    integration_id:
-                      type: string
-                    first_name:
-                      type: string
-                      description: First name of the vendor. Maps to the "Contact.FirstName" field in
-                        RentManager
-                    last_name:
-                      type: string
-                      description: Last name of the vendor. Maps to the "Contact.LastName" field in
-                        RentManager
-                    is_company:
-                      type: boolean
-                      description: Indicates whether the vendor should be considered a company or
-                        person. Maps to the "IsCompany" field in Buildium
-                    company_name:
-                      type: string
-                      description: Company name of the vendor. Maps to the "Name" field in RentManager
-                    email_1:
-                      type: string
-                      format: email
-                      description: Primary email for the vendor. Maps to the "Contact.Email" field in
-                        RentManager
-                    email_2:
-                      type: string
-                      format: email
-                      description: Location email for the vendor. Maps to the "location.email" field
-                        in Entrata
-                    phone_1:
-                      type: string
-                      description: First phone number. Maps to the "Contact.PhoneNumbers.PhoneNumber"
-                        field in RentManager
-                    phone_1_type:
-                      type: string
-                      enum:
-                        - HOME
-                        - WORK
-                        - MOBILE
-                        - FAX
-                      description: First phone number type. Maps to keys of the "PhoneNumbers" field
-                        in Buildium
-                    phone_2:
-                      type: string
-                      description: Second phone number. Maps to the "Contact.PhoneNumbers.PhoneNumber"
-                        field in RentManager
-                    phone_2_type:
-                      type: string
-                      enum:
-                        - HOME
-                        - WORK
-                        - MOBILE
-                        - FAX
-                      description: Second phone number type. Maps to keys of the "PhoneNumbers" field
-                        in Buildium
+                      description: The date of birth of the resident.  This value maps to the
+                        PrimaryContact.DateOfBirth property of the Tenant
+                        object.
                     address_1:
                       type: string
-                      description: Vendor address line 1. Maps to the "Addresses.Address" field in
-                        RentManager
+                      description: Street address for the applicant.
                     address_2:
                       type: string
-                      description: Vendor address line 2. Maps to the "location.addressLine2" field in
-                        Entrata
+                      description: Street address for the applicant.
                     city:
                       type: string
-                      description: Vendor address city. Maps to the "Addresses.City" field in
-                        RentManager
+                      description: City of the applicant's primary address
                     state:
                       type: string
-                      description: Vendor address state. Maps to the "Addresses.State" field in
-                        RentManager
+                      description: State of the applicant's primary address
                     zip:
                       type: string
-                      description: Vendor address zip code. Maps to the "Addresses.PostalCode" field
-                        in RentManager
+                      description: Zip/Postal Code of the applicant's primary address
+                    middle_name:
+                      type: string
+                      description: The middle name of the applicant.
                     country:
                       type: string
-                      description: Vendor address country. Maps to the "location.country" field in
-                        Entrata
-                    category_id:
-                      type: string
-                      description: The unique identifier of the vendor category type. Maps to the
-                        "categories.categoryTypeId" field in Entrata
-                    x_gl_account_id:
-                      type: string
-                      description: The unique identifier of the default general ledger account to
-                        associate with the vendor. Maps to the
-                        "DefaultAccountID" field in RentManager
-                    account_number:
-                      type: string
-                      description: The account number of the vendor. Maps to the "AccountNumber" field
-                        in RentManager
-                    website:
-                      type: string
-                      format: url
-                      maxLength: 100
-                      description: The website of the vendor. The value must be a valid URL. Maps to
-                        the "Website" field in Buildium
-                    insurance_provider:
-                      type: string
-                      maxLength: 65
-                      description: Vendor insurance provider. Maps to the "VendorInsurance > Provider"
-                        field in Buildium
-                    insurance_policy_number:
-                      type: string
-                      maxLength: 65
-                      description: Vendor insurance policy number. Maps to the "VendorInsurance >
-                        PolicyNumber" field in Buildium
-                    insurance_expire_date:
-                      type: string
-                      format: date-time
-                      pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
-                      description: Vendor insurance policy expiration date. Maps to the
-                        "InsuranceExpiration" field in RentManager
-                    notes:
-                      type: string
-                      description: Comments about the vendor. Maps to the "Comment" field in
-                        RentManager
-                    tax_payer_id:
-                      type: string
-                      description: The unique identifier of the tax payer. Maps to the "TaxID" field
-                        in RentManager
-                    tax_payer_type:
-                      type: string
-                      enum:
-                        - SSN
-                        - EIN
-                      description: The tax payer type. Required if `tax_payer_id` is set. Maps to the
-                        "TaxInformation > TaxPayerType" field in Buildium
-                    tax_payer_name_1:
-                      type: string
-                      description: The tax payer first name. Maps to the "nameOnTaxReturn" field in
-                        Entrata
-                    tax_payer_name_2:
-                      type: string
-                      description: The tax payer last name. Maps to the "nameOnTaxReturn" field in
-                        Entrata
-                    tax_address_1:
-                      type: string
-                      maxLength: 100
-                      description: The tax payer address line 1. Maps to the "TaxInformation > Address
-                        > AddressLine1" field in Buildium
-                    tax_address_2:
-                      type: string
-                      maxLength: 100
-                      description: The tax payer address line 2. Maps to the "TaxInformation > Address
-                        > AddressLine2" field in Buildium
-                    tax_city:
-                      type: string
-                      maxLength: 100
-                      description: The tax payer address city. Maps to the "TaxInformation > Address >
-                        City" field in Buildium
-                    tax_state:
-                      type: string
-                      description: The tax payer address state. Maps to the "TaxInformation > Address
-                        > State" field in Buildium
-                    tax_zip:
-                      type: string
-                      description: The tax payer address zip code. Maps to the "TaxInformation >
-                        Address > PostalCode" field in Buildium
-                    tax_country:
-                      type: string
-                      description: The tax payer address country. Maps to the "TaxInformation >
-                        Address > Country" field in Buildium
-                    custom_data:
-                      type: object
-                      properties: {}
-                      description: Custom data
-                    external_id:
-                      type: string
-                      description: The external identifier of the vendor. Maps to the "externalId"
-                        field in Entrata
-                    location_name:
-                      type: string
-                      description: Location name for the vendor. Maps to the "location.name" field in
-                        Entrata
-                    payment_method:
-                      type: string
-                      description: The method of payment for the vendor. Maps to the
-                        "remittance.remittanceName" field in Entrata
-                    payment_type_id:
-                      type: string
-                      description: The unique identifier for the payment type. Maps to the
-                        "remittance.apPaymentTypeId" field in Entrata
-                    payee_name:
-                      type: string
-                      description: Full name of the payee associated with the vendor. Will be
-                        defaulted to "company_name" if not provided. Maps to the
-                        "Payee" field in RentManager
-                    routing_number:
-                      type: string
-                      description: The routing number of the vendor bank account. Required only when
-                        the payment type is ACH. Maps to the
-                        "remittance.routingNumber" field in Entrata
-                    category:
-                      type: string
-                      description: Category of the vendor. Maps to the "Category" field in RentManager
-                    include_in_1099:
-                      type: boolean
-                      description: Indicates if vendor is 1099. Maps to the "Is1099" field in
-                        RentManager
-                    is_active:
-                      type: boolean
-                      description: Indicates if vendor is active. Maps to the "IsActive" field in
-                        RentManager
-                  required:
-                    - integration_id
-      security:
-        - APIKEY_1: []
-          APIKEY_2: []
-  "/v1/integrations/{id}/work-orders":
-    post:
-      operationId: PostV1IntegrationsIdWorkOrders
-      responses:
-        "200":
-          description: POST /v1/integrations/:id/work-orders Successful response
-          content:
-            application/json:
-              schema:
-                type: object
-                properties: {}
-        "400":
-          description: POST /v1/integrations/:id/work-orders Error response
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  error:
-                    type: object
-                    properties:
-                      message:
-                        type: string
-                      errors:
-                        type: array
-                        items:
-                          type: object
-                          properties: {}
-                    required:
-                      - message
-                      - errors
-                required:
-                  - error
-      description: Create a work order for an integration.
-      summary: Create work order
-      tags: &a8
-        - work-orders
-      requestBody:
-        content:
-          application/json:
-            schema:
-              description: POST /v1/integrations/:id/work-orders request body
-              allOf:
-                - allOf:
-                    - allOf:
-                        - allOf:
-                            - type: object
-                              properties: {}
-                            - type: object
-                              properties: {}
-                        - type: object
-                          properties: {}
-                    - type: object
-                      properties: {}
-                - type: object
-                  properties:
-                    integration_id:
-                      type: string
-                    property_id:
-                      type: string
-                      description: The Propify property ID associated with the work order
-                    unit_id:
-                      type: string
-                      description: The Propify unit ID associated with the work order
-                    task_title:
-                      type: string
-                      description: Title assigned to the request. Maps to the "Title" field in
-                        RentManager
-                    work_details:
-                      type: string
-                      description: The description of the work order. Maps to the "description" field
-                        in Rentvine
-                    permission_to_enter:
-                      type: boolean
-                      description: Indicates whether entry has been allowed to the unit. Maps to the
-                        "IsAllowedToEnter" field in RentManager
-                    assigned_to_id:
-                      type: string
-                      description: The unique identifier of the user assigned to the work order. Maps
-                        to the "assignedToUserID" field in Rentvine
-                    due_date:
-                      type: string
-                      format: date-time
-                      pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
-                      description: The due date assigned to the request. Maps to the "DueDate" field
-                        in RentManager
-                    entry_details:
-                      type: string
-                      maxLength: 65535
-                      description: Notes specific to entering the unit. Maps to the "EntryNotes" field
-                        in Buildium
-                    invoice_number:
-                      type: string
-                      maxLength: 50
-                      description: The invoice or reference number that the vendor assigned to the
-                        work order. Maps to the "InvoiceNumber" field in
-                        Buildium
-                    priority:
-                      type: string
-                      enum:
-                        - Low
-                        - Normal
-                        - High
-                      description: Task priority. Maps to the "Task > Priority" field in Buildium
-                    status:
-                      type: string
-                      enum:
-                        - New
-                        - InProgress
-                        - Completed
-                        - Deferred
-                        - Closed
-                      description: Task status. Maps to the "Task > Status" field in Buildium
-                    vendor_notes:
-                      type: string
-                      description: Instructions for the vendor. Maps to the "vendorInstructions" field
-                        in Rentvine
-                    x_property_id:
-                      type: string
-                      description: The unique identifier of the property associated with the work
-                        order. Maps to the "propertyID" field in Rentvine
-                    x_resident_id:
-                      type: string
-                      description: The unique identifier of the resident associated with the work
-                        order. Maps to the "requestedByContactID" field in
-                        Rentvine
-                    x_unit_id:
-                      type: string
-                      description: The unique identifier of the unit associated with the work order.
-                        Maps to the "unitID" field in Rentvine
-                    x_vendor_id:
-                      type: string
-                      description: The unique identifier of the vendor associated with the work order.
-                        Maps to the "vendorContactID" field in Rentvine
-                    custom_data:
-                      type: object
-                      properties: {}
-                      description: Custom data
-                    building_name:
-                      type: string
-                      description: The name of the building associated with the request. Maps to the
-                        "buildingName" field in Entrata
-                    category_id:
-                      type: string
-                      description: The unique identifier of the category associated with the request.
-                        Maps to the "CategoryID" field in RentManager
-                    is_floating:
-                      type: boolean
-                      description: Indicates if work order is floating. Required to be true if there
-                        is no associated lease or resident. Maps to the
-                        "isFloatingWorkOrder" field in Entrata
-                    location_id:
-                      type: string
-                      description: The unique identifier of the location associated with the request.
-                        Maps to the "maintenanceLocationId" field in Entrata
-                    main_phone:
-                      type: string
-                      description: The main phone number associated with the request. Maps to the
-                        "mainPhoneNumber" field in Entrata
-                    pet_details:
-                      type: string
-                      description: Pet details are required if the lease has pets or if permission to
-                        enter is denied so that a reason why entry is not
-                        permitted can be explained or a pet warning given. Maps
-                        to the "petsDescription" field in Entrata
-                    priority_id:
-                      type: string
-                      description: The unique identifier of work order priority. Maps to the
-                        "priorityID" field in Rentvine
-                    problem_id:
-                      type: string
-                      description: The unique identifier of the problem associated with the request.
-                        Maps to the "maintenanceProblemId" field in Entrata
-                    scheduled_end_date:
-                      type: string
-                      format: date-time
-                      pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
-                      description: The scheduled end date of the work order. Maps to the
-                        "scheduledEndDate" field in Rentvine
-                    scheduled_start_date:
-                      type: string
-                      format: date-time
-                      pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
-                      description: The scheduled start date of the work order. Maps to the
-                        "scheduledStartDate" field in Rentvine
-                    sub_problem_id:
-                      type: string
-                      description: The unique identifier of the sub problem associated with the
-                        request. Maps to the "subMaintenanceProblemId" field in
-                        Entrata
-                    unit_number:
-                      type: string
-                      description: The unit number associated with the request. Maps to the
-                        "unitNumber" field in Entrata
-                    x_lease_id:
-                      type: string
-                      description: The unique identifier of the lease associated with the work order.
-                        Maps to the "leaseID" field in Rentvine
-                    status_id:
-                      type: string
-                      description: The unique identifier of work order status. Maps to the
-                        "workOrderStatusID" field in Rentvine
-                    invoice_amount:
-                      type: integer
-                      format: int64
-                      minimum: -9007199254740991
-                      exclusiveMinimum: false
-                      maximum: 9007199254740991
-                      exclusiveMaximum: false
-                      description: The estimated amount in cents for the work order. Maps to the
-                        "estimatedAmount" field in Rentvine
-                  required:
-                    - integration_id
+                      description: Country of the applicant's primary address
+                  required: []
       security:
         - APIKEY_1: []
           APIKEY_2: []
@@ -6484,7 +5010,8 @@ paths:
                   - error
       description: Create a lead for an integration.
       summary: Create lead
-      tags: *a2
+      tags:
+        - leads
       requestBody:
         content:
           application/json:
@@ -7034,206 +5561,64 @@ paths:
                       properties: {}
                 - type: object
                   properties:
-                    x_property_id:
-                      type: string
-                      description: The external ID of the property from the integration vendor
-                    x_unit_id:
-                      type: string
-                      description: The external ID of the unit from the integration vendor
-                    x_leasing_agent_id:
-                      type: string
-                      description: The external ID of the leasing agent from the integration vendor
-                    status:
-                      type: string
-                      description: The status of the lead
-                    lead_source:
-                      type: string
-                      description: The lead source
-                    leasing_agent:
-                      type: string
-                      description: The name of the leasing agent
-                    ils:
-                      type: string
-                      description: The name of the intetnet listing service
-                    first_name:
-                      type: string
-                      description: First name of the lead
-                    middle_name:
-                      type: string
-                      description: Middle name of the lead
                     last_name:
                       type: string
-                      description: Last name of the lead
-                    date_of_birth:
-                      description: Lead date of birth
+                      description: The last name of the prospect.  This value maps to the LastName
+                        property of the Prospect object
+                    first_name:
                       type: string
-                      format: date-time
-                      pattern: ^\d{4}-\d{2}-\d{2}(T\d{2}:\d{2}:\d{2}(\.\d+)?)?Z?$
-                      externalDocs:
-                        url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
-                    address_1:
-                      type: string
-                      description: Lead street address line 1
-                    address_2:
-                      type: string
-                      description: Lead street address line 2
-                    city:
-                      type: string
-                      description: Lead city
-                    state:
-                      type: string
-                      description: Lead state
-                    zip:
-                      type: string
-                      description: Lead zip code
-                    phone_1:
-                      type: string
-                      description: Lead phone number
-                    phone_1_type:
-                      type: string
-                      description: The type of phone number 1
-                    phone_2:
-                      type: string
-                      description: Lead phone number 2
-                    phone_2_type:
-                      type: string
-                      description: The type of phone number 2
+                      description: The first name of the prospect.  This value maps to the FirstName
+                        property of the Prospect object
                     email_1:
                       type: string
-                      description: Lead email address
-                    email_2:
+                      format: email
+                      description: The primary email address for the prospect.  This value maps to the
+                        Email property of the Prospect object
+                    phone_1:
                       type: string
-                      description: Lead email address alternate
-                    notes:
+                      description: Prospect's primary phone number.  This will be assumed to be a HOME
+                        phone number unless phone_1_type is also set.
+                    phone_1_type:
                       type: string
-                      description: Notes
-                    target_move_in_date:
-                      description: The target move in date
+                      enum:
+                        - HOME
+                        - WORK
+                        - MOBILE
+                        - FAX
+                      description: The type of the prospect's primary phone number.  The value passed
+                        in here must be one of 'HOME', 'WORK', 'MOBILE', FAX'.
+                    phone_2:
                       type: string
-                      format: date-time
-                      pattern: ^\d{4}-\d{2}-\d{2}(T\d{2}:\d{2}:\d{2}(\.\d+)?)?Z?$
-                      externalDocs:
-                        url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
-                    desired_unit_number:
+                      description: Prospect's secondary phone number.  This will be assumed to be a
+                        MOBILE phone number unless phone_2_type is also set.
+                    phone_2_type:
                       type: string
-                      description: The unit number
-                    desired_unit_type:
+                      enum:
+                        - HOME
+                        - WORK
+                        - MOBILE
+                        - FAX
+                      description: The type of the prospect's secondary phone number.  The value
+                        passed in here must be one of 'HOME', 'WORK', 'MOBILE',
+                        FAX'.
+                    address_1:
                       type: string
-                      description: The unit type
-                    desired_min_square_ft:
-                      type: number
-                      format: double
-                      minimum: 5e-324
-                      exclusiveMinimum: false
-                      maximum: 1.7976931348623157e+308
-                      exclusiveMaximum: false
-                      description: The desired minimum square feet
-                    desired_max_square_ft:
-                      type: number
-                      format: double
-                      minimum: 5e-324
-                      exclusiveMinimum: false
-                      maximum: 1.7976931348623157e+308
-                      exclusiveMaximum: false
-                      description: The desired maximum square feet
-                    desired_floor_plan_id:
+                      description: First line of the street address for the prospect.
+                    address_2:
                       type: string
-                      description: The desired floor plan ID
-                    desired_floor_plan_name:
+                      description: Second line of the street address for the prospect.
+                    city:
                       type: string
-                      description: The desired floor plan name
-                    desired_min_rent_in_cents:
-                      type: integer
-                      format: int64
-                      minimum: 0
-                      exclusiveMinimum: false
-                      maximum: 9007199254740991
-                      exclusiveMaximum: false
-                      description: The desired minimum rent
-                    desired_max_rent_in_cents:
-                      type: integer
-                      format: int64
-                      minimum: 0
-                      exclusiveMinimum: false
-                      maximum: 9007199254740991
-                      exclusiveMaximum: false
-                      description: The desired maximum rent
-                    desired_num_bedrooms:
-                      type: integer
-                      format: int64
-                      minimum: -9007199254740991
-                      exclusiveMinimum: false
-                      maximum: 9007199254740991
-                      exclusiveMaximum: false
-                      description: The desired number of bedrooms
-                    desired_num_bathrooms:
-                      type: number
-                      format: double
-                      minimum: 5e-324
-                      exclusiveMinimum: false
-                      maximum: 1.7976931348623157e+308
-                      exclusiveMaximum: false
-                      description: The desired number of bathrooms
-                    desired_lease_term_in_months:
+                      description: The city that the prospect lives in.
+                    state:
                       type: string
-                      description: The desired lease term
-                    number_of_occupants:
-                      type: integer
-                      format: int64
-                      minimum: -9007199254740991
-                      exclusiveMinimum: false
-                      maximum: 9007199254740991
-                      exclusiveMaximum: false
-                      description: The number of occupants
-                    desired_amenities:
-                      type: array
-                      items:
-                        type: string
-                      description: The desired amenities
-                    pets:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          type:
-                            type: string
-                            description: The type of pet
-                          weight:
-                            type: string
-                            description: The weight of the pet
-                          count:
-                            type: string
-                            description: The number of pet type
-                    events:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: The Propify unique identifier for the event
-                          type:
-                            type: string
-                            description: The type of event
-                          meta_data:
-                            type: string
-                            description: The meta data associated with the event
-                          notes:
-                            type: string
-                            description: The notes associated with the event
-                          result:
-                            type: string
-                            description: The result of the event
-                          reason:
-                            type: string
-                            description: The reason for the event
-                        required:
-                          - id
-                      description: The events associated with the lead
-                    custom_data:
-                      type: object
-                      properties: {}
-                      description: Custom data
+                      description: State of the prospect's primary address.
+                    zip:
+                      type: string
+                      description: Zip/Postal Code of the prospect's primary address.
+                    country:
+                      type: string
+                      description: Country of the prospect's primary address
                   required: []
       security:
         - APIKEY_1: []
@@ -7624,7 +6009,8 @@ paths:
                   - error
       description: Create a lease for an integration.
       summary: Create lease
-      tags: *a3
+      tags:
+        - leases
       requestBody:
         content:
           application/json:
@@ -8234,106 +6620,440 @@ paths:
                       properties: {}
                 - type: object
                   properties:
-                    x_property_id:
+                    type:
                       type: string
-                      description: The external property ID from the integration vendor
-                    x_resident_id:
-                      type: string
-                      description: The external resident ID from the integration vendor
+                      enum:
+                        - Fixed
+                        - FixedWithRollover
+                        - AtWill
+                      description: The lease type.  The value of this field must be one of "Fixed",
+                        "FixedWithRollover", or "AtWill"
                     x_unit_id:
                       type: string
-                      description: The external unit ID from the integration vendor
-                    rent_amount_in_cents:
-                      type: integer
-                      format: int64
-                      minimum: 0
-                      exclusiveMinimum: false
-                      maximum: 9007199254740991
-                      exclusiveMaximum: false
-                      description: The rent amount in cents
-                    rent_due_day:
-                      type: integer
-                      format: int64
-                      minimum: 0
-                      exclusiveMinimum: false
-                      maximum: 9007199254740991
-                      exclusiveMaximum: false
-                      description: The day of the month the rent is due
-                    deposit_amount:
-                      type: string
-                      description: The deposit amount in cents
-                    deposit_amount_amount_in_cents:
-                      type: integer
-                      format: int64
-                      minimum: 0
-                      exclusiveMinimum: false
-                      maximum: 9007199254740991
-                      exclusiveMaximum: false
-                      description: The deposit amount in cents
-                    deposit_date:
-                      type: string
-                      format: date-time
-                      pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
-                      description: The date the deposit was received
-                    signature_date:
-                      type: string
-                      format: date-time
-                      pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
-                      description: The date the lease was signed
+                      pattern: /^[0-9]+$/
+                      description: The RentManager ID number of the unit that this lease is associated
+                        with
                     start_date:
                       type: string
                       format: date-time
                       pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
-                      description: The date the lease starts
+                      description: The date that the lease begins
                     end_date:
                       type: string
                       format: date-time
                       pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
-                      description: The date the lease ends
-                    application_date:
+                      description: The date that the lease ends
+                    is_eviction_pending:
+                      type: boolean
+                      default: false
+                      description: Boolean indicating whether the lease has an eviction pending. If
+                        not set, defaults to "false"
+                    automatically_move_out_residents:
+                      type: boolean
+                      default: false
+                      description: Boolean indicating whether residents should be set to "past" status
+                        automatically at the expiration of the lease. If not
+                        set, defaults to "false"
+                    x_property_id:
+                      type: string
+                      pattern: /^[0-9]+$/
+                      description: The RentManager ID number of the property that this lease is
+                        associated with.  While this is passed as a string, the
+                        value must parse as an integer.
+                    unit_space_id:
+                      type: string
+                      pattern: /^[0-9]+$/
+                      description: The Entrata ID number of the unit space that this lease is
+                        associated with.  While this is passed as a string, the
+                        value must parse as an integer.
+                    floor_plan_code:
+                      type: string
+                      pattern: /^[0-9]+$/
+                      description: The Entrata ID number of the floorplan.  While this is passed as a
+                        string, the value must parse as an integer.
+                    lease_term_id:
+                      type: string
+                      pattern: /^[0-9]+$/
+                      description: The Entrata ID number of the lease term.  While this is passed as a
+                        string, the value must parse as an integer.
+                    x_resident_id:
+                      type: string
+                      pattern: /^[0-9]+$/
+                      description: The RentManager ID number of the resident that this lease is
+                        associated with
+                    first_name:
+                      type: string
+                      description: The first name of the primary resident on this lease.
+                    last_name:
+                      type: string
+                      description: The last name of the primary resident on this lease.
+                    address_1:
+                      type: string
+                      description: The first line of the primary resident's address.
+                    address_2:
+                      type: string
+                      description: The second line of the primary resident's address.
+                    city:
+                      type: string
+                      description: The city of the primary resident's address
+                    state:
+                      type: string
+                      description: The state of the primary resident's address
+                    zip:
+                      type: string
+                      pattern: /[0-9]+/
+                      description: The postal code of the primary resident's address. The value passed
+                        to th
+                    email_1:
+                      type: string
+                      format: email
+                      description: The email address for the primary resident on this lease.
+                    customer_relationship_type_id:
+                      type: string
+                      pattern: /^[0-9]+$/
+                      description: Entrata ID number of the Customer Relationship Type.  While this is
+                        passed as a string, the value must parse as an integer.
+                    phone_1:
+                      type: string
+                      description: The phone number of the primary resident on this lease.
+                    phone_1_type:
+                      type: string
+                      enum:
+                        - HOME
+                        - WORK
+                        - MOBILE
+                        - FAX
+                      description: The type of the primary resident's phone number.  The value passed
+                        in here must be one of 'HOME', 'WORK', 'MOBILE', FAX'.
+                    date_of_birth:
                       type: string
                       format: date-time
                       pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
-                      description: The date the application was submitted
-                    scheduled_move_in_date:
-                      type: string
-                      format: date-time
-                      pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
-                      description: The date the resident is scheduled to move in
+                      description: The resident's date of birth
                     scheduled_move_out_date:
                       type: string
                       format: date-time
                       pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
-                      description: The date the resident is scheduled to move out
+                      description: The date that the resident is scheduled to move out
                     realized_move_in_date:
                       type: string
                       format: date-time
                       pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
-                      description: The date the resident actually moved in
+                      description: The date that the resident moved in
                     realized_move_out_date:
                       type: string
                       format: date-time
                       pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
-                      description: The date the resident actually moved out
-                    status:
-                      type: string
-                      enum:
-                        - ACTIVE
-                        - INACTIVE
-                        - OTHER
-                        - PENDING
-                      description: The status of the lease
-                    type:
-                      type: string
-                      description: The type of lease
-                    term:
-                      type: string
-                      description: The lease term
-                    custom_data:
-                      type: object
-                      properties: {}
-                      description: Custom data
+                      description: The date that the resident moved out
                   required: []
+      security:
+        - APIKEY_1: []
+          APIKEY_2: []
+  "/v1/leases/{lease_id}/residents":
+    get:
+      operationId: GetV1LeasesLeaseIdResidents
+      responses:
+        "200":
+          description: GET /v1/leases/:lease_id/residents Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      offset:
+                        type: integer
+                        format: int64
+                        minimum: 0
+                        exclusiveMinimum: false
+                        maximum: 9007199254740991
+                        exclusiveMaximum: false
+                      limit:
+                        type: integer
+                        format: int64
+                        minimum: 0
+                        exclusiveMinimum: false
+                        maximum: 250
+                        exclusiveMaximum: false
+                      orderBy:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      hasMore:
+                        nullable: true
+                        type: boolean
+                    required:
+                      - orderBy
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: The Propify unique identifier for the resident
+                        created_at:
+                          description: The date record first entered Propify
+                          type: string
+                          format: date-time
+                          externalDocs:
+                            url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
+                        updated_at:
+                          description: The date record was last updated in Propify
+                          type: string
+                          format: date-time
+                          externalDocs:
+                            url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
+                        x_id:
+                          type: string
+                          description: The external ID from the integration vendor
+                        x_lease_id:
+                          nullable: true
+                          type: string
+                          description: The external ID of the lease from the integration vendor
+                        address_1_alternate:
+                          nullable: true
+                          type: string
+                          description: Resident street address line 1 alternate
+                        address_1:
+                          nullable: true
+                          type: string
+                          description: Resident street address line 1
+                        address_2_alternate:
+                          nullable: true
+                          type: string
+                          description: Resident street address line 2 alternate
+                        address_2:
+                          nullable: true
+                          type: string
+                          description: Resident street address line 2
+                        balance_in_cents:
+                          nullable: true
+                          type: number
+                          description: The rent balance owed
+                        city_alternate:
+                          nullable: true
+                          type: string
+                          description: Resident city alternate
+                        city:
+                          nullable: true
+                          type: string
+                          description: Resident city
+                        country_alternate:
+                          nullable: true
+                          type: string
+                          description: Resident country alternate
+                        country:
+                          nullable: true
+                          type: string
+                          description: Resident country
+                        custom_data:
+                          nullable: true
+                          type: object
+                          properties: {}
+                          description: Custom data
+                        date_of_birth:
+                          nullable: true
+                          description: Resident date of birth
+                          type: string
+                          format: date-time
+                          externalDocs:
+                            url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
+                        email_1:
+                          nullable: true
+                          type: string
+                          description: Resident email address
+                        email_2:
+                          nullable: true
+                          type: string
+                          description: Resident email address alternate
+                        first_name:
+                          nullable: true
+                          type: string
+                          description: First name of the resident
+                        is_employee:
+                          nullable: true
+                          type: boolean
+                          description: Is the resident an employee
+                        last_name:
+                          nullable: true
+                          type: string
+                          description: Last name of the resident
+                        late_balance_in_cents:
+                          nullable: true
+                          type: number
+                          description: The past due rent balance owed
+                        middle_name:
+                          nullable: true
+                          type: string
+                          description: Middle name of the resident
+                        notes:
+                          nullable: true
+                          type: string
+                          description: Notes
+                        phone_1_type:
+                          nullable: true
+                          type: string
+                          enum:
+                            - FAX
+                            - HOME
+                            - MOBILE
+                            - OTHER
+                            - WORK
+                          description: The type of phone number 1
+                        phone_1:
+                          nullable: true
+                          type: string
+                          description: Resident phone number
+                        phone_2_type:
+                          nullable: true
+                          type: string
+                          enum:
+                            - FAX
+                            - HOME
+                            - MOBILE
+                            - OTHER
+                            - WORK
+                          description: The type of phone number 2
+                        phone_2:
+                          nullable: true
+                          type: string
+                          description: Resident phone number 2
+                        state_alternate:
+                          nullable: true
+                          type: string
+                          description: Resident state alternate
+                        state:
+                          nullable: true
+                          type: string
+                          description: Resident state
+                        zip_alternate:
+                          nullable: true
+                          type: string
+                          description: Resident zip code alternate
+                        zip:
+                          nullable: true
+                          type: string
+                          description: Resident zip code
+                        integration_id:
+                          type: string
+                          description: The Propify unique identifier for the integration
+                        integration_vendor:
+                          type: string
+                          description: The property management system of record
+                        property_id:
+                          type: string
+                          description: The Propify unique identifier for the property
+                      required:
+                        - id
+                        - created_at
+                        - updated_at
+                        - x_id
+                        - x_lease_id
+                        - address_1_alternate
+                        - address_1
+                        - address_2_alternate
+                        - address_2
+                        - balance_in_cents
+                        - city_alternate
+                        - city
+                        - country_alternate
+                        - country
+                        - custom_data
+                        - date_of_birth
+                        - email_1
+                        - email_2
+                        - first_name
+                        - is_employee
+                        - last_name
+                        - late_balance_in_cents
+                        - middle_name
+                        - notes
+                        - phone_1_type
+                        - phone_1
+                        - phone_2_type
+                        - phone_2
+                        - state_alternate
+                        - state
+                        - zip_alternate
+                        - zip
+                        - integration_id
+                        - integration_vendor
+                        - property_id
+                required:
+                  - meta
+                  - results
+        "400":
+          description: GET /v1/leases/:lease_id/residents Error response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                      errors:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                    required:
+                      - message
+                      - errors
+                required:
+                  - error
+      description: Get residents by lease ID
+      summary: Get residents by lease ID
+      tags:
+        - residents
+      parameters:
+        - name: order-by
+          in: query
+          required: false
+          schema:
+            description: "Order the results by a field. Optionally include asc or desc
+              preceded by a colon (default is asc). Example:
+              ?order-by=vendor:asc,created_at:desc"
+            type: string
+        - name: offset
+          in: query
+          required: false
+          schema:
+            description: Can be used for paginating results
+            type: integer
+            format: int64
+            minimum: 0
+            exclusiveMinimum: false
+            maximum: 9007199254740991
+            exclusiveMaximum: false
+            nullable: true
+            default: 0
+        - name: limit
+          in: query
+          required: false
+          schema:
+            description: A number between 1 and 250 to determine the number of results to
+              return in a single query
+            type: integer
+            format: int64
+            minimum: 0
+            exclusiveMinimum: false
+            maximum: 250
+            exclusiveMaximum: false
+            nullable: true
+            default: 100
+        - name: lease_id
+          in: path
+          required: true
+          schema:
+            description: GET /v1/leases/:lease_id/residents parameter
+            type: string
       security:
         - APIKEY_1: []
           APIKEY_2: []
@@ -9743,7 +8463,7 @@ paths:
                   - error
       description: Update a unit for a property.
       summary: Update unit
-      tags: &a6
+      tags: &a1
         - units
       requestBody:
         content:
@@ -10215,7 +8935,8 @@ paths:
                   - error
       description: Create a resident for an integration.
       summary: Create resident
-      tags: *a4
+      tags:
+        - residents
       requestBody:
         content:
           application/json:
@@ -10757,16 +9478,15 @@ paths:
                   properties:
                     x_lease_id:
                       type: string
-                      description: The lease ID with which to associate the resident
-                    first_name:
-                      type: string
-                      description: The first name of the resident.
-                    middle_name:
-                      type: string
-                      description: The middle name of the resident.
+                      description: The lease ID with which to associate the resident. This is the ID
+                        of the lease in Buildium. Note that it should be passed
+                        as a string and not an integer.
                     last_name:
                       type: string
                       description: The last name of the resident.
+                    first_name:
+                      type: string
+                      description: The first name of the resident.
                     email_1:
                       type: string
                       format: email
@@ -10774,52 +9494,121 @@ paths:
                     email_2:
                       type: string
                       format: email
-                      description: An alternate email address for the resident.
+                      description: An alternate email address for the resident. This value maps to the
+                        AlternateEmail property of the Tenant object.
                     date_of_birth:
                       type: string
                       format: date-time
                       pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
-                      description: The date of birth of the resident.
+                      description: The date of birth of the resident.  This value maps to the
+                        PrimaryContact.DateOfBirth property of the Tenant
+                        object.
                     address_1:
                       type: string
-                      description: First line of the resident's primary address
+                      description: Street address for the resident.
                     address_2:
                       type: string
-                      description: Second line of the resident's primary address
+                      description: Street address for the resident.
                     city:
                       type: string
-                      description: City of the resident's primary address.
+                      description: City of the resident's primary address
                     state:
                       type: string
-                      description: State of the resident's primary address.
+                      description: State of the resident's primary address
                     zip:
                       type: string
-                      description: Zip/Postal Code of the resident's primary address.
+                      description: Zip/Postal Code of the resident's primary address
                     country:
                       type: string
-                      description: Country of the resident's primary address.
+                      description: Country of the resident's primary address
                     address_1_alternate:
                       type: string
-                      description: First line of the resident's secondary/alternate street address.
+                      description: Secondary/alternate street address for the resident. This maps to
+                        the Street property of the second address of the Tenant
+                        object
                     address_2_alternate:
                       type: string
-                      description: Second line of the resident's secondary/alternate street address.
+                      description: Second line of the secondary/alternate street address for the
+                        resident.  This maps to the
+                        AlternateAddress.AddressLine2 property of the Tenant
+                        object
                     city_alternate:
                       type: string
-                      description: City of the resident's secondary/alternate address.
+                      description: City of the resident's secondary/alternate address
                     state_alternate:
                       type: string
-                      description: State of the resident's secondary/alternate address.
+                      description: State of the resident's secondary/alternate address
                     zip_alternate:
                       type: string
-                      description: Zip/Postal Code of the resident's secondary/alternate address.
+                      description: Zip/Postal Code of the resident's secondary/alternate address
                     country_alternate:
                       type: string
-                      description: Country of the resident's secondary/alternate address.
+                      description: Country of the resident's secondary/alternate address.  This maps
+                        to the AlternateAddress.Country property of the Tenant
+                        object.  This value must be a valid member of the
+                        Buildium country enum, documented at
+                        https://developer.buildium.com/#operation/RentalTenantsExternalApi_CreateRentalTenant
+                    notes:
+                      type: string
+                      description: Any notes on the resident.  This value maps to the Comment property
+                        of the Tenant object.
+                    phone_1:
+                      type: string
+                      description: Resident's primary phone number.  This will be assumed to be a HOME
+                        phone number unless phone_1_type is also set.
+                    phone_1_type:
+                      type: string
+                      enum:
+                        - HOME
+                        - WORK
+                        - MOBILE
+                        - FAX
+                      description: The type of the resident's primary phone number.  The value passed
+                        in here must be one of 'HOME', 'WORK', 'MOBILE', FAX'.
+                    phone_2:
+                      type: string
+                      description: Resident's secondary phone number.  This will be assumed to be a
+                        MOBILE phone number unless phone_2_type is also set.
+                    phone_2_type:
+                      type: string
+                      enum:
+                        - HOME
+                        - WORK
+                        - MOBILE
+                        - FAX
+                      description: The type of the resident's secondary phone number.  The value
+                        passed in here must be one of 'HOME', 'WORK', 'MOBILE',
+                        FAX'.
                     custom_data:
                       type: object
                       properties: {}
                       description: Custom data
+                    middle_name:
+                      type: string
+                      description: The middle name of the resident.
+                    x_property_id:
+                      type: string
+                      description: The property ID with which to associate the resident. This is the
+                        ID of the property in Rentmanager.  Note that it should
+                        be passed as a string and not an integer.
+                    rent_period:
+                      type: string
+                      enum:
+                        - monthly
+                        - weekly
+                        - daily
+                      description: How often the resident is expected to pay rent.  Allowed values are
+                        "monthly", "weekly", and "daily".  Maps to the
+                        RentPeriod property of the Tenant object.
+                    rent_due_day:
+                      type: integer
+                      format: int64
+                      minimum: 1
+                      exclusiveMinimum: false
+                      maximum: 31
+                      exclusiveMaximum: false
+                      description: Day of the month on which the tenant's rent is due.  Maps to the
+                        RentDueDay property of the Tenant object
                   required: []
       security:
         - APIKEY_1: []
@@ -11208,7 +9997,8 @@ paths:
                   - error
       description: Create a transaction for an integration.
       summary: Create transaction
-      tags: *a5
+      tags:
+        - general-ledger
       requestBody:
         content:
           application/json:
@@ -12228,7 +11018,7 @@ paths:
                   - error
       description: Update a unit for a property.
       summary: Update unit
-      tags: *a6
+      tags: *a1
       parameters:
         - name: id
           in: path
@@ -12798,7 +11588,8 @@ paths:
                   - error
       description: Create a vendor for an integration.
       summary: Create vendor
-      tags: *a7
+      tags:
+        - vendors
       requestBody:
         content:
           application/json:
@@ -13488,7 +12279,220 @@ paths:
                     - type: object
                       properties: {}
                 - type: object
-                  properties: {}
+                  properties:
+                    first_name:
+                      type: string
+                      description: First name of the vendor. Maps to the "Contact.FirstName" field in
+                        RentManager
+                    last_name:
+                      type: string
+                      description: Last name of the vendor. Maps to the "Contact.LastName" field in
+                        RentManager
+                    is_company:
+                      type: boolean
+                      description: Indicates whether the vendor should be considered a company or
+                        person. Maps to the "IsCompany" field in Buildium
+                    company_name:
+                      type: string
+                      description: Company name of the vendor. Maps to the "Name" field in RentManager
+                    email_1:
+                      type: string
+                      format: email
+                      description: Primary email for the vendor. Maps to the "Contact.Email" field in
+                        RentManager
+                    email_2:
+                      type: string
+                      format: email
+                      description: Location email for the vendor. Maps to the "location.email" field
+                        in Entrata
+                    phone_1:
+                      type: string
+                      description: First phone number. Maps to the "Contact.PhoneNumbers.PhoneNumber"
+                        field in RentManager
+                    phone_1_type:
+                      type: string
+                      enum:
+                        - HOME
+                        - WORK
+                        - MOBILE
+                        - FAX
+                      description: First phone number type. Maps to keys of the "PhoneNumbers" field
+                        in Buildium
+                    phone_2:
+                      type: string
+                      description: Second phone number. Maps to the "Contact.PhoneNumbers.PhoneNumber"
+                        field in RentManager
+                    phone_2_type:
+                      type: string
+                      enum:
+                        - HOME
+                        - WORK
+                        - MOBILE
+                        - FAX
+                      description: Second phone number type. Maps to keys of the "PhoneNumbers" field
+                        in Buildium
+                    address_1:
+                      type: string
+                      description: Vendor address line 1. Maps to the "Addresses.Address" field in
+                        RentManager
+                    address_2:
+                      type: string
+                      description: Vendor address line 2. Maps to the "location.addressLine2" field in
+                        Entrata
+                    city:
+                      type: string
+                      description: Vendor address city. Maps to the "Addresses.City" field in
+                        RentManager
+                    state:
+                      type: string
+                      description: Vendor address state. Maps to the "Addresses.State" field in
+                        RentManager
+                    zip:
+                      type: string
+                      description: Vendor address zip code. Maps to the "Addresses.PostalCode" field
+                        in RentManager
+                    country:
+                      type: string
+                      description: Vendor address country. Maps to the "location.country" field in
+                        Entrata
+                    category_id:
+                      type: string
+                      description: The unique identifier of the vendor category type. Maps to the
+                        "categories.categoryTypeId" field in Entrata
+                    x_gl_account_id:
+                      type: string
+                      description: The unique identifier of the default general ledger account to
+                        associate with the vendor. Maps to the
+                        "DefaultAccountID" field in RentManager
+                    account_number:
+                      type: string
+                      description: The account number of the vendor. Maps to the "AccountNumber" field
+                        in RentManager
+                    website:
+                      type: string
+                      format: url
+                      maxLength: 100
+                      description: The website of the vendor. The value must be a valid URL. Maps to
+                        the "Website" field in Buildium
+                    insurance_provider:
+                      type: string
+                      maxLength: 65
+                      description: Vendor insurance provider. Maps to the "VendorInsurance > Provider"
+                        field in Buildium
+                    insurance_policy_number:
+                      type: string
+                      maxLength: 65
+                      description: Vendor insurance policy number. Maps to the "VendorInsurance >
+                        PolicyNumber" field in Buildium
+                    insurance_expire_date:
+                      type: string
+                      format: date-time
+                      pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
+                      description: Vendor insurance policy expiration date. Maps to the
+                        "InsuranceExpiration" field in RentManager
+                    notes:
+                      type: string
+                      description: Comments about the vendor. Maps to the "Comment" field in
+                        RentManager
+                    tax_payer_id:
+                      type: string
+                      description: The unique identifier of the tax payer. Maps to the "TaxID" field
+                        in RentManager
+                    tax_payer_type:
+                      type: string
+                      enum:
+                        - SSN
+                        - EIN
+                      description: The tax payer type. Required if `tax_payer_id` is set. Maps to the
+                        "TaxInformation > TaxPayerType" field in Buildium
+                    tax_payer_name_1:
+                      type: string
+                      description: The tax payer first name. Maps to the "nameOnTaxReturn" field in
+                        Entrata
+                    tax_payer_name_2:
+                      type: string
+                      description: The tax payer last name. Maps to the "nameOnTaxReturn" field in
+                        Entrata
+                    tax_address_1:
+                      type: string
+                      maxLength: 100
+                      description: The tax payer address line 1. Maps to the "TaxInformation > Address
+                        > AddressLine1" field in Buildium
+                    tax_address_2:
+                      type: string
+                      maxLength: 100
+                      description: The tax payer address line 2. Maps to the "TaxInformation > Address
+                        > AddressLine2" field in Buildium
+                    tax_city:
+                      type: string
+                      maxLength: 100
+                      description: The tax payer address city. Maps to the "TaxInformation > Address >
+                        City" field in Buildium
+                    tax_state:
+                      type: string
+                      description: The tax payer address state. Maps to the "TaxInformation > Address
+                        > State" field in Buildium
+                    tax_zip:
+                      type: string
+                      description: The tax payer address zip code. Maps to the "TaxInformation >
+                        Address > PostalCode" field in Buildium
+                    tax_country:
+                      type: string
+                      description: The tax payer address country. Maps to the "TaxInformation >
+                        Address > Country" field in Buildium
+                    custom_data:
+                      type: object
+                      properties: {}
+                      description: Custom data
+                    x_property_id:
+                      type: string
+                      description: The unique identifier of the property associated with the vendor.
+                        Maps to the "propertyId" field in Entrata
+                    is_compliant:
+                      type: boolean
+                      description: Indicates if the property associated with the vendor is compliant.
+                        Maps to the "compliance_status_id" field in Entrata
+                    external_id:
+                      type: string
+                      description: The external identifier of the vendor. Maps to the "externalId"
+                        field in Entrata
+                    location_name:
+                      type: string
+                      description: Location name for the vendor. Maps to the "location.name" field in
+                        Entrata
+                    payment_method:
+                      type: string
+                      description: The method of payment for the vendor. Maps to the
+                        "remittance.remittanceName" field in Entrata
+                    payment_type_id:
+                      type: string
+                      description: The unique identifier for the payment type. Maps to the
+                        "remittance.apPaymentTypeId" field in Entrata
+                    routing_number:
+                      type: string
+                      description: The routing number of the vendor bank account. Required only when
+                        the payment type is ACH. Maps to the
+                        "remittance.routingNumber" field in Entrata
+                    payee_name:
+                      type: string
+                      description: Full name of the payee associated with the vendor. Will be
+                        defaulted to "company_name" if not provided. Maps to the
+                        "Payee" field in RentManager
+                    category:
+                      type: string
+                      description: Category of the vendor. Maps to the "Category" field in RentManager
+                    address_type_id:
+                      type: string
+                      description: Vendor address type ID. Maps to the "Addresses.AddressTypeID" field
+                        in RentManager
+                    include_in_1099:
+                      type: boolean
+                      description: Indicates if vendor is 1099. Maps to the "Is1099" field in
+                        RentManager
+                    is_active:
+                      type: boolean
+                      description: Indicates if vendor is active. Maps to the "IsActive" field in
+                        RentManager
                   required: []
       security:
         - APIKEY_1: []
@@ -14096,7 +13100,8 @@ paths:
                   - error
       description: Create a work order for an integration.
       summary: Create work order
-      tags: *a8
+      tags:
+        - work-orders
       requestBody:
         content:
           application/json:
@@ -14847,7 +13852,119 @@ paths:
                     - type: object
                       properties: {}
                 - type: object
-                  properties: {}
+                  properties:
+                    entry_details:
+                      type: string
+                      maxLength: 65535
+                      description: Notes specific to entering the unit. Maps to the "EntryNotes" field
+                        in Buildium
+                    invoice_number:
+                      type: string
+                      maxLength: 50
+                      description: The invoice or reference number that the vendor assigned to the
+                        work order. Maps to the "InvoiceNumber" field in
+                        Buildium
+                    permission_to_enter:
+                      type: boolean
+                      description: Whether the maintenance team has permission to enter the premises
+                    vendor_notes:
+                      type: string
+                      description: Notes from the vendor. Maps to the "closingComments" field in
+                        Entrata
+                    work_details:
+                      type: string
+                      description: A full description of the work order
+                    x_resident_id:
+                      type: string
+                      description: Resident unique identifier. Maps to the "customerId" field in
+                        Entrata
+                    x_vendor_id:
+                      type: string
+                      description: The unique identifier of the vendor associated with the request.
+                        Maps to the "VendorID" field in RentManager
+                    custom_data:
+                      type: object
+                      properties: {}
+                      description: Custom data
+                    assigned_to_id:
+                      type: string
+                      description: The unique identifier of the staff associated with the request.
+                        Maps to the "AssignedToUserID" field in RentManager
+                    category_id:
+                      type: string
+                      description: The unique identifier of the category associated with the request.
+                        Maps to the "CategoryID" field in RentManager
+                    completed_date:
+                      type: string
+                      format: date-time
+                      pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
+                      description: The completed date associated with the request. Maps to the
+                        "completedDateTime" field in Entrata
+                    due_date:
+                      type: string
+                      format: date-time
+                      pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
+                      description: The due date assigned to the request. Maps to the "DueDate" field
+                        in RentManager
+                    location_id:
+                      type: string
+                      description: The unique identifier of the location associated with the request.
+                        Maps to the "maintenanceLocationId" field in Entrata
+                    main_phone:
+                      type: string
+                      description: The main phone number associated with the request. Maps to the
+                        "mainPhoneNumber" field in Entrata
+                    pet_details:
+                      type: string
+                      description: Pet details are required if the lease has pets or if permission to
+                        enter is denied so that a reason why entry is not
+                        permitted can be explained or a pet warning given. Maps
+                        to the "petsDescription" field in Entrata
+                    priority_id:
+                      type: string
+                      description: The unique identifier of the priority associated with the request.
+                        Maps to the "PriorityID" field in RentManager
+                    problem_id:
+                      type: string
+                      description: The unique identifier of the problem associated with the request.
+                        Maps to the "maintenanceProblemId" field in Entrata
+                    scheduled_end_date:
+                      type: string
+                      format: date-time
+                      pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
+                      description: The scheduled end date assigned to the request. Maps to the
+                        "AssignedCloseDate" field in RentManager
+                    scheduled_start_date:
+                      type: string
+                      format: date-time
+                      pattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
+                      description: The scheduled start date assigned to the request. Maps to the
+                        "AssignedOpenDate" field in RentManager
+                    status_id:
+                      type: string
+                      description: The unique identifier of the status associated with the request.
+                        Maps to the "StatusID" field in RentManager
+                    sub_problem_id:
+                      type: string
+                      description: The unique identifier of the sub problem associated with the
+                        request. Maps to the "subMaintenanceProblemId" field in
+                        Entrata
+                    x_lease_id:
+                      type: string
+                      description: The unique identifier of the lease associated with the request.
+                        Maps to the "leaseId" field in Entrata
+                    x_parent_work_order_id:
+                      type: string
+                      description: Unique indentifier of the parent work order associated with the
+                        request. Maps to the "parentWorkOrderId" field in
+                        Entrata
+                    x_property_id:
+                      type: string
+                      description: The unique identifier of property associated with the request. Maps
+                        to the "propertyId" field in Entrata
+                    task_title:
+                      type: string
+                      description: The title of the work order
                   required: []
       security:
         - APIKEY_1: []

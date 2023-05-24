@@ -99,6 +99,7 @@
                         "api-reference/residents/create",
                         "api-reference/residents/get-all",
                         "api-reference/residents/get-by-id",
+                        "api-reference/residents/get-by-lease-id",
                         "api-reference/residents/update"
                     ]
                 },
