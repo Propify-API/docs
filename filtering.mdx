@@ -4,17 +4,10 @@ description: "You can filter results by adding query parameters to your request.
 ---
 
 ## Overview
-The Propify API provides optional query string parameters to provide the ability to filter results on requests that return arrays of objects. Mostly, the provided parameters are used to filter against external IDs denoted by the prefix `x_`.
-
-One example of filtering is finding all residents associated with a lease (by the external lease ID). This can be done by filtering on the `x_lease_id` property.
+The Propify API provides optional query string parameters to provide the ability to filter results on requests that return arrays of objects. One example of filtering is finding all residents associated with a lease (by the Propify lease ID). This can be done by filtering on the `lease_id` property.
 
 ```json Example
-// GET /v1/residents?x_lease_id=123456
+// GET /v1/residents?lease_id=123456
 ```
 
-## Important
-When using filtering in this way, it is important to recognize that it is _possible_ that undesired results are still included in the result set. For example, many property management systems use auto-incrementing IDs for their records. If you filter residents by `x_lease_id`, it is possible that lease ID is re-used on a different property on the same integration. There are a couple of solutions to this problem.
-
-1. We offer some convenience endpoints where we account for this. e.g. [`GET /v1/leases/{lease_id}/residents`](/api-reference/residents/get-by-lease-id) will only return residents associated with a particular lease for a specific property. The `lease_id` parameter, in this case, is the Propify unique ID for the lease, in which case we account for the possibility of duplicate IDs by restricting its scope to a single property. To the extent that these convenience endpoints are available to use, this is the recommended approach.
-
-2. Alternatively, you can use the `x_property_id` filter to ensure that the `x_lease_id` you are filtering is only used on a specific property.
+Note: When filtering using external IDs (e.g. `x_*`), you will be required to supply the Propify integration ID (`integration_id`) and the external property ID (`x_property_id`) as part of your query string. This is to ensure that you are only getting records associated with your intended result set — in an effort to account for property management systems using auto-incrementing integers as their IDs.
