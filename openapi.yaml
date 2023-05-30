@@ -662,8 +662,11 @@ paths:
                 - allOf:
                     - allOf:
                         - allOf:
-                            - type: object
-                              properties: {}
+                            - allOf:
+                                - type: object
+                                  properties: {}
+                                - type: object
+                                  properties: {}
                             - type: object
                               properties: {}
                         - type: object
@@ -1227,8 +1230,11 @@ paths:
                 - allOf:
                     - allOf:
                         - allOf:
-                            - type: object
-                              properties: {}
+                            - allOf:
+                                - type: object
+                                  properties: {}
+                                - type: object
+                                  properties: {}
                             - type: object
                               properties: {}
                         - type: object
@@ -1883,8 +1889,11 @@ paths:
                 - allOf:
                     - allOf:
                         - allOf:
-                            - type: object
-                              properties: {}
+                            - allOf:
+                                - type: object
+                                  properties: {}
+                                - type: object
+                                  properties: {}
                             - type: object
                               properties: {}
                         - type: object
@@ -2177,8 +2186,11 @@ paths:
                 - allOf:
                     - allOf:
                         - allOf:
-                            - type: object
-                              properties: {}
+                            - allOf:
+                                - type: object
+                                  properties: {}
+                                - type: object
+                                  properties: {}
                             - type: object
                               properties: {}
                         - type: object
@@ -2476,8 +2488,11 @@ paths:
                 - allOf:
                     - allOf:
                         - allOf:
-                            - type: object
-                              properties: {}
+                            - allOf:
+                                - type: object
+                                  properties: {}
+                                - type: object
+                                  properties: {}
                             - type: object
                               properties: {}
                         - type: object
@@ -2750,8 +2765,11 @@ paths:
                     - allOf:
                         - allOf:
                             - allOf:
-                                - type: object
-                                  properties: {}
+                                - allOf:
+                                    - type: object
+                                      properties: {}
+                                    - type: object
+                                      properties: {}
                                 - type: object
                                   properties: {}
                             - type: object
@@ -2839,8 +2857,11 @@ paths:
                     - allOf:
                         - allOf:
                             - allOf:
-                                - type: object
-                                  properties: {}
+                                - allOf:
+                                    - type: object
+                                      properties: {}
+                                    - type: object
+                                      properties: {}
                                 - type: object
                                   properties: {}
                             - type: object
@@ -3987,8 +4008,11 @@ paths:
                 - allOf:
                     - allOf:
                         - allOf:
-                            - type: object
-                              properties: {}
+                            - allOf:
+                                - type: object
+                                  properties: {}
+                                - type: object
+                                  properties: {}
                             - type: object
                               properties: {}
                         - type: object
@@ -4444,8 +4468,11 @@ paths:
                 - allOf:
                     - allOf:
                         - allOf:
-                            - type: object
-                              properties: {}
+                            - allOf:
+                                - type: object
+                                  properties: {}
+                                - type: object
+                                  properties: {}
                             - type: object
                               properties: {}
                         - type: object
@@ -5026,8 +5053,11 @@ paths:
                 - allOf:
                     - allOf:
                         - allOf:
-                            - type: object
-                              properties: {}
+                            - allOf:
+                                - type: object
+                                  properties: {}
+                                - type: object
+                                  properties: {}
                             - type: object
                               properties: {}
                         - type: object
@@ -5556,8 +5586,11 @@ paths:
                 - allOf:
                     - allOf:
                         - allOf:
-                            - type: object
-                              properties: {}
+                            - allOf:
+                                - type: object
+                                  properties: {}
+                                - type: object
+                                  properties: {}
                             - type: object
                               properties: {}
                         - type: object
@@ -6025,8 +6058,11 @@ paths:
                 - allOf:
                     - allOf:
                         - allOf:
-                            - type: object
-                              properties: {}
+                            - allOf:
+                                - type: object
+                                  properties: {}
+                                - type: object
+                                  properties: {}
                             - type: object
                               properties: {}
                         - type: object
@@ -6615,8 +6651,11 @@ paths:
                 - allOf:
                     - allOf:
                         - allOf:
-                            - type: object
-                              properties: {}
+                            - allOf:
+                                - type: object
+                                  properties: {}
+                                - type: object
+                                  properties: {}
                             - type: object
                               properties: {}
                         - type: object
@@ -8049,8 +8088,11 @@ paths:
                 - allOf:
                     - allOf:
                         - allOf:
-                            - type: object
-                              properties: {}
+                            - allOf:
+                                - type: object
+                                  properties: {}
+                                - type: object
+                                  properties: {}
                             - type: object
                               properties: {}
                         - type: object
@@ -8171,8 +8213,11 @@ paths:
                 - allOf:
                     - allOf:
                         - allOf:
-                            - type: object
-                              properties: {}
+                            - allOf:
+                                - type: object
+                                  properties: {}
+                                - type: object
+                                  properties: {}
                             - type: object
                               properties: {}
                         - type: object
@@ -8649,8 +8694,11 @@ paths:
                 - allOf:
                     - allOf:
                         - allOf:
-                            - type: object
-                              properties: {}
+                            - allOf:
+                                - type: object
+                                  properties: {}
+                                - type: object
+                                  properties: {}
                             - type: object
                               properties: {}
                         - type: object
@@ -9169,8 +9217,11 @@ paths:
                 - allOf:
                     - allOf:
                         - allOf:
-                            - type: object
-                              properties: {}
+                            - allOf:
+                                - type: object
+                                  properties: {}
+                                - type: object
+                                  properties: {}
                             - type: object
                               properties: {}
                         - type: object
@@ -9711,8 +9762,11 @@ paths:
                 - allOf:
                     - allOf:
                         - allOf:
-                            - type: object
-                              properties: {}
+                            - allOf:
+                                - type: object
+                                  properties: {}
+                                - type: object
+                                  properties: {}
                             - type: object
                               properties: {}
                         - type: object
@@ -10738,8 +10792,11 @@ paths:
                 - allOf:
                     - allOf:
                         - allOf:
-                            - type: object
-                              properties: {}
+                            - allOf:
+                                - type: object
+                                  properties: {}
+                                - type: object
+                                  properties: {}
                             - type: object
                               properties: {}
                         - type: object
@@ -11302,8 +11359,11 @@ paths:
                 - allOf:
                     - allOf:
                         - allOf:
-                            - type: object
-                              properties: {}
+                            - allOf:
+                                - type: object
+                                  properties: {}
+                                - type: object
+                                  properties: {}
                             - type: object
                               properties: {}
                         - type: object
@@ -11973,8 +12033,11 @@ paths:
                 - allOf:
                     - allOf:
                         - allOf:
-                            - type: object
-                              properties: {}
+                            - allOf:
+                                - type: object
+                                  properties: {}
+                                - type: object
+                                  properties: {}
                             - type: object
                               properties: {}
                         - type: object
@@ -12814,8 +12877,11 @@ paths:
                 - allOf:
                     - allOf:
                         - allOf:
-                            - type: object
-                              properties: {}
+                            - allOf:
+                                - type: object
+                                  properties: {}
+                                - type: object
+                                  properties: {}
                             - type: object
                               properties: {}
                         - type: object
@@ -13546,8 +13612,11 @@ paths:
                 - allOf:
                     - allOf:
                         - allOf:
-                            - type: object
-                              properties: {}
+                            - allOf:
+                                - type: object
+                                  properties: {}
+                                - type: object
+                                  properties: {}
                             - type: object
                               properties: {}
                         - type: object
