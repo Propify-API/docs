@@ -606,6 +606,10 @@ paths:
                       is_archived:
                         type: boolean
                         description: Whether or not the integration is archived
+                      ping_results:
+                        type: object
+                        additionalProperties:
+                          type: boolean
                     required:
                       - id
                       - created_at
@@ -620,6 +624,7 @@ paths:
                       - base_url
                       - customer_id
                       - is_archived
+                      - ping_results
                 required:
                   - result
         "400":
@@ -13710,5 +13715,14 @@ tags:
     description: Vendors
   - name: work-orders
     description: Work Orders
+
 servers:
   - url: https://api.getpropify.com
+
+
+
+
+
+
+
+
