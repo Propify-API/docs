@@ -13715,14 +13715,5 @@ tags:
     description: Vendors
   - name: work-orders
     description: Work Orders
-
 servers:
   - url: https://api.getpropify.com
-
-
-
-
-
-
-
-
