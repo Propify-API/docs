@@ -375,6 +375,7 @@ paths:
                             - YARDI
                             - RENTVINE
                             - REALPAGE_APP
+                            - MRI
                             - RESMAN
                           description: The property management system of record
                         active:
@@ -513,6 +514,7 @@ paths:
               - YARDI
               - RENTVINE
               - REALPAGE_APP
+              - MRI
               - RESMAN
       security:
         - APIKEY_1: []
@@ -560,6 +562,7 @@ paths:
                           - YARDI
                           - RENTVINE
                           - REALPAGE_APP
+                          - MRI
                           - RESMAN
                         description: The property management system of record
                       active:
@@ -689,6 +692,7 @@ paths:
                         - YARDI
                         - RENTVINE
                         - REALPAGE_APP
+                        - MRI
                         - RESMAN
                       description: The integration vendor
                     credentials:
@@ -830,6 +834,25 @@ paths:
                             - apiSecret
                             - companyId
                           description: Rentvine authentication credentials
+                        - type: object
+                          properties:
+                            clientId:
+                              type: string
+                            databaseName:
+                              type: string
+                            partnerKey:
+                              type: string
+                            username:
+                              type: string
+                            password:
+                              type: string
+                          required:
+                            - clientId
+                            - databaseName
+                            - partnerKey
+                            - username
+                            - password
+                          description: MRI authentication credentials
                       description: JSON encoded credentials for accessing the integration vendor API
                     name:
                       type: string
@@ -958,6 +981,7 @@ paths:
                           - YARDI
                           - RENTVINE
                           - REALPAGE_APP
+                          - MRI
                           - RESMAN
                         description: The property management system of record
                       active:
@@ -1133,6 +1157,7 @@ paths:
                           - YARDI
                           - RENTVINE
                           - REALPAGE_APP
+                          - MRI
                           - RESMAN
                         description: The property management system of record
                       active:
@@ -1260,6 +1285,7 @@ paths:
                         - YARDI
                         - RENTVINE
                         - REALPAGE_APP
+                        - MRI
                         - RESMAN
                       description: The integration vendor
                     credentials:
@@ -1401,6 +1427,25 @@ paths:
                             - apiSecret
                             - companyId
                           description: Rentvine authentication credentials
+                        - type: object
+                          properties:
+                            clientId:
+                              type: string
+                            databaseName:
+                              type: string
+                            partnerKey:
+                              type: string
+                            username:
+                              type: string
+                            password:
+                              type: string
+                          required:
+                            - clientId
+                            - databaseName
+                            - partnerKey
+                            - username
+                            - password
+                          description: MRI authentication credentials
                       description: JSON encoded credentials for accessing the integration vendor API
                     name:
                       type: string
@@ -2605,6 +2650,7 @@ paths:
                             - YARDI
                             - RENTVINE
                             - REALPAGE_APP
+                            - MRI
                             - RESMAN
                           description: The property management system of record
                       required:
@@ -2695,6 +2741,7 @@ paths:
               - YARDI
               - RENTVINE
               - REALPAGE_APP
+              - MRI
               - RESMAN
         - name: integration_id
           in: query
@@ -2810,6 +2857,7 @@ paths:
                         - YARDI
                         - RENTVINE
                         - REALPAGE_APP
+                        - MRI
                         - RESMAN
                   required:
                     - amenity
@@ -2995,6 +3043,7 @@ paths:
                         - YARDI
                         - RENTVINE
                         - REALPAGE_APP
+                        - MRI
                         - RESMAN
                   required:
                     - amenity
@@ -3479,6 +3528,7 @@ paths:
               - YARDI
               - RENTVINE
               - REALPAGE_APP
+              - MRI
               - RESMAN
       security:
         - APIKEY_1: []
@@ -4156,6 +4206,7 @@ paths:
               - YARDI
               - RENTVINE
               - REALPAGE_APP
+              - MRI
               - RESMAN
       security:
         - APIKEY_1: []
@@ -5202,6 +5253,7 @@ paths:
               - YARDI
               - RENTVINE
               - REALPAGE_APP
+              - MRI
               - RESMAN
       security:
         - APIKEY_1: []
@@ -6062,6 +6114,7 @@ paths:
                             - YARDI
                             - RENTVINE
                             - REALPAGE_APP
+                            - MRI
                             - RESMAN
                           description: The property management system of record
                       required:
@@ -6209,6 +6262,7 @@ paths:
               - YARDI
               - RENTVINE
               - REALPAGE_APP
+              - MRI
               - RESMAN
       security:
         - APIKEY_1: []
@@ -6695,6 +6749,7 @@ paths:
                           - YARDI
                           - RENTVINE
                           - REALPAGE_APP
+                          - MRI
                           - RESMAN
                         description: The property management system of record
                     required:
@@ -7337,6 +7392,7 @@ paths:
               - YARDI
               - RENTVINE
               - REALPAGE_APP
+              - MRI
               - RESMAN
       security:
         - APIKEY_1: []
@@ -7954,6 +8010,7 @@ paths:
               - YARDI
               - RENTVINE
               - REALPAGE_APP
+              - MRI
               - RESMAN
       security:
         - APIKEY_1: []
@@ -8849,6 +8906,7 @@ paths:
               - YARDI
               - RENTVINE
               - REALPAGE_APP
+              - MRI
               - RESMAN
       security:
         - APIKEY_1: []
@@ -9918,6 +9976,7 @@ paths:
               - YARDI
               - RENTVINE
               - REALPAGE_APP
+              - MRI
               - RESMAN
       security:
         - APIKEY_1: []
@@ -10667,6 +10726,7 @@ paths:
               - YARDI
               - RENTVINE
               - REALPAGE_APP
+              - MRI
               - RESMAN
       security:
         - APIKEY_1: []
@@ -11517,6 +11577,7 @@ paths:
               - YARDI
               - RENTVINE
               - REALPAGE_APP
+              - MRI
               - RESMAN
       security:
         - APIKEY_1: []
@@ -13036,6 +13097,7 @@ paths:
               - YARDI
               - RENTVINE
               - REALPAGE_APP
+              - MRI
               - RESMAN
       security:
         - APIKEY_1: []
