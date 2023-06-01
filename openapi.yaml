@@ -2761,7 +2761,7 @@ paths:
       description: Create an amenity for any integration. This is a convenience
         endpoint that acts as a generic proxy for all amenity creation
         endpoints.
-      summary: "*Create amenity for unit"
+      summary: Create amenity for unit
       tags:
         - amenities
       requestBody:
@@ -2769,6 +2769,98 @@ paths:
           application/json:
             schema:
               description: POST /v1/amenities/units/:id request body
+              allOf:
+                - allOf:
+                    - allOf:
+                        - allOf:
+                            - allOf:
+                                - allOf:
+                                    - type: object
+                                      properties: {}
+                                    - type: object
+                                      properties: {}
+                                - type: object
+                                  properties: {}
+                            - type: object
+                              properties: {}
+                        - type: object
+                          properties: {}
+                    - type: object
+                      properties: {}
+                - type: object
+                  properties:
+                    amenity:
+                      type: string
+                      description: The amenity name
+                    custom_data:
+                      type: object
+                      properties: {}
+                      description: Custom data
+                    integration_id:
+                      type: string
+                      format: cuid
+                    vendor:
+                      type: string
+                      enum:
+                        - BUILDIUM
+                        - ENTRATA
+                        - PROPERTYWARE
+                        - REALPAGE
+                        - RENTMANAGER
+                        - YARDI
+                        - RENTVINE
+                        - REALPAGE_APP
+                        - RESMAN
+                  required:
+                    - amenity
+                    - integration_id
+                    - vendor
+      security:
+        - APIKEY_1: []
+          APIKEY_2: []
+    put:
+      operationId: PutV1AmenitiesUnitsId
+      responses:
+        "200":
+          description: PUT /v1/amenities/units/:id Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+        "400":
+          description: PUT /v1/amenities/units/:id Error response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                      errors:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                    required:
+                      - message
+                      - errors
+                required:
+                  - error
+      description: Update an amenity for any integration. This is a convenience
+        endpoint that acts as a generic proxy for all amenity creation
+        endpoints.
+      summary: Update amenity for unit
+      tags:
+        - amenities
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: PUT /v1/amenities/units/:id request body
               allOf:
                 - allOf:
                     - allOf:
@@ -2862,6 +2954,98 @@ paths:
           application/json:
             schema:
               description: POST /v1/amenities/properties/:id request body
+              allOf:
+                - allOf:
+                    - allOf:
+                        - allOf:
+                            - allOf:
+                                - allOf:
+                                    - type: object
+                                      properties: {}
+                                    - type: object
+                                      properties: {}
+                                - type: object
+                                  properties: {}
+                            - type: object
+                              properties: {}
+                        - type: object
+                          properties: {}
+                    - type: object
+                      properties: {}
+                - type: object
+                  properties:
+                    amenity:
+                      type: string
+                      description: The amenity name
+                    custom_data:
+                      type: object
+                      properties: {}
+                      description: Custom data
+                    integration_id:
+                      type: string
+                      format: cuid
+                    vendor:
+                      type: string
+                      enum:
+                        - BUILDIUM
+                        - ENTRATA
+                        - PROPERTYWARE
+                        - REALPAGE
+                        - RENTMANAGER
+                        - YARDI
+                        - RENTVINE
+                        - REALPAGE_APP
+                        - RESMAN
+                  required:
+                    - amenity
+                    - integration_id
+                    - vendor
+      security:
+        - APIKEY_1: []
+          APIKEY_2: []
+    put:
+      operationId: PutV1AmenitiesPropertiesId
+      responses:
+        "200":
+          description: PUT /v1/amenities/properties/:id Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+        "400":
+          description: PUT /v1/amenities/properties/:id Error response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                      errors:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                    required:
+                      - message
+                      - errors
+                required:
+                  - error
+      description: Update an amenity for any integration. This is a convenience
+        endpoint that acts as a generic proxy for all amenity creation
+        endpoints.
+      summary: Update amenity for property
+      tags:
+        - amenities
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: PUT /v1/amenities/properties/:id request body
               allOf:
                 - allOf:
                     - allOf:
