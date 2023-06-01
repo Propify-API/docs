@@ -47,6 +47,17 @@
             "group": "API Reference",
             "pages": [
                 {
+                    "group": "Amenities",
+                    "pages": [
+                        "api-reference/amenities/create-units",
+                        "api-reference/amenities/create-properties",
+                        "api-reference/amenities/get-all",
+                        "api-reference/amenities/get-by-id",
+                        "api-reference/amenities/update-units",
+                        "api-reference/amenities/update-properties"
+                    ]
+                },
+                {
                     "group": "Applicants",
                     "pages": [
                         "api-reference/applicants/create",
