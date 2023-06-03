@@ -2950,6 +2950,7 @@ paths:
                         - YARDI
                         - RENTVINE
                         - REALPAGE_APP
+                        - MRI
                         - RESMAN
                   required:
                     - amenity
@@ -3136,6 +3137,7 @@ paths:
                         - YARDI
                         - RENTVINE
                         - REALPAGE_APP
+                        - MRI
                         - RESMAN
                   required:
                     - amenity
