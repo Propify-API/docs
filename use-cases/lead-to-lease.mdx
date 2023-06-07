@@ -16,8 +16,8 @@ If your business helps fill vacant units, you may find it valuable to share avai
 
 **1. Receive input from your UI about prospect requirements**
 
-**2. Read amenities from Propify API**
-```bash Request amenities
+**2. Read amenities from Propify API with a filter of `name_normalized` with a value of `INTERNET`**
+```bash
 curl --request GET \
   --url 'https://api.getpropify.com/v1/amenities?name_normalized=INTERNET' \
   --header 'propify-api-key: <propify-api-key>' \
@@ -52,8 +52,8 @@ curl --request GET \
 }
 ```
 
-**3. Read units from Propify API**
-```bash Request units
+**3. Read units from Propify API, filtering by `x_property_id` and the Propify `integration_id`**
+```bash
 curl --request GET \
   --url 'https://api.getpropify.com/v1/units?x_property_id=3456&integration_id=xyz' \
   --header 'propify-api-key: <propify-api-key>' \
