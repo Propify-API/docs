@@ -26,11 +26,16 @@
             "name": "API Reference",
             "icon": "rectangle-terminal",
             "url": "api-reference"
+        },
+        {
+            "name": "Use Cases",
+            "icon": "rectangle-terminal",
+            "url": "use-cases"
         }
     ],
     "navigation": [
         {
-            "group": "Home",
+            "group": "API Documentation",
             "pages": [
                 "introduction",
                 "authentication",
@@ -41,6 +46,12 @@
                 "sync-frequency",
                 "webhooks",
                 "write-requests"
+            ]
+        },
+        {
+        "group": "Use Cases",
+        "pages": [
+                "use-cases/charge-to-ledger"
             ]
         },
         {
