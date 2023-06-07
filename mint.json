@@ -51,7 +51,8 @@
         {
         "group": "Use Cases",
         "pages": [
-                "use-cases/charge-to-ledger"
+                "use-cases/charge-to-ledger",
+                "use-cases/lead-to-lease"
             ]
         },
         {

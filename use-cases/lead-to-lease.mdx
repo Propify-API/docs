@@ -1,0 +1,98 @@
+---
+title: "Lead to Lease"
+description: "Suggest compatible units to prospective residents"
+---
+
+## Workflow
+Recommend available units to prospective residents.
+
+## Relevant Business Types
+Listings, Leasing chatbot, Leasing automation.
+
+## Description
+If your business helps fill vacant units, you may find it valuable to share availabilities that align with the search criteria of prospective residents. 
+
+## Steps
+
+**1. Receive input from your UI about prospect requirements**
+
+**2. Read amenities from Propify API**
+```bash Request amenities
+curl --request GET \
+  --url 'https://api.getpropify.com/v1/amenities?name_normalized=INTERNET' \
+  --header 'propify-api-key: <propify-api-key>' \
+  --header 'propify-api-secret: <propify-api-secret>'
+```
+
+```json Sample amenities response payload
+{
+  "meta": {
+    "offset": 0,
+    "limit": 0,
+    "orderBy": [],
+    "hasMore": true
+  },
+  "results": [
+    {
+      "id": "<propify_id>",
+      "created_at": "2019-08-24T14:15:22Z",
+      "updated_at": "2019-08-24T14:15:22Z",
+      "x_id": "12345",
+      "x_listing_id": "98765",
+      "x_property_id": "3456",
+      "x_unit_id": "1234",
+      "cost_in_cents": 0,
+      "description": "High speed internet",
+      "image_urls": [],
+      "name_normalized": "INTERNET",
+      "name": "wifi",
+      "integration_id": "xyz"
+    }
+  ]
+}
+```
+
+**3. Read units from Propify API**
+```bash Request units
+curl --request GET \
+  --url 'https://api.getpropify.com/v1/units?x_property_id=3456&integration_id=xyz' \
+  --header 'propify-api-key: <propify-api-key>' \
+  --header 'propify-api-secret: <propify-api-secret>'
+```
+
+```json Sample units response payload
+{
+  "meta": {
+    "offset": 0,
+    "limit": 0,
+    "orderBy": [],
+    "hasMore": true
+  },
+  "results": [
+    {
+      "id": "<propify_id>",
+      "created_at": "2019-08-24T14:15:22Z",
+      "updated_at": "2019-08-24T14:15:22Z",
+      "x_id": "1234",
+      "x_property_id": "3456",
+      "bathrooms": "2",
+      "bedrooms": "2",
+      "city": "Boston",
+      "is_available": true,
+      "is_furnished": false,
+      "is_listed": true,
+      "is_vacant": true,
+      "rent_amount_market_in_cents": 500000,
+      "rent_amount_max_in_cents": 550000,
+      "rent_amount_min_in_cents": 350000,
+      "square_feet": 1012,
+      "state": "MA",
+      "street_address_1": "123 Main st",
+      "zip": "02108",
+      "integration_id": "xyz"
+    }
+  ]
+}
+```
+
+**4. Surface the matching units to prospect in your UI**
