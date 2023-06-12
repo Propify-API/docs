@@ -29,7 +29,7 @@
         },
         {
             "name": "Use Cases",
-            "icon": "rectangle-terminal",
+            "icon": "computer",
             "url": "use-cases"
         }
     ],
@@ -52,7 +52,8 @@
         "group": "Use Cases",
         "pages": [
                 "use-cases/charge-to-ledger",
-                "use-cases/lead-to-lease"
+                "use-cases/lead-to-lease",
+                "use-cases/create-lead"
             ]
         },
         {

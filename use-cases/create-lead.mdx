@@ -1,39 +1,44 @@
 ---
-title: "Charge to Ledger"
+title: "Create a Lead"
 description: ""
 ---
 
 ## Workflow
-Insert charge into resident payment ledger.
+Create a prospective tenant within property management system.
 
 ## Relevant Business Types
-Resident benefits & amenities, rent payments, security deposit alternatives, services that charge resident a fee.
+Listings, leasing chatbot, leasing automation, tenant screening, rental application.
 
 ## Description
-Your business may find it valuable to add charges directly to a resident's payment ledger. This allows residents to pay for your service from within the property management software while you can collect fees from the property management company. 
+If your business generates or screens prospective tenants to fill vacant units, adding these new contacts to property management software is an important step to ensure the site team is aware of the work you've done.
 
 ## Steps
 
-**Proptech generates a charge with associated metadata**
-```bash Example transaction for $50.00
+**Generate a new lead**
+```bash
 curl --request POST \
-  --url https://api.getpropify.com/v1/transactions \
+  --url https://api.getpropify.com/v1/leads \
   --header 'propify-api-key: <propify-api-key>' \
   --header 'propify-api-secret: <propify-api-secret>' \
   --data '{
     "integration_id": "<integration_id>",
-    "invoice_date": "2023-07-15",
-    "due_date": "2023-08-01",
-    "memo": "This is a charge for pet insurance",
-    "lines": [
-        {
-            "x_accounting_entity_type": "abc",
-            "x_accounting_entity_id": 123,
-            "x_gl_account_id": 456,
-            "amount_in_cents": 5000
-        }
-    ]
+    "last_name": "Doe",
+    "first_name": "Jane",
+    "email_1": "jane@doe.com",
+    "phone_1": "+16175551234",
+    "phone_1_type": "CELL"
 }'
 ```
 
-**That charge is pushed into the resident payment ledger, and will be collected by the property manager via the payment portal**
+**Update existing lead**
+```bash
+curl --request PUT \
+  --url 'https://api.getpropify.com/v1/leads/<lead_id>' \
+  --header 'propify-api-key: <propify-api-key>' \
+  --header 'propify-api-secret: <propify-api-secret>' \
+  --data '{
+    "last_name": "Doe",
+    "first_name": "Jill",
+    "email_1": "jill@doe.com"
+}'
+```
