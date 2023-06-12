@@ -9885,8 +9885,8 @@ paths:
     post:
       tags:
         - amenities
-      summary: Create amenity for unit
-      description: Create an amenity for any integration. This is a convenience
+      summary: Create Amenities - Units | Propify Documentation
+      description: Create a unit amenity for any integration. This is a convenience
         endpoint that acts as a generic proxy for all amenity creation
         endpoints.
       parameters:
@@ -9929,7 +9929,7 @@ paths:
                 - vendor
       responses:
         "200":
-          description: Create an amenity for any integration. This is a convenience
+          description: Create a unit amenity for any integration. This is a convenience
             endpoint that acts as a generic proxy for all amenity creation
             endpoints.
           content:
@@ -9942,8 +9942,10 @@ paths:
     put:
       tags:
         - applicants
-      summary: Update applicant
-      description: Update an applicant for an integration.
+      summary: Update amenities for unit
+      description: Update unit amenities for any integration. This is a convenience
+        endpoint that acts as a generic proxy for all amenity creation
+        endpoints.
       parameters:
         - schema:
             type: string
@@ -10023,7 +10025,9 @@ paths:
                 - id
       responses:
         "200":
-          description: Update an applicant for an integration.
+          description: Update unit amenities for any integration. This is a convenience
+            endpoint that acts as a generic proxy for all amenity creation
+            endpoints.
           content:
             application/json:
               schema:
@@ -10035,10 +10039,10 @@ paths:
     post:
       tags:
         - amenities
-      summary: "*Create amenity for property"
-      description: Create an amenity for any integration. This is a convenience
-        endpoint that acts as a generic proxy for all amenity creation
-        endpoints.
+      summary: Create amenity for property
+      description: Create a property amenity for any integration. This is a
+        convenience endpoint that acts as a generic proxy for all amenity
+        creation endpoints.
       parameters:
         - schema:
             type: string
@@ -10079,9 +10083,9 @@ paths:
                 - vendor
       responses:
         "200":
-          description: Create an amenity for any integration. This is a convenience
-            endpoint that acts as a generic proxy for all amenity creation
-            endpoints.
+          description: Create a property amenity for any integration. This is a
+            convenience endpoint that acts as a generic proxy for all amenity
+            creation endpoints.
           content:
             application/json:
               schema:
@@ -10092,8 +10096,10 @@ paths:
     put:
       tags:
         - applicants
-      summary: Update applicant
-      description: Update an applicant for an integration.
+      summary: Update amenities for property
+      description: Update property amenities for any integration. This is a
+        convenience endpoint that acts as a generic proxy for all amenity
+        creation endpoints.
       parameters:
         - schema:
             type: string
@@ -10202,7 +10208,9 @@ paths:
                 - id
       responses:
         "200":
-          description: Update an applicant for an integration.
+          description: Update property amenities for any integration. This is a
+            convenience endpoint that acts as a generic proxy for all amenity
+            creation endpoints.
           content:
             application/json:
               schema:
