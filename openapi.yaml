@@ -5,6 +5,9 @@ info:
 security:
   - propify-api-key: []
   - propify-api-secret: []
+servers:
+  - url: https://api.getpropify.com
+  - url: https://api.sandbox.getpropify.com
 components:
   schemas: {}
   parameters: {}
@@ -1073,7 +1076,18 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   "/v1/applicants/{id}":
@@ -1430,7 +1444,18 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   /v1/leads:
@@ -1877,7 +1902,18 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   "/v1/leads/{id}":
@@ -2285,7 +2321,18 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   /v1/leases:
@@ -2817,7 +2864,18 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   "/v1/leases/{id}":
@@ -3219,7 +3277,18 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   /v1/listings:
@@ -4725,7 +4794,18 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   "/v1/residents/{id}":
@@ -5160,7 +5240,18 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   /v1/transactions:
@@ -5538,7 +5629,18 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   "/v1/transactions/{id}":
@@ -6350,7 +6452,18 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   /v1/vendors:
@@ -6973,7 +7086,18 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   "/v1/vendors/{id}":
@@ -7569,7 +7693,18 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   /v1/work-orders:
@@ -8220,7 +8355,18 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   "/v1/work-orders/{id}":
@@ -8777,7 +8923,18 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   /v1/admin/logs/jobs:
@@ -9936,7 +10093,18 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
     put:
@@ -10032,7 +10200,18 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   "/v1/amenities/properties/{id}":
@@ -10090,7 +10269,18 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
     put:
@@ -10215,7 +10405,18 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   "/v1/admin/integrations/{integration_id}":
@@ -10894,7 +11095,18 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   "/v1/properties/{property_id}/units/{unit_id}":
@@ -10990,7 +11202,18 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   "/v1/admin/integrations/{integration_id}/job-schedules/{job_schedule_id}":
