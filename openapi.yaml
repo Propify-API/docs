@@ -518,6 +518,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -1099,6 +1100,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -1346,6 +1348,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -1925,6 +1928,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -2243,6 +2247,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -2887,6 +2892,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -3138,6 +3144,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -3593,6 +3600,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -4094,6 +4102,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -4817,6 +4826,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -5098,6 +5108,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -5652,6 +5663,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -6150,6 +6162,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -6373,6 +6386,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -7109,6 +7123,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -7461,6 +7476,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -8378,6 +8394,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -8797,6 +8814,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -9051,6 +9069,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -9844,6 +9863,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The unique identifier for the user
           required: true
           name: id
           in: path
@@ -9955,6 +9975,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The unique identifier for the user
           required: true
           name: id
           in: path
@@ -10049,6 +10070,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -10109,7 +10131,7 @@ paths:
           description: invalid input
     put:
       tags:
-        - applicants
+        - amenities
       summary: Update amenities for unit
       description: Update unit amenities for any integration. This is a convenience
         endpoint that acts as a generic proxy for all amenity creation
@@ -10117,6 +10139,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -10225,6 +10248,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -10285,7 +10309,7 @@ paths:
           description: invalid input
     put:
       tags:
-        - applicants
+        - amenities
       summary: Update amenities for property
       description: Update property amenities for any integration. This is a
         convenience endpoint that acts as a generic proxy for all amenity
@@ -10293,6 +10317,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -10428,6 +10453,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The integration id
           required: true
           name: integration_id
           in: path
@@ -10576,6 +10602,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The unique identifier for the integration
           required: true
           name: integration_id
           in: path
@@ -10889,6 +10916,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The unique identifier for the integration
           required: true
           name: integration_id
           in: path
@@ -11020,6 +11048,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: property_id
           in: path
@@ -11118,11 +11147,13 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: property_id
           in: path
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: unit_id
           in: path
@@ -11225,11 +11256,13 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The unique identifier for the integration
           required: true
           name: integration_id
           in: path
         - schema:
             type: string
+            description: The unique identifier for the job schedule
           required: true
           name: job_schedule_id
           in: path
@@ -11309,11 +11342,13 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The unique identifier for the integration
           required: true
           name: integration_id
           in: path
         - schema:
             type: string
+            description: The unique identifier for the job schedule
           required: true
           name: job_schedule_id
           in: path
