@@ -5,6 +5,9 @@ info:
 security:
   - propify-api-key: []
   - propify-api-secret: []
+servers:
+  - url: https://api.getpropify.com
+  - url: https://api.sandbox.getpropify.com
 components:
   schemas: {}
   parameters: {}
@@ -515,6 +518,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -1073,7 +1077,18 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   "/v1/applicants/{id}":
@@ -1085,6 +1100,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -1332,6 +1348,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -1430,7 +1447,18 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   /v1/leads:
@@ -1877,7 +1905,18 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   "/v1/leads/{id}":
@@ -1889,6 +1928,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -2207,6 +2247,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -2285,7 +2326,18 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   /v1/leases:
@@ -2817,7 +2869,18 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   "/v1/leases/{id}":
@@ -2829,6 +2892,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -3080,6 +3144,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -3219,7 +3284,18 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   /v1/listings:
@@ -3524,6 +3600,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -4025,6 +4102,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -4725,7 +4803,18 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   "/v1/residents/{id}":
@@ -4737,6 +4826,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -5018,6 +5108,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -5160,7 +5251,18 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   /v1/transactions:
@@ -5538,7 +5640,18 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   "/v1/transactions/{id}":
@@ -5550,6 +5663,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -6048,6 +6162,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -6271,6 +6386,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -6350,7 +6466,18 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   /v1/vendors:
@@ -6973,7 +7100,18 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   "/v1/vendors/{id}":
@@ -6985,6 +7123,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -7337,6 +7476,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -7569,7 +7709,18 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   /v1/work-orders:
@@ -8220,7 +8371,18 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   "/v1/work-orders/{id}":
@@ -8232,6 +8394,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -8651,6 +8814,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -8777,7 +8941,18 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   /v1/admin/logs/jobs:
@@ -8894,6 +9069,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -9687,6 +9863,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The unique identifier for the user
           required: true
           name: id
           in: path
@@ -9798,6 +9975,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The unique identifier for the user
           required: true
           name: id
           in: path
@@ -9885,13 +10063,14 @@ paths:
     post:
       tags:
         - amenities
-      summary: Create amenity for unit
-      description: Create an amenity for any integration. This is a convenience
+      summary: Create Amenities - Units | Propify Documentation
+      description: Create a unit amenity for any integration. This is a convenience
         endpoint that acts as a generic proxy for all amenity creation
         endpoints.
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -9929,24 +10108,38 @@ paths:
                 - vendor
       responses:
         "200":
-          description: Create an amenity for any integration. This is a convenience
+          description: Create a unit amenity for any integration. This is a convenience
             endpoint that acts as a generic proxy for all amenity creation
             endpoints.
           content:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
     put:
       tags:
-        - applicants
-      summary: Update applicant
-      description: Update an applicant for an integration.
+        - amenities
+      summary: Update amenities for unit
+      description: Update unit amenities for any integration. This is a convenience
+        endpoint that acts as a generic proxy for all amenity creation
+        endpoints.
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -10023,25 +10216,39 @@ paths:
                 - id
       responses:
         "200":
-          description: Update an applicant for an integration.
+          description: Update unit amenities for any integration. This is a convenience
+            endpoint that acts as a generic proxy for all amenity creation
+            endpoints.
           content:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   "/v1/amenities/properties/{id}":
     post:
       tags:
         - amenities
-      summary: "*Create amenity for property"
-      description: Create an amenity for any integration. This is a convenience
-        endpoint that acts as a generic proxy for all amenity creation
-        endpoints.
+      summary: Create amenity for property
+      description: Create a property amenity for any integration. This is a
+        convenience endpoint that acts as a generic proxy for all amenity
+        creation endpoints.
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -10079,24 +10286,38 @@ paths:
                 - vendor
       responses:
         "200":
-          description: Create an amenity for any integration. This is a convenience
-            endpoint that acts as a generic proxy for all amenity creation
-            endpoints.
+          description: Create a property amenity for any integration. This is a
+            convenience endpoint that acts as a generic proxy for all amenity
+            creation endpoints.
           content:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
     put:
       tags:
-        - applicants
-      summary: Update applicant
-      description: Update an applicant for an integration.
+        - amenities
+      summary: Update amenities for property
+      description: Update property amenities for any integration. This is a
+        convenience endpoint that acts as a generic proxy for all amenity
+        creation endpoints.
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: id
           in: path
@@ -10202,12 +10423,25 @@ paths:
                 - id
       responses:
         "200":
-          description: Update an applicant for an integration.
+          description: Update property amenities for any integration. This is a
+            convenience endpoint that acts as a generic proxy for all amenity
+            creation endpoints.
           content:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   "/v1/admin/integrations/{integration_id}":
@@ -10219,6 +10453,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The integration id
           required: true
           name: integration_id
           in: path
@@ -10367,6 +10602,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The unique identifier for the integration
           required: true
           name: integration_id
           in: path
@@ -10680,6 +10916,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The unique identifier for the integration
           required: true
           name: integration_id
           in: path
@@ -10811,6 +11048,7 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: property_id
           in: path
@@ -10886,7 +11124,18 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   "/v1/properties/{property_id}/units/{unit_id}":
@@ -10898,11 +11147,13 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: property_id
           in: path
         - schema:
             type: string
+            description: The ID of the resource.
           required: true
           name: unit_id
           in: path
@@ -10982,7 +11233,18 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   "/v1/admin/integrations/{integration_id}/job-schedules/{job_schedule_id}":
@@ -10994,11 +11256,13 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The unique identifier for the integration
           required: true
           name: integration_id
           in: path
         - schema:
             type: string
+            description: The unique identifier for the job schedule
           required: true
           name: job_schedule_id
           in: path
@@ -11078,11 +11342,13 @@ paths:
       parameters:
         - schema:
             type: string
+            description: The unique identifier for the integration
           required: true
           name: integration_id
           in: path
         - schema:
             type: string
+            description: The unique identifier for the job schedule
           required: true
           name: job_schedule_id
           in: path
