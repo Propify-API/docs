@@ -2579,7 +2579,11 @@ paths:
                             - INACTIVE
                             - OTHER
                             - PENDING
-                          description: The status of the lease
+                          description: The status of the lease. Yardi does not provide a lease status, so
+                            Propify provides this value as a derived value based
+                            on the comparison between the date the most recent
+                            data sync occurred and the lease start and end
+                            dates.
                         term:
                           type: string
                           nullable: true
@@ -3073,7 +3077,10 @@ paths:
                           - INACTIVE
                           - OTHER
                           - PENDING
-                        description: The status of the lease
+                        description: The status of the lease. Yardi does not provide a lease status, so
+                          Propify provides this value as a derived value based
+                          on the comparison between the date the most recent
+                          data sync occurred and the lease start and end dates.
                       term:
                         type: string
                         nullable: true
