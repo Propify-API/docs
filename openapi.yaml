@@ -2545,7 +2545,7 @@ paths:
                           type: integer
                           nullable: true
                           minimum: 0
-                          description: The day of the month the rent is due. *Not supported by all PMSs.
+                          description: The day of the month the rent is due.
                         rent_due_date:
                           type: string
                           nullable: true
@@ -3042,7 +3042,7 @@ paths:
                         type: integer
                         nullable: true
                         minimum: 0
-                        description: The day of the month the rent is due. *Not supported by all PMSs.
+                        description: The day of the month the rent is due.
                       rent_due_date:
                         type: string
                         nullable: true
