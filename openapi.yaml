@@ -801,7 +801,6 @@ paths:
                           description: The external ID from the integration vendor
                         x_property_id:
                           type: string
-                          nullable: true
                           description: The external ID of the property from the integration vendor
                         x_unit_id:
                           type: string
@@ -1177,7 +1176,6 @@ paths:
                         description: The external ID from the integration vendor
                       x_property_id:
                         type: string
-                        nullable: true
                         description: The external ID of the property from the integration vendor
                       x_unit_id:
                         type: string
@@ -1602,7 +1600,6 @@ paths:
                           description: The external ID of the leasing agent from the integration vendor
                         x_property_id:
                           type: string
-                          nullable: true
                           description: The external ID of the property from the integration vendor
                         x_unit_id:
                           type: string
@@ -2017,7 +2014,6 @@ paths:
                         description: The external ID of the leasing agent from the integration vendor
                       x_property_id:
                         type: string
-                        nullable: true
                         description: The external ID of the property from the integration vendor
                       x_unit_id:
                         type: string
@@ -2475,7 +2471,6 @@ paths:
                           description: The external ID from the integration vendor
                         x_property_id:
                           type: string
-                          nullable: true
                           description: The external ID of the property from the integration vendor
                         x_resident_id:
                           type: string
@@ -2550,7 +2545,7 @@ paths:
                           type: integer
                           nullable: true
                           minimum: 0
-                          description: The day of the month the rent is due
+                          description: The day of the month the rent is due. *Not supported by all PMSs.
                         rent_due_date:
                           type: string
                           nullable: true
@@ -2579,11 +2574,11 @@ paths:
                             - INACTIVE
                             - OTHER
                             - PENDING
-                          description: The status of the lease. Yardi does not provide a lease status, so
-                            Propify provides this value as a derived value based
-                            on the comparison between the date the most recent
-                            data sync occurred and the lease start and end
-                            dates.
+                          description: The status of the lease. Some PMS systems do not provide a lease
+                            status, so Propify provides this value as a derived
+                            value based on the comparison between the date the
+                            most recent data sync occurred and the lease start
+                            and end dates.
                         term:
                           type: string
                           nullable: true
@@ -2973,7 +2968,6 @@ paths:
                         description: The external ID from the integration vendor
                       x_property_id:
                         type: string
-                        nullable: true
                         description: The external ID of the property from the integration vendor
                       x_resident_id:
                         type: string
@@ -3048,7 +3042,7 @@ paths:
                         type: integer
                         nullable: true
                         minimum: 0
-                        description: The day of the month the rent is due
+                        description: The day of the month the rent is due. *Not supported by all PMSs.
                       rent_due_date:
                         type: string
                         nullable: true
@@ -3077,10 +3071,11 @@ paths:
                           - INACTIVE
                           - OTHER
                           - PENDING
-                        description: The status of the lease. Yardi does not provide a lease status, so
-                          Propify provides this value as a derived value based
-                          on the comparison between the date the most recent
-                          data sync occurred and the lease start and end dates.
+                        description: The status of the lease. Some PMS systems do not provide a lease
+                          status, so Propify provides this value as a derived
+                          value based on the comparison between the date the
+                          most recent data sync occurred and the lease start and
+                          end dates.
                       term:
                         type: string
                         nullable: true
@@ -5428,7 +5423,6 @@ paths:
                           description: The external ID of the lease from the integration vendor
                         x_property_id:
                           type: string
-                          nullable: true
                           description: The external ID of the property from the integration vendor
                         x_resident_id:
                           type: string
@@ -5756,7 +5750,6 @@ paths:
                         description: The external ID of the lease from the integration vendor
                       x_property_id:
                         type: string
-                        nullable: true
                         description: The external ID of the property from the integration vendor
                       x_resident_id:
                         type: string
@@ -6021,7 +6014,6 @@ paths:
                           description: The external ID from the integration vendor
                         x_property_id:
                           type: string
-                          nullable: true
                           description: The external ID of the property from the integration vendor
                         bathrooms:
                           type: string
@@ -6246,7 +6238,6 @@ paths:
                         description: The external ID from the integration vendor
                       x_property_id:
                         type: string
-                        nullable: true
                         description: The external ID of the property from the integration vendor
                       bathrooms:
                         type: string
@@ -6621,7 +6612,6 @@ paths:
                           description: The external ID from the integration vendor
                         x_property_id:
                           type: string
-                          nullable: true
                           description: The external ID of the property from the integration vendor
                         account_number:
                           type: string
@@ -7212,7 +7202,6 @@ paths:
                         description: The external ID from the integration vendor
                       x_property_id:
                         type: string
-                        nullable: true
                         description: The external ID of the property from the integration vendor
                       account_number:
                         type: string
@@ -7891,7 +7880,6 @@ paths:
                             order in cases where work orders have children
                         x_property_id:
                           type: string
-                          nullable: true
                           description: The external ID of the property from the integration vendor
                         x_resident_id:
                           type: string
@@ -8492,7 +8480,6 @@ paths:
                           order in cases where work orders have children
                       x_property_id:
                         type: string
-                        nullable: true
                         description: The external ID of the property from the integration vendor
                       x_resident_id:
                         type: string
