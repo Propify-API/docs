@@ -11429,12 +11429,10 @@ paths:
                       sync_cadence:
                         type: string
                         enum:
-                          - MINUTE
-                          - HOUR
                           - DAY
-                          - WEEK
+                          - HOUR
                           - MONTH
-                          - SECOND
+                          - WEEK
                         description: The sync cadence of the job schedule
                       parameters:
                         type: object
