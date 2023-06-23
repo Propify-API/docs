@@ -72,14 +72,12 @@ paths:
           in: query
         - schema:
             type: string
-            nullable: true
             description: Only show data diffs before this timestamp
           required: false
           name: before
           in: query
         - schema:
             type: string
-            nullable: true
             description: Only show data diffs after this timestamp
           required: false
           name: after
