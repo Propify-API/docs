@@ -3516,6 +3516,10 @@ paths:
                           type: string
                           nullable: true
                           description: The date the listing was created
+                        notes:
+                          type: string
+                          nullable: true
+                          description: Notes about the listing
                         number:
                           type: string
                           nullable: true
@@ -3580,6 +3584,7 @@ paths:
                         - is_vacant
                         - lease_term
                         - listing_date
+                        - notes
                         - number
                         - rent_amount_in_cents
                         - square_feet
@@ -3766,6 +3771,10 @@ paths:
                         type: string
                         nullable: true
                         description: The date the listing was created
+                      notes:
+                        type: string
+                        nullable: true
+                        description: Notes about the listing
                       number:
                         type: string
                         nullable: true
@@ -3830,6 +3839,7 @@ paths:
                       - is_vacant
                       - lease_term
                       - listing_date
+                      - notes
                       - number
                       - rent_amount_in_cents
                       - square_feet
