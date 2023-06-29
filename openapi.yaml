@@ -1461,6 +1461,71 @@ paths:
                   - data
         "400":
           description: invalid input
+  /v1/lead-events:
+    post:
+      tags:
+        - lead-events
+      summary: Create lead event
+      description: Create a lead event for an integration.
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                integration_id:
+                  type: string
+                lead_id:
+                  type: string
+                  description: The Propify ID of the lead to attached the new event to.
+                event_name:
+                  type: string
+                  enum:
+                    - E-mail
+                    - Event
+                    - Fax/Letter
+                    - Internet
+                    - Notes
+                    - Phone call
+                    - Pre-recorded - Tour
+                    - Self-guided - Tour
+                    - Signature
+                    - Text message
+                    - Videotelephony - Tour
+                    - Visit
+                    - Visit (return)
+                  description: The name of the event in Realpage. These are specific to Realpage.
+                event_datetime:
+                  type: string
+                  nullable: true
+                  description: The datetime that the event occured.
+                notes:
+                  type: string
+                  description: Notes to associate with the event.
+              required:
+                - integration_id
+      responses:
+        "200":
+          description: Create a lead event for an integration.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
+        "400":
+          description: invalid input
   /v1/leads:
     get:
       tags:
