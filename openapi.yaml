@@ -2543,6 +2543,9 @@ paths:
                         rent_amount_in_cents:
                           type: number
                           description: The rent amount in cents
+                        rent_amount_market_in_cents:
+                          type: number
+                          description: The market rent amount in cents
                         rent_due_day:
                           type: integer
                           nullable: true
@@ -2626,6 +2629,7 @@ paths:
                         - realized_move_in_date
                         - realized_move_out_date
                         - rent_amount_in_cents
+                        - rent_amount_market_in_cents
                         - rent_due_day
                         - rent_due_date
                         - scheduled_move_in_date
@@ -3040,6 +3044,9 @@ paths:
                       rent_amount_in_cents:
                         type: number
                         description: The rent amount in cents
+                      rent_amount_market_in_cents:
+                        type: number
+                        description: The market rent amount in cents
                       rent_due_day:
                         type: integer
                         nullable: true
@@ -3123,6 +3130,7 @@ paths:
                       - realized_move_in_date
                       - realized_move_out_date
                       - rent_amount_in_cents
+                      - rent_amount_market_in_cents
                       - rent_due_day
                       - rent_due_date
                       - scheduled_move_in_date
