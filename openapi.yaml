@@ -2917,7 +2917,7 @@ paths:
                 scheduled_move_out_date:
                   type: string
                   format: date-time
-                  description: The date that the resident is scheduled to move out
+                  description: The move out date
                 realized_move_in_date:
                   type: string
                   format: date-time
@@ -2929,7 +2929,36 @@ paths:
                 scheduled_move_in_date:
                   type: string
                   format: date-time
-                  description: The date that the resident intends to move in
+                  description: The move in date
+                unit_id:
+                  type: string
+                  description: The Propify unique identifier for the unit
+                leads:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      lead_id:
+                        type: string
+                        description: The Propify unique identifier for the lead
+                    required:
+                      - lead_id
+                  description: An array of Propify lead IDs
+                primary_contact_id:
+                  type: string
+                  description: The Propify unique identifier for the lead
+                property_id:
+                  type: string
+                  description: The Propify unique identifier for the property
+                status:
+                  type: string
+                  enum:
+                    - Draft
+                    - Active
+                    - Active - Notice Given
+                    - Terminated
+                    - Eviction
+                  description: The status of the lease
               required:
                 - integration_id
       responses:
