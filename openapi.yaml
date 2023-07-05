@@ -808,6 +808,11 @@ paths:
                           type: string
                           nullable: true
                           description: The external ID of the unit from the integration vendor
+                        x_lead_id:
+                          type: string
+                          nullable: true
+                          description: The external ID of the lead from the integration vendor. *Not
+                            supported by all PMSs
                         address_1_alternate:
                           type: string
                           nullable: true
@@ -933,6 +938,7 @@ paths:
                         - x_id
                         - x_property_id
                         - x_unit_id
+                        - x_lead_id
                         - address_1_alternate
                         - address_1
                         - address_2_alternate
@@ -1183,6 +1189,11 @@ paths:
                         type: string
                         nullable: true
                         description: The external ID of the unit from the integration vendor
+                      x_lead_id:
+                        type: string
+                        nullable: true
+                        description: The external ID of the lead from the integration vendor. *Not
+                          supported by all PMSs
                       address_1_alternate:
                         type: string
                         nullable: true
@@ -1308,6 +1319,7 @@ paths:
                       - x_id
                       - x_property_id
                       - x_unit_id
+                      - x_lead_id
                       - address_1_alternate
                       - address_1
                       - address_2_alternate
