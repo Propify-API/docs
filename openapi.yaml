@@ -3374,7 +3374,7 @@ paths:
                 scheduled_move_out_date:
                   type: string
                   format: date-time
-                  description: The date that the resident is scheduled to move out
+                  description: The move out date
                 realized_move_in_date:
                   type: string
                   format: date-time
@@ -3383,6 +3383,51 @@ paths:
                   type: string
                   format: date-time
                   description: The date that the resident moved out
+                lease_id:
+                  type: string
+                  description: The Propify unique identifier for the lease
+                unit_id:
+                  type: string
+                  description: The Propify unique identifier for the unit
+                contacts:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      contact_id:
+                        type: string
+                        description: The Propertyware ID of the Contact
+                      first_name:
+                        type: string
+                        description: The first name of the Contact
+                      last_name:
+                        type: string
+                        description: The last name of the Contact
+                    required:
+                      - contact_id
+                      - first_name
+                      - last_name
+                  description: A list of Propertware Contacts containing ID, first name, and last
+                    name
+                primary_contact_id:
+                  type: string
+                  description: The Propertware ID of the Primary Contact for the Lease
+                property_id:
+                  type: string
+                  description: The Propify unique identifier for the property
+                scheduled_move_in_date:
+                  type: string
+                  format: date-time
+                  description: The move in date
+                status:
+                  type: string
+                  enum:
+                    - Draft
+                    - Active
+                    - Active - Notice Given
+                    - Terminated
+                    - Eviction
+                  description: The status of the lease
               required:
                 - id
       responses:
