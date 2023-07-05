@@ -2336,62 +2336,128 @@ paths:
                   type: string
                 last_name:
                   type: string
-                  description: The last name of the prospect.  This value maps to the LastName
-                    property of the Prospect object
+                  description: The last name of the prospect.
                 first_name:
                   type: string
-                  description: The first name of the prospect.  This value maps to the FirstName
-                    property of the Prospect object
+                  description: The first name of the prospect.
                 email_1:
                   type: string
-                  format: email
-                  description: The primary email address for the prospect.  This value maps to the
-                    Email property of the Prospect object
+                  description: The email of the prospect
                 phone_1:
                   type: string
-                  description: Prospect's primary phone number.  This will be assumed to be a HOME
-                    phone number unless phone_1_type is also set.
+                  description: First phone number of the prospect.
                 phone_1_type:
                   type: string
                   enum:
-                    - HOME
-                    - WORK
-                    - MOBILE
                     - FAX
-                  description: The type of the prospect's primary phone number.  The value passed
-                    in here must be one of 'HOME', 'WORK', 'MOBILE', FAX'.
+                    - HOME
+                    - MOBILE
+                    - WORK
+                  description: Type of the first phone number. Required when updating phone
+                    number.
                 phone_2:
                   type: string
-                  description: Prospect's secondary phone number.  This will be assumed to be a
-                    MOBILE phone number unless phone_2_type is also set.
+                  description: Second phone number of the prospect.
                 phone_2_type:
                   type: string
                   enum:
-                    - HOME
-                    - WORK
-                    - MOBILE
                     - FAX
-                  description: The type of the prospect's secondary phone number.  The value
-                    passed in here must be one of 'HOME', 'WORK', 'MOBILE',
-                    FAX'.
+                    - HOME
+                    - MOBILE
+                    - OTHER
+                    - WORK
+                  description: Type of the second phone number. Required when updating phone
+                    number.
                 address_1:
                   type: string
-                  description: First line of the street address for the prospect.
+                  description: The first address line of the prospect.
                 address_2:
                   type: string
-                  description: Second line of the street address for the prospect.
+                  description: The second address line of the prospect.
                 city:
                   type: string
-                  description: The city that the prospect lives in.
+                  description: The city of the prospect's address.
                 state:
                   type: string
-                  description: State of the prospect's primary address.
+                  description: The state of the prospect's address.
                 zip:
                   type: string
-                  description: Zip/Postal Code of the prospect's primary address.
+                  description: The zip code of the prospect's address.
                 country:
                   type: string
-                  description: Country of the prospect's primary address
+                  description: The country of the prospect's address.
+                lead_id:
+                  type: string
+                  description: The Propify unique identifier for the lead
+                target_move_in_date:
+                  type: string
+                  pattern: \d{4}-\d{2}-\d{2}
+                  description: The target move in date for the prospect.
+                desired_unit_number:
+                  type: string
+                  description: The desired unit number of the prospect.
+                desired_num_bedrooms:
+                  type: number
+                  description: The desired number of bedrooms of the prospect.
+                desired_lease_term_in_months:
+                  type: string
+                  description: The desired lease term in months of the prospect.
+                notes:
+                  type: string
+                  description: General notes about this prospect.
+                events:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      event_name:
+                        type: string
+                        enum:
+                          - Other
+                          - WalkIn
+                          - Chat
+                          - Email
+                          - Text
+                          - Webservice
+                          - Appointment
+                          - Show
+                          - Application
+                          - SelfGuidedTour
+                        description: The name/type of the event. This has to be from a predefined set of
+                          Yardi events.
+                      event_datetime:
+                        type: string
+                        format: date-time
+                        description: The date and time that the event occured.
+                      notes:
+                        type: string
+                        maxLength: 256
+                        description: General notes about the event.
+                      agent_name:
+                        type: string
+                        description: The name of the agent associated with the address.
+                      lead_source:
+                        type: string
+                        description: The source of the lead associated with the lead event. This has to
+                          be from a preset list of lead sources that have to be
+                          registered inside of Yardi.
+                      reasons_for_event:
+                        type: string
+                        description: The reason the event occured.
+                      unit_id:
+                        type: string
+                        description: The Propify unit ID to associated with the lead event. Only some
+                          Yardi events use this, including "Show" and
+                          "Appointment".
+                      id:
+                        type: string
+                        description: The Propify ID of the lead event. Required if attempting to update
+                          an existing lead event.
+                    required:
+                      - event_name
+                      - event_datetime
+                      - agent_name
+                  description: Array of events associated with this lead.
               required:
                 - id
       responses:
