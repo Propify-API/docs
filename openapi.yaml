@@ -2644,6 +2644,7 @@ paths:
                             - INACTIVE
                             - OTHER
                             - PENDING
+                            - EVICTED
                           description: The status of the lease. Some PMS systems do not provide a lease
                             status, so Propify provides this value as a derived
                             value based on the comparison between the date the
@@ -3174,6 +3175,7 @@ paths:
                           - INACTIVE
                           - OTHER
                           - PENDING
+                          - EVICTED
                         description: The status of the lease. Some PMS systems do not provide a lease
                           status, so Propify provides this value as a derived
                           value based on the comparison between the date the
