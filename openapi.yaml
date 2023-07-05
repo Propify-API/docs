@@ -6258,6 +6258,98 @@ paths:
                   - results
         "400":
           description: invalid input
+    post:
+      tags:
+        - units
+      summary: "*Create unit"
+      description: Create a unit for a property.
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                number:
+                  type: string
+                  description: The unit number
+                bedrooms:
+                  type: string
+                  description: The number of bedrooms
+                bathrooms:
+                  type: string
+                  description: The number of bathrooms
+                square_feet:
+                  type: integer
+                  minimum: 0
+                  description: The square footage of the unit
+                building_number:
+                  type: string
+                  description: The building number
+                building_name:
+                  type: string
+                  description: The building name
+                floor_plan_code:
+                  type: string
+                  description: The floor plan code
+                floor_plan_name:
+                  type: string
+                  description: The floor plan name
+                floor:
+                  type: string
+                  description: Floor number/name
+                street_address_1:
+                  type: string
+                  description: The street address line 1
+                street_address_2:
+                  type: string
+                  description: The street address line 2
+                city:
+                  type: string
+                  description: The city
+                state:
+                  type: string
+                  description: The state
+                zip:
+                  type: string
+                  description: The zip code
+                is_available:
+                  type: boolean
+                  description: Whether the unit is available
+                is_furnished:
+                  type: boolean
+                  description: Whether the unit is furnished
+                is_listed:
+                  type: boolean
+                  description: Whether the unit is listed
+                is_vacant:
+                  type: boolean
+                  description: Whether the unit is vacant
+                custom_data:
+                  type: object
+                  properties: {}
+                  description: Custom data
+      responses:
+        "200":
+          description: Create a unit for a property.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
+        "400":
+          description: invalid input
   "/v1/units/{id}":
     get:
       tags:
