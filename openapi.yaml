@@ -4211,6 +4211,43 @@ paths:
                   - results
         "400":
           description: invalid input
+    post:
+      tags:
+        - properties
+      summary: Create property
+      description: Create a property for an integration.
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                integration_id:
+                  type: string
+              required:
+                - integration_id
+      responses:
+        "200":
+          description: Create a property for an integration.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
+        "400":
+          description: invalid input
   "/v1/properties/{id}":
     get:
       tags:
@@ -4436,6 +4473,117 @@ paths:
                 required:
                   - meta
                   - results
+        "400":
+          description: invalid input
+    put:
+      tags:
+        - properties
+      summary: Update property
+      description: Update a property for an integration.
+      parameters:
+        - schema:
+            type: string
+            description: The ID of the resource.
+          required: true
+          name: id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                integration_id:
+                  type: string
+                property_id:
+                  type: string
+                  description: The Propify unique identifier for the property
+                abbreviation:
+                  type: string
+                  description: "The abbreviation of the property. Example: PROP1"
+                name:
+                  type: string
+                  description: "The name of the property. Example: Property 1"
+                street_address_1:
+                  type: string
+                  description: The first address line associated with the property
+                street_address_2:
+                  type: string
+                  description: The second address line associated with the property
+                zip:
+                  type: string
+                  description: The zip code associated with the property
+                city:
+                  type: string
+                  description: The city associated with the property
+                county:
+                  type: string
+                  description: The county associated with the property
+                state:
+                  type: string
+                  description: The state associated with the property
+                country:
+                  type: string
+                  description: The country associated with the property
+                website:
+                  type: string
+                  description: The website associated with the property
+                square_footage:
+                  type: string
+                  description: The size of the property in square feet
+                is_active:
+                  type: string
+                  description: Whether or not the property is currently active
+                notes:
+                  type: string
+                  description: General notes about the property
+                year_built:
+                  type: number
+                  description: The year the property was built
+                category:
+                  type: string
+                  enum:
+                    - Residential
+                    - Commercial
+                  description: The category of the property. This is from a limited set of data
+                    that Propertyware requires.
+                type:
+                  type: string
+                  enum:
+                    - Apartment
+                    - Condo
+                    - Commercial
+                    - Du/Fourplex
+                    - House
+                    - Section 8/Affordable
+                    - Senior
+                    - Short-term/vacation
+                    - Student
+                    - Townhouse
+                    - Other
+                  description: The type of the property. This is from a limited set of data that
+                    Propertyware requires.
+              required:
+                - integration_id
+      responses:
+        "200":
+          description: Update a property for an integration.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id:
+                    type: string
+                    description: The ID of the job created to handle this operation
+                  data:
+                    type: object
+                    properties: {}
+                    description: Returned data from the operation. This is dependent on the vendor
+                      specific endpoint's returned data.
+                required:
+                  - job_id
+                  - data
         "400":
           description: invalid input
   /v1/residents:
