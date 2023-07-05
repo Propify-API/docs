@@ -2644,7 +2644,6 @@ paths:
                             - INACTIVE
                             - OTHER
                             - PENDING
-                            - EVICTED
                           description: The status of the lease. Some PMS systems do not provide a lease
                             status, so Propify provides this value as a derived
                             value based on the comparison between the date the
@@ -3175,7 +3174,6 @@ paths:
                           - INACTIVE
                           - OTHER
                           - PENDING
-                          - EVICTED
                         description: The status of the lease. Some PMS systems do not provide a lease
                           status, so Propify provides this value as a derived
                           value based on the comparison between the date the
@@ -3620,6 +3618,10 @@ paths:
                           type: string
                           nullable: true
                           description: The date the listing was created
+                        notes:
+                          type: string
+                          nullable: true
+                          description: Notes about the listing
                         number:
                           type: string
                           nullable: true
@@ -3684,6 +3686,7 @@ paths:
                         - is_vacant
                         - lease_term
                         - listing_date
+                        - notes
                         - number
                         - rent_amount_in_cents
                         - square_feet
@@ -3870,6 +3873,10 @@ paths:
                         type: string
                         nullable: true
                         description: The date the listing was created
+                      notes:
+                        type: string
+                        nullable: true
+                        description: Notes about the listing
                       number:
                         type: string
                         nullable: true
@@ -3934,6 +3941,7 @@ paths:
                       - is_vacant
                       - lease_term
                       - listing_date
+                      - notes
                       - number
                       - rent_amount_in_cents
                       - square_feet
