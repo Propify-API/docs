@@ -342,7 +342,7 @@ paths:
                         name_normalized:
                           type: string
                           nullable: true
-                          enum: &a1
+                          enum:
                             - ACCENT_WALLS
                             - ADDITIONAL_STORAGE
                             - AIR_CON
@@ -636,7 +636,138 @@ paths:
                       name_normalized:
                         type: string
                         nullable: true
-                        enum: *a1
+                        enum:
+                          - ACCENT_WALLS
+                          - ADDITIONAL_STORAGE
+                          - AIR_CON
+                          - AIR_CONDITIONING_COMMERCIAL
+                          - AIR_CONDITIONING
+                          - ALARM
+                          - APPLIANCES_INCLUDED
+                          - AVAILABILITY_24_HOURS
+                          - BALCONY_OR_DECK_OR_PATIO
+                          - BALCONY
+                          - BASKETBALL_COURT
+                          - BEACH_ACCESS
+                          - BILINGUAL
+                          - BOAT_DOCKS
+                          - BROADBAND_INTERNET
+                          - BUSINESS_CENTER
+                          - CABLE_READY_COMMERCIAL
+                          - CABLE_READY
+                          - CABLE
+                          - CAR_WASH_AREA
+                          - CARPET
+                          - CARPORT
+                          - CEILING_FAN
+                          - CHILD_CARE
+                          - CLUB_DISCOUNT
+                          - CLUB_HOUSE
+                          - CONCIERGE
+                          - CONFERENCE_ROOM
+                          - CONTROLLED_ACCESS
+                          - COURTYARD
+                          - DISHWASHER
+                          - DISPOSAL
+                          - DOCK_HIGH_DOORS_OR_LOADING_AVAILABLE
+                          - DOOR_ATTENDANT
+                          - DOUBLE_SINK_VANITY
+                          - DRYER
+                          - ELECTRIC
+                          - ELEVATOR
+                          - FENCED_YARD
+                          - FIREPLACE
+                          - FITNESS_CENTER
+                          - FRAMED_MIRRORS
+                          - FREE_WEIGHTS
+                          - FURNISHED_AVAILABLE
+                          - FURNISHED
+                          - GAMING_STATIONS
+                          - GARAGE_PARKING
+                          - GARAGE
+                          - GAS
+                          - GATE
+                          - GROCERY_SERVICE
+                          - GRILL
+                          - GROUP_EXERCISE
+                          - GUEST_ROOM
+                          - HANDRAILS
+                          - HARDWOOD_FLOORS
+                          - HEAT_ELECTRIC
+                          - HEAT_GAS
+                          - HEAT_OIL
+                          - HEAT
+                          - HEATING
+                          - HIGH_SPEED_INTERNET_COMMERCIAL
+                          - HIGH_SPEED_INTERNET
+                          - HOT_WATER
+                          - HOUSE_SITTING
+                          - HOUSEKEEPING
+                          - INDIVIDUAL_CLIMATE_CONTROL
+                          - ISLAND_KITCHEN
+                          - JOGGING_WALKING_TRAILS
+                          - LAKE_ACCESS
+                          - LAKE_FRONT
+                          - LAUNDRY_ROOM_OR_HOOKUPS
+                          - LAUNDRY_ROOM
+                          - LIBRARY
+                          - LINEN_CLOSET
+                          - MEAL_SERVICE
+                          - MEDIA_ROOM
+                          - MICROWAVE
+                          - MULTI_USE_ROOM
+                          - NIGHT_PATROL
+                          - ON_SITE_MAINTENANCE
+                          - ON_SITE_MANAGEMENT
+                          - OTHER
+                          - OVEN_OR_RANGE
+                          - PACKAGE_RECEIVING
+                          - PANTRY
+                          - PARKING_COMMERCIAL
+                          - PARKING
+                          - PER_DIEM_ACCEPTED
+                          - PETS_ALLOWED
+                          - PLAY_GROUND
+                          - POOL
+                          - POWER
+                          - PRIVATE_BALCONY
+                          - PRIVATE_PATIO
+                          - RACQUETBALL
+                          - REC_ROOM
+                          - RECYCLING
+                          - REFRIGERATOR
+                          - SATELLITE
+                          - SAUNA
+                          - SECURITY
+                          - SEWER
+                          - SHORT_TERM_LEASE
+                          - SKYLIGHT
+                          - SMOKE_FREE
+                          - SPA
+                          - SPRINKLER_SYSTEM
+                          - STORAGE_UNITS
+                          - SUNDECK
+                          - TELEPHONE
+                          - TENNIS_COURT
+                          - TILE_FLOORING
+                          - TRANSPORTATION
+                          - TRASH
+                          - TV_LOUNGE
+                          - VALET_TRASH
+                          - VAULTED_CEILING
+                          - VIEW
+                          - VINTAGE
+                          - VINYL_FLOORING
+                          - VOLLEYBALL_COURT
+                          - WALK_IN_CLOSETS
+                          - WASHER
+                          - WATER
+                          - WD_HOOKUP
+                          - WD_IN_UNIT
+                          - WHEEL_CHAIR
+                          - WHEELCHAIR_ACCESS
+                          - WINDOW_COVERINGS
+                          - WIRELESS_INTERNET
                         description: Name of the amenity
                       name:
                         type: string
@@ -996,31 +1127,29 @@ paths:
                     property of the Application object.
                 first_name:
                   type: string
-                  description: The first name of the resident.  This value maps to both the
-                    FirstName and PrimaryContact.FirstName properties of the
-                    Tenant object
+                  description: The first name of the applicant.  This value maps to the firstName
+                    property of the Applicant object.
                 last_name:
                   type: string
-                  description: The last name of the resident.  This value maps to both the
-                    LastName and PrimaryContact.LastName properties of the
-                    Tenant object
+                  description: The last name of the applicant.  This value maps to the lastName
+                    property of the Applicant object
                 x_unit_id:
                   type: string
                   description: The unit ID to associate the applicant with
                 email_1:
                   type: string
                   format: email
-                  description: The primary email address for the resident.  This value maps to the
-                    PrimaryContact.Email property of the Tenant object
+                  description: The primary email address for the applicant.  This value maps to
+                    the email property of the Applicant object
                 date_of_birth:
                   type: string
                   format: date-time
-                  description: The date of birth of the resident.  This value maps to the
-                    PrimaryContact.DateOfBirth property of the Tenant object.
+                  description: Date of birth of the applicant.  This maps to the birthDate
+                    property of the Applicant object.
                 address_1:
                   type: string
-                  description: Street address for the resident. This maps to the Street property
-                    of the primary address of the Tenant object
+                  description: First line of the street address for the applicant. This maps to
+                    the addressLine1 property of the Applicant's primary address
                 address_2:
                   type: string
                   description: Second line of the street address for the applicant.  This maps to
@@ -1028,17 +1157,20 @@ paths:
                     address.
                 city:
                   type: string
-                  description: City of the resident's primary address
+                  description: City of the applicant's primary address. This maps to the city
+                    property of the Applicant's primary address.
                 state:
                   type: string
-                  description: State of the resident's primary address
+                  description: State of the resident's primary address. This maps to the stateCode
+                    property of the Applicant's primary address.
                 zip:
                   type: string
-                  description: Zip/Postal Code of the resident's primary address
+                  description: Zip/Postal Code of the resident's primary address. This maps to the
+                    postalCode property of the Applicant's primary address.
                 phone_1:
                   type: string
-                  description: Applicant's primary phone number.  This will be assumed to be a
-                    HOME phone number unless phone_1_type is also set.
+                  description: Applicant's primary phone number. This maps to the phoneNumber
+                    property of the Applicant object.
                 phone_1_type:
                   type: string
                   enum:
@@ -1047,7 +1179,9 @@ paths:
                     - MOBILE
                     - FAX
                   description: The type of the applicant's primary phone number.  The value passed
-                    in here must be one of 'HOME', 'WORK', 'MOBILE', FAX'.
+                    in here must be one of 'HOME', 'WORK', 'MOBILE', FAX'. This
+                    maps to the phoneNumberTypeId property of the Applicant
+                    object.
                 custom_data:
                   type: object
                   properties: {}
@@ -1059,8 +1193,8 @@ paths:
                     online application form. Defaults to FALSE.
                 phone_2:
                   type: string
-                  description: Applicant's secondary phone number.  This will be assumed to be a
-                    MOBILE phone number unless phone_2_type is also set.
+                  description: Applicant's secondary phone number. This maps to the phoneNumber
+                    property of the Applicant object.
                 phone_2_type:
                   type: string
                   enum:
@@ -1070,11 +1204,18 @@ paths:
                     - FAX
                   description: The type of the applicant's secondary phone number.  The value
                     passed in here must be one of 'HOME', 'WORK', 'MOBILE',
-                    FAX'.
+                    FAX'. This maps to the phoneNumberTypeId property of the
+                    Applicant object.
                 middle_name:
                   type: string
                   description: The middle name of the resident.  This value maps to the
                     PrimaryContact.MiddleName property of the Tenant object
+                property_id:
+                  type: string
+                  description: The Propify unique identifier for the property
+                unit_id:
+                  type: string
+                  description: The Propify unique identifier for the unit
               required:
                 - integration_id
       responses:
@@ -2423,6 +2564,7 @@ paths:
                           - Show
                           - Application
                           - SelfGuidedTour
+                          - Application
                         description: The name/type of the event. This has to be from a predefined set of
                           Yardi events.
                       event_datetime:
