@@ -2878,6 +2878,9 @@ paths:
                           type: string
                           nullable: true
                           description: The type of lease
+                        unit_id:
+                          type: string
+                          description: The Propify unique identifier for the unit
                         property_id:
                           type: string
                           description: The Propify unique identifier for the property
@@ -2925,6 +2928,7 @@ paths:
                         - status
                         - term
                         - type
+                        - unit_id
                         - property_id
                         - integration_id
                         - integration_vendor
@@ -3409,6 +3413,9 @@ paths:
                         type: string
                         nullable: true
                         description: The type of lease
+                      unit_id:
+                        type: string
+                        description: The Propify unique identifier for the unit
                       property_id:
                         type: string
                         description: The Propify unique identifier for the property
@@ -3456,6 +3463,7 @@ paths:
                       - status
                       - term
                       - type
+                      - unit_id
                       - property_id
                       - integration_id
                       - integration_vendor
