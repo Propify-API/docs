@@ -1216,6 +1216,29 @@ paths:
                 unit_id:
                   type: string
                   description: The Propify unique identifier for the unit
+                files:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      file_data:
+                        type: string
+                        maxLength: 15960000
+                        description: The contents of the file, as a base64 encoded string. Propertyware
+                          has a max file size of 12 MB.
+                      file_name:
+                        type: string
+                        description: The name of the file
+                      notes:
+                        type: string
+                        description: General notes about the file
+                      is_private:
+                        type: boolean
+                        description: If the file should be marked as private in Propertyware
+                    required:
+                      - file_data
+                      - file_name
+                  description: Files to upload to the applicant.
               required:
                 - integration_id
       responses:
