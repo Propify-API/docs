@@ -9494,14 +9494,15 @@ paths:
                     work order. Maps to the "InvoiceNumber" field in Buildium
                 permission_to_enter:
                   type: boolean
-                  description: Whether the maintenance team has permission to enter the premises
+                  description: Boolean indicating if authorized to enter property
                 vendor_notes:
                   type: string
                   description: Notes from the vendor. Maps to the "closingComments" field in
                     Entrata
                 work_details:
                   type: string
-                  description: A full description of the work order
+                  description: Description of the work order. Maps to the "notes" field in
+                    Propertyware
                 x_resident_id:
                   type: string
                   description: Resident unique identifier. Maps to the "customerId" field in
@@ -9525,8 +9526,7 @@ paths:
                 completed_date:
                   type: string
                   format: date-time
-                  description: The completed date associated with the request. Maps to the
-                    "completedDateTime" field in Entrata
+                  description: The date the work order was completed
                 due_date:
                   type: string
                   format: date-time
@@ -9557,13 +9557,11 @@ paths:
                 scheduled_end_date:
                   type: string
                   format: date-time
-                  description: The scheduled end date assigned to the request. Maps to the
-                    "AssignedCloseDate" field in RentManager
+                  description: The date the work order is scheduled to end
                 scheduled_start_date:
                   type: string
                   format: date-time
-                  description: The scheduled start date assigned to the request. Maps to the
-                    "AssignedOpenDate" field in RentManager
+                  description: The date the work is scheduled to start
                 status_id:
                   type: string
                   description: The unique identifier of the status associated with the request.
@@ -9588,6 +9586,60 @@ paths:
                 task_title:
                   type: string
                   description: The title of the work order
+                work_order_id:
+                  type: string
+                  description: The Propify unique identifier for the work order
+                property_id:
+                  type: string
+                  description: The Propify unique identifier for the property
+                unit_id:
+                  type: string
+                  description: The Propify unique identifier for the unit
+                vendor_id:
+                  type: string
+                  description: The Propify unique identifier for the vendor
+                lease_id:
+                  type: string
+                  description: The Propify unique identifier for the lease
+                requested_by:
+                  type: string
+                  description: The name of the person who requested the work order
+                total_cost_in_cents:
+                  type: number
+                  description: The total cost in cents
+                category:
+                  type: string
+                  description: The category used to classify the work order
+                created_date:
+                  type: string
+                  format: date-time
+                  description: The date the work order was created
+                entry_date:
+                  type: string
+                  format: date-time
+                  description: The date to enter the property
+                problem:
+                  type: string
+                  description: Description of the problem
+                total_time_in_minutes:
+                  type: number
+                  description: The total hours worked in minutes
+                priority:
+                  type: string
+                  description: The priority of the work order, either low, medium, or high
+                status:
+                  type: string
+                  description: The current status of the work order
+                type:
+                  type: string
+                  enum:
+                    - General
+                    - Service Request
+                    - Turnover
+                    - Inspection
+                    - Estimate
+                  description: "The type of work order: General, Service Request, Turnover,
+                    Inpsection, or Estimate"
               required:
                 - id
       responses:
