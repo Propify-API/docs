@@ -5707,42 +5707,51 @@ paths:
                   type: string
                 last_name:
                   type: string
-                  description: The last name of the resident.
+                  description: The last name of the resident.  This value maps to the lastName
+                    property of the Contact object
                 first_name:
                   type: string
-                  description: The first name of the resident.
+                  description: The first name of the resident.  This value maps to the firstName
+                    property of the Contact object
                 email_1:
                   type: string
                   format: email
-                  description: The primary email address for the resident.
+                  description: The primary email address for the resident.  This value maps to the
+                    email property of the Contact object
                 email_2:
                   type: string
                   format: email
-                  description: An alternate email address for the resident. This value maps to the
-                    AlternateEmail property of the Tenant object.
+                  description: The secondary email address for the resident.  This value maps to
+                    the altEmail property of the Contact object
                 date_of_birth:
                   type: string
                   format: date-time
                   description: The date of birth of the resident.  This value maps to the
-                    PrimaryContact.DateOfBirth property of the Tenant object.
+                    birthDate property of the Contact object.
                 address_1:
                   type: string
-                  description: Street address for the resident.
+                  description: First line of the street address for the resident. This maps to the
+                    address property of Contact object
                 address_2:
                   type: string
-                  description: Street address for the resident.
+                  description: Second line of the street address for the resident.  This maps to
+                    the address2 property of the Contact object
                 city:
                   type: string
-                  description: City of the resident's primary address
+                  description: City of the resident's address. This maps to the city property of
+                    the Contact object.
                 state:
                   type: string
-                  description: State of the resident's primary address
+                  description: State of the resident's address. This maps to the state property of
+                    the Contact object.
                 zip:
                   type: string
-                  description: Zip/Postal Code of the resident's primary address
+                  description: Zip/Postal Code of the resident's address. This maps to the zip
+                    property of the Contact object.
                 country:
                   type: string
-                  description: Country of the resident's primary address
+                  description: Country of the resident's address.  This maps to the country
+                    property of the Contact object
                 address_1_alternate:
                   type: string
                   description: Secondary/alternate street address for the resident. This maps to
@@ -5771,42 +5780,44 @@ paths:
                     https://developer.buildium.com/#operation/RentalTenantsExternalApi_CreateRentalTenant
                 notes:
                   type: string
-                  description: Any notes on the resident.  This value maps to the Comment property
-                    of the Tenant object.
+                  description: Any notes about the resident. This maps to the comments property of
+                    the Contact object
                 phone_1:
                   type: string
-                  description: Resident's primary phone number.  This will be assumed to be a HOME
-                    phone number unless phone_1_type is also set.
+                  description: Primary phone number for the resident.  Depending on the value of
+                    phone_1_type, this may map to the properties fax, homePhone,
+                    mobilePhone, or workPhone.
                 phone_1_type:
                   type: string
                   enum:
                     - HOME
-                    - WORK
                     - MOBILE
+                    - WORK
                     - FAX
-                  description: The type of the resident's primary phone number.  The value passed
-                    in here must be one of 'HOME', 'WORK', 'MOBILE', FAX'.
+                  description: The type of the primary phone. Must be one of 'HOME', 'MOBILE',
+                    'WORK', or 'FAX'
                 phone_2:
                   type: string
-                  description: Resident's secondary phone number.  This will be assumed to be a
-                    MOBILE phone number unless phone_2_type is also set.
+                  description: Secondary phone number for the resident.  Depending on the value of
+                    phone_1_type, this may map to the properties fax, homePhone,
+                    mobilePhone, or workPhone.
                 phone_2_type:
                   type: string
                   enum:
                     - HOME
-                    - WORK
                     - MOBILE
+                    - WORK
                     - FAX
-                  description: The type of the resident's secondary phone number.  The value
-                    passed in here must be one of 'HOME', 'WORK', 'MOBILE',
-                    FAX'.
+                  description: The type of the secondary phone. Must be one of 'HOME', 'MOBILE',
+                    'WORK', or 'FAX'
                 custom_data:
                   type: object
                   properties: {}
                   description: Custom data
                 middle_name:
                   type: string
-                  description: The middle name of the resident.
+                  description: The middle name of the resident.  This value maps to the middleName
+                    property of the Contact object
                 x_property_id:
                   type: string
                   description: The property ID with which to associate the resident. This is the
@@ -5827,6 +5838,9 @@ paths:
                   maximum: 31
                   description: Day of the month on which the tenant's rent is due.  Maps to the
                     RentDueDay property of the Tenant object
+                resident_id:
+                  type: string
+                  description: The Propify unique identifier for the resident
               required:
                 - id
       responses:
