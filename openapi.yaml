@@ -2518,22 +2518,22 @@ paths:
                   description: The first name of the prospect.
                 email_1:
                   type: string
-                  description: The email of the prospect
+                  description: The primary email address for the prospect.
                 phone_1:
                   type: string
-                  description: First phone number of the prospect.
+                  description: Prospect's primary phone number.
                 phone_1_type:
                   type: string
                   enum:
                     - FAX
                     - HOME
                     - MOBILE
+                    - OTHER
                     - WORK
-                  description: Type of the first phone number. Required when updating phone
-                    number.
+                  description: The type of the prospect's primary phone number.
                 phone_2:
                   type: string
-                  description: Second phone number of the prospect.
+                  description: Prospect's secondary phone number.
                 phone_2_type:
                   type: string
                   enum:
@@ -2542,26 +2542,25 @@ paths:
                     - MOBILE
                     - OTHER
                     - WORK
-                  description: Type of the second phone number. Required when updating phone
-                    number.
+                  description: The type of the prospect's secondary phone number.
                 address_1:
                   type: string
-                  description: The first address line of the prospect.
+                  description: First line of the street address for the prospect.
                 address_2:
                   type: string
-                  description: The second address line of the prospect.
+                  description: Second line of the street address for the prospect.
                 city:
                   type: string
-                  description: The city of the prospect's address.
+                  description: The city that the prospect lives in.
                 state:
                   type: string
-                  description: The state of the prospect's address.
+                  description: State of the prospect's primary address.
                 zip:
                   type: string
-                  description: The zip code of the prospect's address.
+                  description: Zip/Postal Code of the prospect's primary address.
                 country:
                   type: string
-                  description: The country of the prospect's address.
+                  description: Country of the prospect's primary address
                 lead_id:
                   type: string
                   description: The Propify unique identifier for the lead
@@ -2574,13 +2573,13 @@ paths:
                   description: The desired unit number of the prospect.
                 desired_num_bedrooms:
                   type: number
-                  description: The desired number of bedrooms of the prospect.
+                  description: The desired number of bedrooms the prospect would like.
                 desired_lease_term_in_months:
                   type: string
                   description: The desired lease term in months of the prospect.
                 notes:
                   type: string
-                  description: General notes about this prospect.
+                  description: General notes about the prospect.
                 events:
                   type: array
                   items:
@@ -2635,6 +2634,30 @@ paths:
                       - event_datetime
                       - agent_name
                   description: Array of events associated with this lead.
+                middle_name:
+                  type: string
+                  description: The middle name of the prospect.
+                lead_source:
+                  type: string
+                  description: The source of the prospect lead.
+                desired_num_bathrooms:
+                  type: number
+                  description: The desired number of bathrooms the prospect would like.
+                number_of_occupants:
+                  type: number
+                  description: The number of occupants the prospect is planning to reside with.
+                desired_max_rent_in_cents:
+                  type: number
+                  description: The maximum rent cost the prospect is looking at pay, in cents.
+                desired_min_rent_in_cents:
+                  type: number
+                  description: The minimum rent cost the prospect is looking at pay, in cents.
+                status:
+                  type: string
+                  description: The status of the prospect
+                desired_unit_type:
+                  type: string
+                  description: The desired unit type of the prospect.
               required:
                 - id
       responses:
