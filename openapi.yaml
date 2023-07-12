@@ -1950,7 +1950,7 @@ paths:
                         ils:
                           type: string
                           nullable: true
-                          description: The name of the intetnet listing service
+                          description: The name of the Internet listing service
                         last_name:
                           type: string
                           nullable: true
@@ -2364,7 +2364,7 @@ paths:
                       ils:
                         type: string
                         nullable: true
-                        description: The name of the intetnet listing service
+                        description: The name of the Internet listing service
                       last_name:
                         type: string
                         nullable: true
