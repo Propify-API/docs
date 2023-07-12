@@ -9802,9 +9802,6 @@ paths:
                           type: string
                         status:
                           type: string
-                        integration_response:
-                          type: string
-                          nullable: true
                         parent_job_id:
                           type: string
                           nullable: true
@@ -9819,7 +9816,6 @@ paths:
                         - created_at
                         - job_type
                         - status
-                        - integration_response
                         - parent_job_id
                         - job_schedule_id
                         - integration_id
@@ -9913,9 +9909,6 @@ paths:
                           type: string
                         status:
                           type: string
-                        integration_response:
-                          type: string
-                          nullable: true
                         parent_job_id:
                           type: string
                           nullable: true
@@ -9930,7 +9923,6 @@ paths:
                         - created_at
                         - job_type
                         - status
-                        - integration_response
                         - parent_job_id
                         - job_schedule_id
                         - integration_id
