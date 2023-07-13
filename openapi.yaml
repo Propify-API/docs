@@ -3207,26 +3207,28 @@ paths:
                   type: string
                   format: date-time
                   description: The move in date
+                property_id:
+                  type: string
+                  description: The Propify unique identifier for the property
                 unit_id:
                   type: string
                   description: The Propify unique identifier for the unit
-                leads:
+                primary_contact_id:
+                  type: string
+                  description: The Propify unique identifier of the primary contact. This must
+                    either be a lead, applicant or resident in Propify
+                tenants:
                   type: array
                   items:
                     type: object
                     properties:
-                      lead_id:
+                      id:
                         type: string
-                        description: The Propify unique identifier for the lead
+                        description: The Propify unique identifier for the lead, applicant, or resident
                     required:
-                      - lead_id
-                  description: An array of Propify lead IDs
-                primary_contact_id:
-                  type: string
-                  description: The Propify unique identifier for the lead
-                property_id:
-                  type: string
-                  description: The Propify unique identifier for the property
+                      - id
+                  description: An array of Propify lead, applicant, or resident IDs. This must
+                    also include the primary contact ID
                 status:
                   type: string
                   enum:
@@ -3660,35 +3662,28 @@ paths:
                 lease_id:
                   type: string
                   description: The Propify unique identifier for the lease
+                property_id:
+                  type: string
+                  description: The Propify unique identifier for the property
                 unit_id:
                   type: string
                   description: The Propify unique identifier for the unit
-                contacts:
+                primary_contact_id:
+                  type: string
+                  description: The Propify unique identifier of the primary contact. This must
+                    either be a lead, applicant or resident in Propify
+                tenants:
                   type: array
                   items:
                     type: object
                     properties:
-                      contact_id:
+                      id:
                         type: string
-                        description: The Propertyware ID of the Contact
-                      first_name:
-                        type: string
-                        description: The first name of the Contact
-                      last_name:
-                        type: string
-                        description: The last name of the Contact
+                        description: The Propify unique identifier for the lead, applicant, or resident
                     required:
-                      - contact_id
-                      - first_name
-                      - last_name
-                  description: A list of Propertware Contacts containing ID, first name, and last
-                    name
-                primary_contact_id:
-                  type: string
-                  description: The Propertware ID of the Primary Contact for the Lease
-                property_id:
-                  type: string
-                  description: The Propify unique identifier for the property
+                      - id
+                  description: An array of Propify lead, applicant, or resident IDs. This must
+                    also include the primary contact ID
                 scheduled_move_in_date:
                   type: string
                   format: date-time
